@@ -1,0 +1,147 @@
+// Ambient background motion for the hero motifs.
+//
+// Every page already ships the same motif DOM (orbits, rings, sparks). Rather
+// than write a separate animation per page, each page sets four custom
+// properties and the shared keyframes below read them. That is what makes the
+// background feel like a different beat per page without more rules.
+//
+// Brand rule 5: fantasy supports hospitality, it never overwhelms it. Motion
+// here stays slow, low-amplitude, and limited to transform/opacity so it
+// composites on the GPU and never competes with the copy.
+//
+// Reduced motion needs no handling in this file: the global block in
+// _responsive.scss already collapses every animation-duration to 0.01ms.
+
+:root {
+  --motif-spin: 150s;   // outer orbit rotation period
+  --motif-drift: 26s;   // spark drift period
+  --motif-breath: 15s;  // glow pulse period
+  --motif-throw: 4px;   // drift amplitude
+  --motif-dim: 0.55;    // low point of a pulse
+}
+
+@keyframes motif-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes motif-spin-reverse {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes motif-breathe {
+  0%, 100% { opacity: var(--motif-dim); transform: scale(1); }
+  50%      { opacity: 1;                transform: scale(1.035); }
+}
+
+@keyframes motif-drift {
+  0%, 100% { opacity: 0.25; transform: translate(0, 0); }
+  35%      { opacity: 0.85; transform: translate(var(--motif-throw), calc(var(--motif-throw) * -1.2)); }
+  70%      { opacity: 0.45; transform: translate(calc(var(--motif-throw) * -0.8), calc(var(--motif-throw) * 0.6)); }
+}
+
+// A solid circle looks identical at every angle, so spinning one renders
+// nothing. Brightening a single edge turns the same rotation into a slow
+// tracer travelling the rim, which is the effect actually worth having.
+@mixin tracer-ring {
+  border-top-color: var(--gold-text);
+  border-right-color: color-mix(in srgb, var(--gold-text) 35%, transparent);
+}
+
+// Standard page motif -------------------------------------------------------
+
+.orbit--one {
+  @include tracer-ring;
+  animation: motif-spin var(--motif-spin) linear infinite;
+}
+
+.orbit--two {
+  // Already dashed, so plain rotation reads. Counter-rotating keeps the two
+  // rings from ever locking into a single static shape.
+  animation: motif-spin-reverse calc(var(--motif-spin) * 0.62) linear infinite;
+}
+
+.orbit__center {
+  // Carries the "BS" brand mark, so it gets a much shallower pulse than the
+  // bare rings do.
+  --motif-dim: 0.82;
+  animation: motif-breathe var(--motif-breath) ease-in-out infinite;
+}
+
+// Homepage story table ------------------------------------------------------
+
+.story-table__ring--outer {
+  @include tracer-ring;
+  animation: motif-spin var(--motif-spin) linear infinite;
+}
+
+.story-table__ring--middle {
+  animation: motif-spin-reverse calc(var(--motif-spin) * 0.7) linear infinite;
+}
+
+.story-table__ring--inner {
+  --motif-dim: 0.6;
+  animation: motif-breathe calc(var(--motif-breath) * 1.3) ease-in-out infinite;
+}
+
+.story-table__spark {
+  animation: motif-drift var(--motif-drift) ease-in-out infinite;
+}
+
+// Staggered so the three sparks read as separate points of interest rather
+// than one blinking group.
+.story-table__spark--two   { animation-delay: calc(var(--motif-drift) * -0.37); }
+.story-table__spark--three { animation-delay: calc(var(--motif-drift) * -0.71); }
+
+// Per-page tempo ------------------------------------------------------------
+//
+// The body class comes from layouts/baseof.html. Each page gets the pace its
+// copy is asking for; pages about commitment and privacy stay nearly still.
+
+.page-home {
+  --motif-spin: 130s;
+  --motif-breath: 13s;
+  --motif-throw: 5px;
+}
+
+.page-experience {
+  --motif-spin: 95s;
+  --motif-drift: 19s;
+  --motif-breath: 10s;
+  --motif-throw: 7px;
+}
+
+.page-how-it-works {
+  // Deliberately metronomic: the page is about a dependable process.
+  --motif-spin: 120s;
+  --motif-breath: 12s;
+  --motif-throw: 3px;
+}
+
+.page-for-your-table {
+  --motif-spin: 140s;
+  --motif-breath: 16s;
+  --motif-throw: 6px;
+}
+
+.page-about {
+  --motif-spin: 175s;
+  --motif-breath: 19s;
+  --motif-throw: 3px;
+}
+
+.page-questions {
+  --motif-spin: 160s;
+  --motif-breath: 14s;
+  --motif-throw: 4px;
+}
+
+// Conversion and legal pages: present, but as close to still as the motif gets.
+.page-consultation,
+.page-privacy,
+.page-thank-you,
+.page-brand-guide,
+.page-404 {
+  --motif-spin: 230s;
+  --motif-breath: 24s;
+  --motif-throw: 2px;
+}

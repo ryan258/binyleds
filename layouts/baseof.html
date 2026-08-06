@@ -13,7 +13,11 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body class="{{ if or (ne .Kind "page") (eq .Layout "archives") (eq .Layout "search") }}list {{ end }}kind-{{ .Kind }} layout-{{ .Layout | default "default" }}" id="top">
+{{- /* page-<slug> is the hook _motion.scss uses to give each page its own
+       ambient tempo. The archives/search branches and the kind-/layout-
+       classes that used to live here were PaperMod's and matched no CSS. */ -}}
+{{- $slug := cond .IsHome "home" (path.BaseName .RelPermalink) -}}
+<body class="{{ if ne .Kind "page" }}list {{ end }}page-{{ $slug }}" id="top">
   {{ partialCached "header.html" . .Page }}
   <main class="main">
     {{ block "main" . }}{{ end }}
