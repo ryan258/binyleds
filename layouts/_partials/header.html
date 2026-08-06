@@ -1,0 +1,41 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header" data-site-header>
+  <nav class="site-nav shell" aria-label="Primary navigation">
+    <a class="brand-home" href="{{ "" | relLangURL }}" aria-label="Binyled’s Storyscape home">
+      {{ partial "brand-mark.html" . }}
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-menu"
+      data-menu-toggle
+    >
+      <span aria-hidden="true" class="menu-toggle__lines"></span>
+      <span class="menu-toggle__label">Menu</span>
+    </button>
+
+    <div class="nav-panel" id="primary-menu" data-menu-panel>
+      <ul class="site-menu">
+        {{- $currentPage := . -}}
+        {{- range site.Menus.main }}
+          {{- $isActive := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) -}}
+          <li>
+            <a
+              href="{{ .URL | relLangURL }}"
+              class="{{ if .Params.cta }}button button--primary nav-cta{{ else }}menu-link{{ end }}{{ if $isActive }} is-active{{ end }}"
+              {{ if $isActive }}aria-current="page"{{ end }}
+            >{{ .Name }}</a>
+          </li>
+        {{- end }}
+      </ul>
+
+      <button class="theme-control" id="theme-toggle" type="button" aria-label="Switch color theme" data-theme-toggle>
+        <span class="theme-control__sun" aria-hidden="true">Light</span>
+        <span class="theme-control__moon" aria-hidden="true">Dark</span>
+      </button>
+    </div>
+  </nav>
+</header>
+

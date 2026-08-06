@@ -1,0 +1,137 @@
+hero:
+  eyebrow: Bespoke in-home tabletop experiences
+  line_one: You host the people.
+  line_two: I host the world.
+  lede: >-
+    Commission a private tabletop adventure created around your guests and
+    brought to life in your home - with thoughtful preparation, welcoming
+    guidance, and an expertly hosted evening from the opening scene to the final
+    decision.
+  primary_cta:
+    label: Request a private consultation
+    url: /consultation/
+  secondary_cta:
+    label: Explore the experience
+    url: /experience/
+  signature: I build the world. You shape the story.
+
+proof:
+  - label: Created around your guests
+    detail: Personalities, experience levels, and the occasion shape the story.
+  - label: Welcoming from the first scene
+    detail: New and experienced players are guided into the same shared evening.
+  - label: Prepared from beginning to end
+    detail: The creative and facilitation burden no longer sits with the host.
+
+positioning:
+  eyebrow: The Private Storyscape
+  title: An evening created around your table
+  paragraphs:
+    - >-
+      The most memorable game nights are not defined by how well everyone knows
+      the rules. They are defined by the moment every guest realizes they have a
+      place in the story.
+    - >-
+      Binyled’s Storyscape creates a private adventure around the people you
+      invite - their personalities, experience levels, interests, and sense of
+      humor. Every detail is prepared so you can remain part of the gathering
+      rather than responsible for running it.
+  pullquote: You invite the guests. The world arrives prepared.
+
+process:
+  eyebrow: How the evening takes shape
+  title: Thoughtfully prepared. Effortlessly hosted.
+  intro: >-
+    A clear three-part process keeps the practical details calm and gives the
+    imagination room to work.
+  steps:
+    - number: "01"
+      title: A private consultation
+      text: >-
+        We discuss your guests, the occasion, their experience, and the
+        atmosphere you want to create.
+    - number: "02"
+      title: A story prepared for the group
+      text: >-
+        The adventure, characters, encounters, and supporting materials are
+        shaped around the people at the table.
+    - number: "03"
+      title: A fully guided evening
+      text: >-
+        The world arrives at your home and is guided from the opening scene
+        through the final decision.
+
+details:
+  eyebrow: What the commission can hold
+  title: Every detail serves the evening
+  intro: >-
+    The final scope is confirmed during consultation. These are the parts that
+    may be shaped around the table rather than a one-size-fits-all package.
+  items:
+    - title: Story and characters
+      text: A focused adventure, approachable roles, and choices tuned to the group.
+    - title: Guest guidance
+      text: A calm introduction to the table, the world, and only the rules people need.
+    - title: Pacing and facilitation
+      text: The evening keeps moving while every guest has room to contribute.
+    - title: Atmosphere and materials
+      text: Maps, music, miniatures, and selected physical details where they serve the story.
+    - title: In-home presence
+      text: The experience is prepared for the room and guided with attention to the gathering.
+    - title: A possible next chapter
+      text: When the table wants more, the conversation can continue after the final scene.
+
+reassurance:
+  eyebrow: Designed for mixed experience
+  title: Curiosity is the only prerequisite
+  paragraphs:
+    - >-
+      Some guests may have played for years. Others may be opening a character
+      sheet for the first time. The experience is created for both.
+    - >-
+      New players receive enough guidance to begin making meaningful choices
+      immediately, while experienced players have room to explore, improvise,
+      and surprise the table.
+    - >-
+      No one is expected to study beforehand. No one is left waiting for the
+      story to make sense.
+  pullquote: Within the first scene, the evening belongs to everyone.
+
+philosophy:
+  eyebrow: The approach
+  title: Prepared with care. Guided with presence.
+  paragraphs:
+    - >-
+      Every commission is approached as a private gathering first and a tabletop
+      game second. That means understanding the guests, reading the room,
+      explaining without condescension, adapting without losing direction, and
+      knowing when to let the table take control of the story.
+    - >-
+      The goal is not to perform at your guests. It is to create the conditions
+      for them to surprise one another.
+  link:
+    label: Read the hosting philosophy
+    url: /about/
+
+location:
+  eyebrow: Bentonville, Arkansas
+  title: A private world, brought to your home
+  text: >-
+    Binyled’s Storyscape creates in-home tabletop experiences for private
+    gatherings in Bentonville and across Northwest Arkansas, with each date and
+    location confirmed during consultation.
+  link:
+    label: See if the experience fits your table
+    url: /for-your-table/
+
+closing:
+  eyebrow: Your evening begins here
+  title: Begin with the evening you want to create
+  text: >-
+    Tell me who you are gathering, what they enjoy, and what would make the night
+    feel distinctly yours. From there, we can determine the right shape for the
+    evening and begin building the story around your table.
+  cta:
+    label: Request a private consultation
+    url: /consultation/
+

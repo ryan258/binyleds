@@ -1,0 +1,15 @@
+{
+  "name": "binyleds-storyscape",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Hugo website for Binyled’s Storyscape.",
+  "scripts": {
+    "dev": "hugo server --buildDrafts --disableFastRender",
+    "build": "hugo --gc --minify --panicOnWarning",
+    "check": "bash scripts/check.sh"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+

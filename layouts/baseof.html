@@ -1,0 +1,24 @@
+{{- /* hugo.Data (layouts/index.html, layouts/brand-guide/single.html) replaced
+       the deprecated site.Data in v0.156.0, so that is the real floor. */ -}}
+{{- if lt hugo.Version "0.156.0" }}
+  {{- errorf "Hugo Extended v0.156.0 or newer is required." }}
+{{- end -}}
+<!DOCTYPE html>
+{{- $theme := site.Params.defaultTheme | default "auto" -}}
+<html
+  lang="{{ site.Language }}"
+  dir="{{ .Language.Direction | default "auto" }}"
+  data-theme="{{ $theme }}"
+>
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="{{ if or (ne .Kind "page") (eq .Layout "archives") (eq .Layout "search") }}list {{ end }}kind-{{ .Kind }} layout-{{ .Layout | default "default" }}" id="top">
+  {{ partialCached "header.html" . .Page }}
+  <main class="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") }}
+</body>
+</html>
+

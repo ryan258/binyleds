@@ -1,0 +1,110 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="{{ if and hugo.IsProduction (ne .Params.robotsNoIndex true) }}index, follow{{ else }}noindex, nofollow{{ end }}">
+
+{{- $title := cond .IsHome site.Title (printf "%s | %s" .Title site.Title) }}
+{{- $description := .Description | default site.Params.description | plainify }}
+{{- $image := "" }}
+{{- with (or .Params.images site.Params.images) }}{{ $image = absURL (index . 0) }}{{ end }}
+
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="author" content="{{ site.Params.author }}">
+{{- with site.Params.keywords }}
+<meta name="keywords" content="{{ delimit . ", " }}">
+{{- end }}
+<link rel="canonical" href="{{ .Permalink }}">
+
+<link rel="icon" href="{{ "favicon.ico" | absURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | absURL }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | absURL }}">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
+<meta name="theme-color" content="#0C100F">
+<meta name="msapplication-TileColor" content="#0C100F">
+<meta name="color-scheme" content="dark light">
+<meta name="format-detection" content="telephone=no">
+
+{{- $styles := resources.Get "scss/main.scss" | css.Sass (dict
+  "targetPath" "assets/css/storyscape.css"
+  "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
+  "enableSourceMap" (not hugo.IsProduction)
+) }}
+{{- if hugo.IsProduction }}
+  {{- $styles = $styles | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
+{{- else }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+{{- end }}
+
+<script>
+  document.documentElement.classList.add("js");
+  if (localStorage.getItem("pref-theme") === "light") document.documentElement.dataset.theme = "light";
+</script>
+<noscript><style>#theme-toggle,.top-link{display:none}</style></noscript>
+
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ or .Title site.Title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:locale" content="{{ replace site.Language.Locale "-" "_" }}">
+<meta property="og:type" content="{{ cond .IsPage "article" "website" }}">
+<meta name="twitter:title" content="{{ or .Title site.Title }}">
+<meta name="twitter:description" content="{{ $description }}">
+{{- with $image }}
+<meta property="og:image" content="{{ . }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ . }}">
+{{- else }}
+<meta name="twitter:card" content="summary">
+{{- end }}
+
+{{- if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.Title | jsonify | safeJS }},
+  "url": {{ .Permalink | jsonify | safeJS }},
+  "description": {{ $description | jsonify | safeJS }},
+  "inLanguage": {{ site.Language.Locale | jsonify | safeJS }},
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.Title | jsonify | safeJS }}
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "The Private Storyscape",
+  "serviceType": "Private in-home tabletop roleplaying experience",
+  "description": {{ site.Params.description | jsonify | safeJS }},
+  "url": {{ .Permalink | jsonify | safeJS }},
+  "provider": {
+    "@type": "Organization",
+    "name": {{ site.Title | jsonify | safeJS }}
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Bentonville" },
+    { "@type": "AdministrativeArea", "name": "Northwest Arkansas" }
+  ]
+}
+</script>
+{{- else }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": {{ .Title | jsonify | safeJS }},
+  "url": {{ .Permalink | jsonify | safeJS }},
+  "description": {{ $description | jsonify | safeJS }},
+  "inLanguage": {{ site.Language.Locale | jsonify | safeJS }},
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": {{ site.Title | jsonify | safeJS }},
+    "url": {{ site.Home.Permalink | jsonify | safeJS }}
+  }
+}
+</script>
+{{- end }}

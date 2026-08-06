@@ -1,0 +1,109 @@
+{{ define "main" }}
+<article id="main-content" class="consultation-page">
+  {{ partial "page-hero.html" . }}
+
+  <div class="shell consultation-grid">
+    <aside class="consultation-aside">
+      <p class="eyebrow">A useful first conversation</p>
+      <h2>No commitment. No performance.</h2>
+      <p>The details below create a thoughtful starting point. They are not a booking contract, and every practical decision is confirmed directly before an evening is accepted.</p>
+      <ul class="quiet-list">
+        <li>Allow about five minutes</li>
+        <li>Share only what is known today</li>
+        <li>Beginners and mixed groups are welcome</li>
+        <li>Dates and locations are confirmed privately</li>
+      </ul>
+    </aside>
+
+    <form
+      class="consultation-form"
+      name="private-consultation"
+      method="POST"
+      action="{{ "thank-you/" | relURL }}"
+      data-netlify="true"
+      netlify-honeypot="company-website"
+      aria-labelledby="consultation-form-title"
+    >
+      <input type="hidden" name="form-name" value="private-consultation">
+      <p class="form-honeypot" aria-hidden="true">
+        <label>Leave this field empty <input name="company-website" tabindex="-1" autocomplete="off"></label>
+      </p>
+
+      <div class="form-intro">
+        <p class="eyebrow">Private consultation request</p>
+        <h2 id="consultation-form-title">Tell me about the table</h2>
+        <p>Fields marked <span aria-hidden="true">*</span><span class="sr-only">required</span> are required.</p>
+      </div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Your name <span aria-hidden="true">*</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone <span class="field-optional">Optional</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+        </div>
+
+        <div class="field">
+          <label for="city">Where would the evening take place? <span aria-hidden="true">*</span></label>
+          <input id="city" name="city" type="text" autocomplete="address-level2" placeholder="City or Northwest Arkansas area" required>
+        </div>
+
+        <div class="field">
+          <label for="preferred-date">Preferred date <span class="field-optional">Optional</span></label>
+          <input id="preferred-date" name="preferred-date" type="date">
+        </div>
+
+        <div class="field">
+          <label for="guest-count">Expected guests <span aria-hidden="true">*</span></label>
+          <input id="guest-count" name="guest-count" type="number" min="2" max="20" inputmode="numeric" required>
+        </div>
+
+        <div class="field field--full">
+          <label for="experience-level">Tabletop experience <span aria-hidden="true">*</span></label>
+          <select id="experience-level" name="experience-level" required>
+            <option value="">Choose the closest fit</option>
+            <option>Mostly new players</option>
+            <option>A mix of new and experienced players</option>
+            <option>Mostly experienced players</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="field field--full">
+          <label for="occasion">What brings everyone together? <span class="field-optional">Optional</span></label>
+          <input id="occasion" name="occasion" type="text" placeholder="A birthday, reunion, ordinary excellent evening...">
+        </div>
+
+        <div class="field field--full">
+          <label for="vision">What would make the evening feel distinctly yours? <span aria-hidden="true">*</span></label>
+          <textarea id="vision" name="vision" rows="6" required></textarea>
+          <p class="field-help">Interests, tone, favorite stories, group dynamics, or the feeling you want guests to carry home.</p>
+        </div>
+
+        <div class="field field--full">
+          <label for="boundaries">Comfort, access, or accommodation notes <span class="field-optional">Optional</span></label>
+          <textarea id="boundaries" name="boundaries" rows="4"></textarea>
+          <p class="field-help">Share only what would help make the gathering welcoming. Details can also be discussed privately later.</p>
+        </div>
+
+        <label class="consent field--full">
+          <input type="checkbox" name="privacy-consent" required>
+          <span>I agree that these details may be used to respond to this request. <a href="{{ "privacy/" | relURL }}">Read the privacy note.</a> <span aria-hidden="true">*</span></span>
+        </label>
+      </div>
+
+      <button class="button button--primary form-submit" type="submit">Request a private consultation</button>
+      <p class="form-note">This request begins a conversation. It does not reserve a date or create a payment obligation.</p>
+    </form>
+  </div>
+</article>
+{{ end }}
+

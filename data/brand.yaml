@@ -1,0 +1,403 @@
+meta:
+  name: Binyled’s Storyscape
+  version: "1.0"
+  status: Production foundation
+  updated: August 2026
+  owner: Binyled
+
+foundation:
+  descriptor: Bespoke in-home tabletop experiences
+  location: Bentonville, Arkansas
+  service_area: Bentonville and Northwest Arkansas, subject to date and location confirmation
+  promise: You host the people. I host the world.
+  signature: I build the world. You shape the story.
+  essence: Cultivated hospitality with a storyteller's imagination.
+  introduction: >-
+    Binyled’s Storyscape creates and hosts private tabletop adventures for
+    people who want to give their friends an evening that feels thoughtful,
+    seamless, and entirely their own.
+  what: >-
+    A consultation-first service that creates and guides a private tabletop
+    roleplaying evening in the client's home.
+  who: >-
+    Discerning hosts who value originality, preparation, guest comfort, and the
+    chance to remain present at their own gathering.
+  why: >-
+    To remove the creative and facilitation burden from the host while giving
+    every guest a meaningful place in a shared story.
+
+strategy:
+  positioning: >-
+    A premium in-home game-mastering service for tabletop enthusiasts who want
+    to host an extraordinary night without carrying the creative, logistical,
+    rules-management, or performance burden themselves.
+  core_tension: >-
+    The client wants the intimacy and creativity of a private tabletop night
+    without having to prepare, teach, facilitate, pace, and perform the
+    experience themselves.
+  real_purchase: Confidence that their guests will have an exceptional evening.
+  functional_promise: >-
+    Preparation, onboarding, materials, rules guidance, pacing, atmosphere, and
+    facilitation are shaped and handled from beginning to end as confirmed in
+    the consultation.
+  emotional_promise: Your guests feel transported. You remain present as the host.
+  status_benefit: I did not merely organize game night. I commissioned an experience.
+  internal_standard: Polished enough for an executive's home; imaginative enough for their favorite friends.
+
+audience:
+  persona: The Discerning Host
+  description: >-
+    A professional, founder, executive, creative, collector, established
+    hobbyist, or socially thoughtful host with disposable income.
+  likely_thought: >-
+    I want to give my friends something exceptional, but I do not want to spend
+    weeks preparing and running it myself.
+  values:
+    - Trust
+    - Preparation
+    - Taste
+    - Originality
+    - Hospitality
+    - Reliability
+    - Social awareness
+    - Guest comfort
+    - Memorable experiences
+  concerns:
+    - Will beginners feel comfortable?
+    - Will the evening run smoothly?
+    - Will the game master be polished and dependable?
+    - Will the experience feel personal?
+    - Will it be impressive without becoming theatrical?
+    - Will I be able to enjoy the evening too?
+  public_labels_to_avoid:
+    - Upper class
+    - Rich
+    - Wealthy
+    - Elite
+    - VIP
+    - Corporate executives
+
+offer:
+  name: The Private Storyscape
+  summary: >-
+    A bespoke single-evening tabletop roleplaying experience created around the
+    guests and professionally hosted in the client's home.
+  frame: >-
+    Closer to commissioning a private chef, storyteller, or boutique hosted
+    experience than hiring a casual freelance game master.
+  before:
+    - Private consultation
+    - Guest profile and experience review
+    - Tone, interests, and comfort boundaries
+    - Occasion and location details
+    - Story direction
+  during:
+    - A focused adventure created for the group
+    - Curated characters or guided character creation
+    - New-player onboarding and rules guidance
+    - Professional game mastery and narrative pacing
+    - Maps, music, miniatures, and selected props where appropriate
+    - Setup and pack-down where confirmed in scope
+  after:
+    - Optional keepsakes or character summaries
+    - A follow-up chapter
+    - A conversation about continuing the story
+
+journey:
+  - stage: Discover
+    visitor_question: Is this different from hiring a game master?
+    answer: Lead with the host outcome, private-home setting, and commissioned preparation.
+    primary_route: Homepage and The Experience
+  - stage: Understand
+    visitor_question: What happens, and what do I need to do?
+    answer: Show the three-step process, possible scope, and calm guest onboarding.
+    primary_route: How It Works
+  - stage: Believe
+    visitor_question: Will this work for my particular friends?
+    answer: Reassure mixed-experience groups and explain the hospitality-first approach.
+    primary_route: For Your Table and About
+  - stage: Resolve
+    visitor_question: What about price, location, timing, or practical concerns?
+    answer: Answer honestly and move unknowns into the consultation rather than inventing facts.
+    primary_route: Questions
+  - stage: Act
+    visitor_question: How do I begin without making a commitment?
+    answer: Ask only for the details needed to shape an informed private consultation.
+    primary_route: Consultation
+
+messaging:
+  hierarchy:
+    - name: Host outcome
+      text: The client can give friends an extraordinary evening without running it themselves.
+    - name: Guest experience
+      text: Every guest is welcomed, guided, and given a meaningful place in the story.
+    - name: Craft
+      text: The adventure is created around the group.
+    - name: Professional delivery
+      text: Preparation, rules guidance, pacing, and facilitation are handled.
+    - name: Fantasy
+      text: Once the practical value is understood, heighten the imaginative promise.
+  headlines:
+    - You host the people. I host the world.
+    - An evening created around your table.
+    - Thoughtfully prepared. Effortlessly hosted.
+    - Curiosity is the only prerequisite.
+    - Every detail serves the evening.
+    - Prepared with care. Guided with presence.
+    - A private world, brought to your home.
+    - Begin with the evening you want to create.
+  supporting_lines:
+    - You invite the guests. The world arrives prepared.
+    - Within the first scene, the evening belongs to everyone.
+    - The rest belongs to the table.
+    - What happens next is yours to decide.
+    - Then the story begins.
+  primary_ctas:
+    - Request a private consultation
+    - Commission your Storyscape
+    - Begin planning your evening
+  secondary_ctas:
+    - Explore the experience
+    - See how the evening works
+    - Ask about your date
+    - Discuss your gathering
+  avoid_ctas:
+    - Buy now
+    - Book a DM
+    - Get started
+    - Level up your event
+    - Roll for adventure
+    - Join the quest
+
+voice:
+  north_star: Cultivated hospitality with a storyteller's imagination.
+  ratio:
+    - label: Gracious private host
+      value: 40
+    - label: Master storyteller
+      value: 35
+    - label: Discreet concierge
+      value: 25
+  pillars:
+    - name: Cultivated hospitality
+      sounds_like:
+        - Gracious
+        - Attentive
+        - Composed
+        - Personal
+      not_like:
+        - Aristocratic
+        - Pretentious
+        - Ceremonial
+        - Cold
+      good: Every adventure begins with a conversation about your guests, your home, and the kind of evening you want to create.
+      bad: Our exclusive consultation process ensures a luxurious bespoke engagement.
+    - name: Quiet command
+      sounds_like:
+        - Prepared
+        - Experienced
+        - Reassuring
+        - Clear
+        - Confident
+      not_like:
+        - Boastful
+        - Dominating
+        - Rules-obsessed
+        - Competitive
+      good: From the first introduction to the final decision, I guide the table, manage the pace, and keep every guest involved.
+      bad: An elite Dungeon Master delivers unmatched mastery of the rules.
+    - name: Living imagination
+      sounds_like:
+        - Evocative
+        - Sensory
+        - Intriguing
+        - Emotionally intelligent
+      not_like:
+        - Overwritten fantasy prose
+        - Constant references to destiny
+        - Theatrical monologues
+        - Generic epic language
+      good: By evening's end, the quiet guest may have negotiated with a dragon or saved the kingdom with one beautifully reckless decision.
+      bad: Enter a realm of epic legends where heroes forge their eternal destinies.
+  writing_rules:
+    - Use “I” when the practitioner speaks and “you” to keep the host central.
+    - Do not use “we” unless multiple people genuinely deliver the service.
+    - Use sentence case for headings and buttons.
+    - Mix short, confident statements with calm explanation.
+    - Use evocative fantasy language sparingly and after practical clarity.
+    - Avoid mock-medieval speech, jargon, exclamation marks, and excessive ellipses.
+    - Keep body copy clear, conversational, and near 65 characters per line.
+  use_words:
+    - Private
+    - Thoughtful
+    - Created around your guests
+    - Hosted
+    - Guided
+    - Prepared
+    - Commission
+    - Gathering
+    - Evening
+    - Adventure
+    - At your table
+    - In your home
+    - Welcoming
+    - Crafted
+    - Personal
+    - Story
+    - Atmosphere
+  sparing_words:
+    - Bespoke
+    - Immersive
+    - Curated
+    - Extraordinary
+    - Memorable
+    - Refined
+    - Premium
+    - Legendary
+    - Magical
+  avoid_words:
+    - Luxury D&D
+    - Elite Dungeon Master
+    - Ultimate game night
+    - Epic fun
+    - Nerds
+    - High-end clients
+    - Upper class
+    - VIP
+    - Unmatched
+    - Best-in-class
+    - World-class
+    - Entertainment package
+
+visual:
+  direction: Private Club Fantasy
+  character: 65% old-world private club / 35% modern fantasy
+  page_balance: 75% tasteful restraint / 25% fantasy atmosphere
+  impression: Quietly composed, editorial, intimate, personal, warmly authoritative, highly prepared, and discreet rather than showy.
+  colors:
+    - name: Obsidian
+      hex: "#0C100F"
+      rgb: 12, 16, 15
+      use: Primary dark background and ink
+      text: light
+    - name: Parchment
+      hex: "#EEE5D4"
+      rgb: 238, 229, 212
+      use: Primary light background and dark-mode type
+      text: dark
+    - name: Dark verdigris
+      hex: "#1E6658"
+      rgb: 30, 102, 88
+      use: Signature brand field and action color
+      text: light
+    - name: Bright mint
+      hex: "#73D0AB"
+      rgb: 115, 208, 171
+      use: Focus, small highlights, and interactive confirmation
+      text: dark
+    - name: Antique gold
+      hex: "#C19A52"
+      rgb: 193, 154, 82
+      use: Fine rules, indices, and ceremonial detail
+      text: dark
+    - name: Deep forest
+      hex: "#163830"
+      rgb: 22, 56, 48
+      use: Secondary surfaces and tonal depth
+      text: light
+  typography:
+    display:
+      family: Cormorant Garamond
+      fallback: Iowan Old Style, Baskerville, Times New Roman, serif
+      roles: Hero, section headlines, pull quotes, and ceremonial statements
+    body:
+      family: Manrope
+      fallback: Avenir Next, Helvetica Neue, Arial, sans-serif
+      roles: Navigation, body copy, forms, labels, and operational information
+  type_scale:
+    - role: Hero
+      desktop: 76/80 px
+      mobile: 52/54 px
+    - role: Section headline
+      desktop: 48/54 px
+      mobile: 38/42 px
+    - role: Subsection
+      desktop: 28/34 px
+      mobile: 25/31 px
+    - role: Large body
+      desktop: 20/32 px
+      mobile: 19/30 px
+    - role: Body
+      desktop: 17/28 px
+      mobile: 16/27 px
+    - role: Eyebrow
+      desktop: 12/16 px
+      mobile: 11/15 px
+  spacing: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 / 128
+  layout_rules:
+    - Use generous negative space and editorial left alignment for practical information.
+    - Reserve centered layouts for ceremonial statements.
+    - Use one focal symbol or image per composition.
+    - Use thin antique-gold rules and 0-4 px corner radii.
+    - Avoid heavy shadows, dense card grids, and decorative medieval borders.
+    - Remove decoration before reducing whitespace.
+  imagery:
+    do:
+      - Favor intimate tables, tactile materials, hands in conversation, and warm pools of light.
+      - Crop close enough to feel private rather than event-scale.
+      - Let real objects and gestures carry the fantasy atmosphere.
+      - Keep the host and guests more important than costumes or spectacle.
+    avoid:
+      - Generic AI fantasy decoration
+      - Cosplay, convention, or game-store imagery
+      - Glowing effects and synthetic epic landscapes
+      - Overt wealth signaling
+      - Juvenile fantasy or esports graphics
+
+accessibility:
+  principles:
+    - Meet WCAG 2.2 AA contrast for text, controls, and focus indicators.
+    - Preserve a visible skip link, keyboard operation, and logical heading order.
+    - Keep touch targets at least 44 by 44 CSS pixels where practical.
+    - Respect reduced-motion and system light/dark preferences.
+    - Pair every form control with an explicit label and useful error context.
+    - Never hide essential information in hover, color, or imagery alone.
+
+sales:
+  approach: Consultation-first, low-pressure, specificity-led selling
+  principles:
+    - Sell the host outcome before the game mechanics.
+    - Make the work visible through concrete preparation rather than adjectives.
+    - Use fit language instead of fake scarcity.
+    - Treat the consultation as useful discovery, not a disguised checkout.
+    - Do not show pricing until the service model and scope variables are confirmed.
+    - Never manufacture social proof; publish testimonials only with client approval.
+  consultation_qualification:
+    - Who is gathering and how many guests may attend?
+    - What is the occasion and preferred date?
+    - Where will the evening take place?
+    - What mix of tabletop experience is expected?
+    - What tone, interests, boundaries, or accommodations matter?
+    - What would make the evening feel distinctly successful?
+
+governance:
+  do:
+    - Show preparation, hospitality, guest consideration, and reliability.
+    - Explain practical value before adding fantasy atmosphere.
+    - Communicate limited capacity through honest preparation requirements.
+    - Make beginners feel welcome and keep the host central.
+  do_not:
+    - Describe the public audience through wealth or corporate status.
+    - Name-drop local employers.
+    - Use fake scarcity, invented testimonials, or invented credentials.
+    - Sound like a children's party entertainer or a casual game-store listing.
+    - Add new colors, fonts, or motifs without updating the brand system.
+  unresolved:
+    - Approved game master biography and credentials
+    - Confirmed standard service inclusions and guest-count range
+    - Real client testimonials
+    - Final public contact details
+    - Exact travel radius and travel policy
+    - Final rate structure and owner-approved commercial terms
+    - Lead time, cancellation, and rescheduling policies
+    - Game-system trademark or affiliation wording

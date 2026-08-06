@@ -1,0 +1,14 @@
+{{- $title := .title | default "Begin with the evening you want to create" -}}
+{{- $text := .text | default "Tell me who you are gathering, what they enjoy, and what would make the night feel distinctly yours. From there, we can begin shaping the story around your table." -}}
+{{- $label := .label | default "Request a private consultation" -}}
+{{- $url := .url | default site.Params.consultationPath -}}
+<section class="closing-cta section-pad" aria-labelledby="closing-cta-title">
+  <div class="shell closing-cta__inner">
+    <p class="eyebrow">Your evening begins here</p>
+    <h2 id="closing-cta-title">{{ $title }}</h2>
+    <p>{{ $text }}</p>
+    <a class="button button--light" href="{{ $url | relURL }}">{{ $label }}</a>
+    <span class="closing-cta__signature">I build the world. You shape the story.</span>
+  </div>
+</section>
+

@@ -1,0 +1,147 @@
+{{ define "main" }}
+{{- $home := hugo.Data.home -}}
+<div id="main-content" class="home-page">
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="shell home-hero__grid">
+      <div class="home-hero__copy">
+        <p class="eyebrow">{{ $home.hero.eyebrow }}</p>
+        <h1 id="home-title">
+          <span>{{ $home.hero.line_one }}</span>
+          <em>{{ $home.hero.line_two }}</em>
+        </h1>
+        <p class="home-hero__lede">{{ $home.hero.lede }}</p>
+        <div class="button-row">
+          <a class="button button--primary" href="{{ $home.hero.primary_cta.url | relURL }}">{{ $home.hero.primary_cta.label }}</a>
+          <a class="text-link" href="{{ $home.hero.secondary_cta.url | relURL }}">{{ $home.hero.secondary_cta.label }} <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <p class="signature-line">{{ $home.hero.signature }}</p>
+      </div>
+
+      <div class="story-table" aria-hidden="true">
+        <span class="story-table__ring story-table__ring--outer"></span>
+        <span class="story-table__ring story-table__ring--middle"></span>
+        <span class="story-table__ring story-table__ring--inner"></span>
+        <span class="story-table__label story-table__label--guests">Your guests</span>
+        <span class="story-table__label story-table__label--story">The story</span>
+        <span class="story-table__label story-table__label--host">You, at the table</span>
+        <span class="story-table__spark story-table__spark--one"></span>
+        <span class="story-table__spark story-table__spark--two"></span>
+        <span class="story-table__spark story-table__spark--three"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof-strip" aria-label="Experience principles">
+    <div class="shell proof-grid">
+      {{ range $home.proof }}
+      <article>
+        <h2>{{ .label }}</h2>
+        <p>{{ .detail }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="section-pad" id="experience" aria-labelledby="positioning-title">
+    <div class="shell editorial-grid">
+      <div class="section-intro">
+        <p class="eyebrow">{{ $home.positioning.eyebrow }}</p>
+        <h2 id="positioning-title">{{ $home.positioning.title }}</h2>
+      </div>
+      <div class="section-copy">
+        {{ range $home.positioning.paragraphs }}<p>{{ . }}</p>{{ end }}
+        <blockquote>{{ $home.positioning.pullquote }}</blockquote>
+        <a class="text-link" href="{{ "experience/" | relURL }}">Explore the Private Storyscape <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad section--forest" id="process" aria-labelledby="process-title">
+    <div class="shell">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">{{ $home.process.eyebrow }}</p>
+          <h2 id="process-title">{{ $home.process.title }}</h2>
+        </div>
+        <p>{{ $home.process.intro }}</p>
+      </div>
+      <ol class="process-list">
+        {{ range $home.process.steps }}
+        <li>
+          <span class="process-number">{{ .number }}</span>
+          <h3>{{ .title }}</h3>
+          <p>{{ .text }}</p>
+        </li>
+        {{ end }}
+      </ol>
+      <a class="text-link text-link--light" href="{{ "how-it-works/" | relURL }}">See how the evening works <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </section>
+
+  <section class="section-pad" aria-labelledby="details-title">
+    <div class="shell">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">{{ $home.details.eyebrow }}</p>
+          <h2 id="details-title">{{ $home.details.title }}</h2>
+        </div>
+        <p>{{ $home.details.intro }}</p>
+      </div>
+      <div class="detail-list">
+        {{ range $index, $item := $home.details.items }}
+        <article>
+          <span aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
+          <h3>{{ $item.title }}</h3>
+          <p>{{ $item.text }}</p>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad section--parchment" aria-labelledby="reassurance-title">
+    <div class="shell editorial-grid">
+      <div class="section-intro">
+        <p class="eyebrow">{{ $home.reassurance.eyebrow }}</p>
+        <h2 id="reassurance-title">{{ $home.reassurance.title }}</h2>
+      </div>
+      <div class="section-copy">
+        {{ range $home.reassurance.paragraphs }}<p>{{ . }}</p>{{ end }}
+        <blockquote>{{ $home.reassurance.pullquote }}</blockquote>
+        <a class="text-link" href="{{ "for-your-table/" | relURL }}">See who the experience is for <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad philosophy-section" aria-labelledby="philosophy-title">
+    <div class="shell philosophy-grid">
+      <div class="philosophy-mark" aria-hidden="true">
+        <span>Host</span>
+        <strong>+</strong>
+        <span>Story</span>
+      </div>
+      <div>
+        <p class="eyebrow">{{ $home.philosophy.eyebrow }}</p>
+        <h2 id="philosophy-title">{{ $home.philosophy.title }}</h2>
+        {{ range $home.philosophy.paragraphs }}<p>{{ . }}</p>{{ end }}
+        <a class="text-link" href="{{ $home.philosophy.link.url | relURL }}">{{ $home.philosophy.link.label }} <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="location-band" aria-labelledby="location-title">
+    <div class="shell location-band__inner">
+      <div>
+        <p class="eyebrow">{{ $home.location.eyebrow }}</p>
+        <h2 id="location-title">{{ $home.location.title }}</h2>
+      </div>
+      <div>
+        <p>{{ $home.location.text }}</p>
+        <a class="text-link" href="{{ $home.location.link.url | relURL }}">{{ $home.location.link.label }} <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "cta.html" (dict "title" $home.closing.title "text" $home.closing.text "label" $home.closing.cta.label "url" $home.closing.cta.url) }}
+</div>
+{{ end }}

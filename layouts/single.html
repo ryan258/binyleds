@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article id="main-content" class="standard-page">
+  {{ partial "page-hero.html" . }}
+
+  <div class="shell page-content-grid{{ if not .Params.toc }} page-content-grid--single{{ end }}">
+    {{ if .Params.toc }}
+    <aside class="page-toc" aria-label="On this page">
+      <p>On this page</p>
+      {{ .TableOfContents }}
+    </aside>
+    {{ end }}
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+
+  {{ if .Params.showCta }}
+    {{ partial "cta.html" (dict) }}
+  {{ end }}
+</article>
+{{ end }}
+

@@ -1,0 +1,5 @@
+<aside class="content-callout{{ with .Get "tone" }} content-callout--{{ . }}{{ end }}">
+  {{ with .Get "title" }}<h2>{{ . }}</h2>{{ end }}
+  <div>{{ .Inner | markdownify }}</div>
+</aside>
+

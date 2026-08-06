@@ -1,0 +1,374 @@
+{{ define "main" }}
+{{- $brand := hugo.Data.brand -}}
+<article id="main-content" class="brand-guide" data-brand-guide>
+  <header class="guide-hero">
+    <div class="shell guide-hero__grid">
+      <div>
+        <p class="eyebrow">Brand command center / {{ $brand.meta.version }}</p>
+        <h1>Binyled’s Storyscape<br><em>Brand guide</em></h1>
+        <p class="guide-hero__lede">The strategic, verbal, visual, sales, accessibility, and operating standards for every public expression of the Storyscape.</p>
+        <div class="guide-status-row">
+          <span class="status-chip status-chip--approved">Production foundation</span>
+          <span class="status-chip">Updated {{ $brand.meta.updated }}</span>
+        </div>
+      </div>
+      <div class="guide-seal" aria-hidden="true">
+        <span>BS</span>
+        <small>Storyscape</small>
+      </div>
+    </div>
+  </header>
+
+  <div class="guide-toolbar" data-guide-toolbar>
+    <div class="shell guide-toolbar__inner">
+      <label class="guide-search">
+        <span>Search the guide</span>
+        <input type="search" placeholder="Voice, colors, audience..." data-guide-search>
+      </label>
+      <div class="guide-toolbar__actions">
+        <span class="guide-results" role="status" aria-live="polite" data-guide-results>All sections</span>
+        <button class="button button--quiet" type="button" data-expand-guide>Expand all</button>
+        <button class="button button--quiet" type="button" data-print-guide>Print guide</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="shell guide-layout">
+    <aside class="guide-nav" aria-label="Brand guide sections">
+      <p>Guide sections</p>
+      <ol>
+        <li><a href="#guide-foundation">Foundation</a></li>
+        <li><a href="#guide-strategy">Strategy</a></li>
+        <li><a href="#guide-audience">Audience</a></li>
+        <li><a href="#guide-offer">Offer and journey</a></li>
+        <li><a href="#guide-messaging">Messaging</a></li>
+        <li><a href="#guide-voice">Voice</a></li>
+        <li><a href="#guide-visual">Visual system</a></li>
+        <li><a href="#guide-accessibility">Accessibility</a></li>
+        <li><a href="#guide-sales">Sales system</a></li>
+        <li><a href="#guide-governance">Governance</a></li>
+      </ol>
+      <a class="text-link" href="{{ "" | relLangURL }}">View the live site <span aria-hidden="true">&rarr;</span></a>
+    </aside>
+
+    <div class="guide-content">
+      <section class="guide-section" id="guide-foundation" data-guide-section>
+        <header class="guide-section__heading">
+          <span>01</span>
+          <div>
+            <p class="eyebrow">The immutable center</p>
+            <h2>Brand foundation</h2>
+            <p>The name, premise, and promises that every touchpoint must reinforce.</p>
+          </div>
+        </header>
+
+        <div class="guide-feature-statement">
+          <p>{{ $brand.foundation.descriptor }}</p>
+          <blockquote>{{ $brand.foundation.promise }}</blockquote>
+          <p>{{ $brand.foundation.signature }}</p>
+        </div>
+
+        <dl class="definition-grid">
+          <div><dt>Brand name</dt><dd>{{ $brand.meta.name }}</dd></div>
+          <div><dt>Location</dt><dd>{{ $brand.foundation.location }}</dd></div>
+          <div><dt>Brand essence</dt><dd>{{ $brand.foundation.essence }}</dd></div>
+          <div><dt>One-sentence introduction</dt><dd>{{ $brand.foundation.introduction }}</dd></div>
+        </dl>
+
+        <div class="guide-card-grid guide-card-grid--three">
+          <article data-guide-card><p class="card-index">What it is</p><p>{{ $brand.foundation.what }}</p></article>
+          <article data-guide-card><p class="card-index">Who it is for</p><p>{{ $brand.foundation.who }}</p></article>
+          <article data-guide-card><p class="card-index">Why it exists</p><p>{{ $brand.foundation.why }}</p></article>
+        </div>
+      </section>
+
+      <section class="guide-section" id="guide-strategy" data-guide-section>
+        <header class="guide-section__heading">
+          <span>02</span>
+          <div><p class="eyebrow">Commercial and emotional logic</p><h2>Strategy</h2><p>Value is created by giving the host confidence, presence, and a gathering worth remembering.</p></div>
+        </header>
+
+        <details class="guide-disclosure" open data-guide-card>
+          <summary>Positioning</summary>
+          <p>{{ $brand.strategy.positioning }}</p>
+        </details>
+        <details class="guide-disclosure" open data-guide-card>
+          <summary>The core tension</summary>
+          <p>{{ $brand.strategy.core_tension }}</p>
+        </details>
+        <details class="guide-disclosure" open data-guide-card>
+          <summary>What the customer is really buying</summary>
+          <blockquote>{{ $brand.strategy.real_purchase }}</blockquote>
+        </details>
+
+        <dl class="definition-grid">
+          <div><dt>Functional promise</dt><dd>{{ $brand.strategy.functional_promise }}</dd></div>
+          <div><dt>Emotional promise</dt><dd>{{ $brand.strategy.emotional_promise }}</dd></div>
+          <div><dt>Status benefit</dt><dd>“{{ $brand.strategy.status_benefit }}”</dd></div>
+          <div><dt>Internal standard</dt><dd>{{ $brand.strategy.internal_standard }}</dd></div>
+        </dl>
+      </section>
+
+      <section class="guide-section" id="guide-audience" data-guide-section>
+        <header class="guide-section__heading">
+          <span>03</span>
+          <div><p class="eyebrow">The person at the center</p><h2>{{ $brand.audience.persona }}</h2><p>{{ $brand.audience.description }}</p></div>
+        </header>
+
+        <blockquote class="guide-pullquote">“{{ $brand.audience.likely_thought }}”</blockquote>
+
+        <div class="guide-card-grid">
+          <article data-guide-card>
+            <h3>What they value</h3>
+            <ul class="tag-list">{{ range $brand.audience.values }}<li>{{ . }}</li>{{ end }}</ul>
+          </article>
+          <article data-guide-card>
+            <h3>Questions they need answered</h3>
+            <ul>{{ range $brand.audience.concerns }}<li>{{ . }}</li>{{ end }}</ul>
+          </article>
+        </div>
+
+        <aside class="guide-warning" data-guide-card>
+          <p class="eyebrow">Public-language guardrail</p>
+          <h3>Signal value through care, never class labels.</h3>
+          <p>Do not publicly describe the audience as:</p>
+          <ul class="tag-list tag-list--avoid">{{ range $brand.audience.public_labels_to_avoid }}<li>{{ . }}</li>{{ end }}</ul>
+        </aside>
+      </section>
+
+      <section class="guide-section" id="guide-offer" data-guide-section>
+        <header class="guide-section__heading">
+          <span>04</span>
+          <div><p class="eyebrow">Flagship commission</p><h2>{{ $brand.offer.name }}</h2><p>{{ $brand.offer.summary }}</p></div>
+        </header>
+
+        <blockquote class="guide-pullquote">{{ $brand.offer.frame }}</blockquote>
+
+        <div class="guide-card-grid guide-card-grid--three">
+          <article data-guide-card><p class="card-index">Before</p><ul>{{ range $brand.offer.before }}<li>{{ . }}</li>{{ end }}</ul></article>
+          <article data-guide-card><p class="card-index">During</p><ul>{{ range $brand.offer.during }}<li>{{ . }}</li>{{ end }}</ul></article>
+          <article data-guide-card><p class="card-index">After</p><ul>{{ range $brand.offer.after }}<li>{{ . }}</li>{{ end }}</ul></article>
+        </div>
+
+        <h3 class="guide-subheading">The conversion journey</h3>
+        <div class="journey-table-wrap">
+          <table class="guide-table">
+            <thead><tr><th>Stage</th><th>Visitor question</th><th>Brand answer</th><th>Primary route</th></tr></thead>
+            <tbody>
+              {{ range $brand.journey }}
+              <tr data-guide-card><th scope="row">{{ .stage }}</th><td>{{ .visitor_question }}</td><td>{{ .answer }}</td><td>{{ .primary_route }}</td></tr>
+              {{ end }}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="guide-section" id="guide-messaging" data-guide-section>
+        <header class="guide-section__heading">
+          <span>05</span>
+          <div><p class="eyebrow">Order of persuasion</p><h2>Messaging system</h2><p>Practical value earns the right to heighten the imaginative promise.</p></div>
+        </header>
+
+        <ol class="message-hierarchy">
+          {{ range $index, $message := $brand.messaging.hierarchy }}
+          <li data-guide-card><span>{{ printf "%02d" (add $index 1) }}</span><div><h3>{{ $message.name }}</h3><p>{{ $message.text }}</p></div></li>
+          {{ end }}
+        </ol>
+
+        <div class="guide-card-grid">
+          <article data-guide-card>
+            <h3>Approved headlines</h3>
+            <ul class="copy-list">{{ range $brand.messaging.headlines }}<li><span>{{ . }}</span><button type="button" data-copy-text="{{ . }}">Copy</button></li>{{ end }}</ul>
+          </article>
+          <article data-guide-card>
+            <h3>Approved supporting lines</h3>
+            <ul class="copy-list">{{ range $brand.messaging.supporting_lines }}<li><span>{{ . }}</span><button type="button" data-copy-text="{{ . }}">Copy</button></li>{{ end }}</ul>
+          </article>
+        </div>
+
+        <div class="guide-card-grid guide-card-grid--three">
+          <article data-guide-card><h3>Primary calls to action</h3><ul>{{ range $brand.messaging.primary_ctas }}<li>{{ . }}</li>{{ end }}</ul></article>
+          <article data-guide-card><h3>Secondary calls to action</h3><ul>{{ range $brand.messaging.secondary_ctas }}<li>{{ . }}</li>{{ end }}</ul></article>
+          <article class="guide-card--avoid" data-guide-card><h3>Avoid</h3><ul>{{ range $brand.messaging.avoid_ctas }}<li>{{ . }}</li>{{ end }}</ul></article>
+        </div>
+      </section>
+
+      <section class="guide-section" id="guide-voice" data-guide-section>
+        <header class="guide-section__heading">
+          <span>06</span>
+          <div><p class="eyebrow">Voice north star</p><h2>Brand voice</h2><p>{{ $brand.voice.north_star }}</p></div>
+        </header>
+
+        <div class="voice-ratio" aria-label="Voice ratio">
+          {{ range $brand.voice.ratio }}<span style="--ratio: {{ .value }}%"><strong>{{ .value }}%</strong> {{ .label }}</span>{{ end }}
+        </div>
+
+        <div class="guide-card-grid guide-card-grid--three">
+          {{ range $brand.voice.pillars }}
+          <article class="voice-card" data-guide-card>
+            <h3>{{ .name }}</h3>
+            <p class="card-index">Sounds like</p>
+            <ul class="tag-list">{{ range .sounds_like }}<li>{{ . }}</li>{{ end }}</ul>
+            <p class="card-index">Not like</p>
+            <ul class="tag-list tag-list--avoid">{{ range .not_like }}<li>{{ . }}</li>{{ end }}</ul>
+            <p class="example example--good"><strong>Yes:</strong> “{{ .good }}”</p>
+            <p class="example example--bad"><strong>No:</strong> “{{ .bad }}”</p>
+          </article>
+          {{ end }}
+        </div>
+
+        <div class="guide-card-grid">
+          <article data-guide-card><h3>Writing rules</h3><ol>{{ range $brand.voice.writing_rules }}<li>{{ . }}</li>{{ end }}</ol></article>
+          <article data-guide-card><h3>Word banks</h3><p class="card-index">Use</p><ul class="tag-list">{{ range $brand.voice.use_words }}<li>{{ . }}</li>{{ end }}</ul><p class="card-index">Use sparingly</p><ul class="tag-list tag-list--caution">{{ range $brand.voice.sparing_words }}<li>{{ . }}</li>{{ end }}</ul><p class="card-index">Avoid</p><ul class="tag-list tag-list--avoid">{{ range $brand.voice.avoid_words }}<li>{{ . }}</li>{{ end }}</ul></article>
+        </div>
+      </section>
+
+      <section class="guide-section" id="guide-visual" data-guide-section>
+        <header class="guide-section__heading">
+          <span>07</span>
+          <div><p class="eyebrow">{{ $brand.visual.direction }}</p><h2>Visual system</h2><p>{{ $brand.visual.impression }}</p></div>
+        </header>
+
+        <dl class="definition-grid">
+          <div><dt>Character</dt><dd>{{ $brand.visual.character }}</dd></div>
+          <div><dt>Page balance</dt><dd>{{ $brand.visual.page_balance }}</dd></div>
+        </dl>
+
+        <h3 class="guide-subheading">Color palette</h3>
+        <div class="swatch-grid">
+          {{ range $brand.visual.colors }}
+          <article class="swatch" data-guide-card>
+            <div class="swatch__color" style="--swatch: {{ .hex }}"><button type="button" data-copy-text="{{ .hex }}">Copy {{ .hex }}</button></div>
+            <h3>{{ .name }}</h3><p>{{ .hex }} / RGB {{ .rgb }}</p><p>{{ .use }}</p>
+          </article>
+          {{ end }}
+        </div>
+
+        <figure class="social-card-example" data-guide-card>
+          <img src="{{ "images/storyscape-social-card.png" | relURL }}" width="1672" height="941" loading="lazy" alt="Binyled’s Storyscape social card showing the line You host the people. I host the world beside a warmly lit tabletop map and metal die">
+          <figcaption><strong>Social preview:</strong> The first production example balances practical brand language with one restrained tabletop focal point. It is a campaign asset, not a logo or a template for filling every page with fantasy imagery.</figcaption>
+        </figure>
+
+        <h3 class="guide-subheading">Identity and digital behavior</h3>
+        <div class="guide-card-grid guide-card-grid--three">
+          <article data-guide-card>
+            <h3>Name and wordmark</h3>
+            <ul>
+              <li>Write the full name as “Binyled’s Storyscape” on first reference.</li>
+              <li>Keep the possessive apostrophe and the capital S in Storyscape.</li>
+              <li>Use the display serif for the ceremonial name and the sans serif for descriptors.</li>
+              <li>Do not compress, outline, arch, or add fantasy effects to the wordmark.</li>
+            </ul>
+          </article>
+          <article data-guide-card>
+            <h3>Utility seal</h3>
+            <ul>
+              <li>Use the BS seal only where the full name cannot remain legible, such as a favicon.</li>
+              <li>Keep clear space equal to the width of the B stem on every side.</li>
+              <li>Do not reproduce it below 32 CSS pixels or add a drop shadow.</li>
+              <li>Use only the approved obsidian, verdigris, parchment, and antique-gold combinations.</li>
+            </ul>
+          </article>
+          <article data-guide-card>
+            <h3>Interface hierarchy</h3>
+            <ul>
+              <li>Reserve filled verdigris buttons for consultation or another true primary action.</li>
+              <li>Use underlined text links for exploration and supporting routes.</li>
+              <li>Use hairline rules and spacing before introducing a card or shadow.</li>
+              <li>Keep labels explicit; clarity is a brand behavior, not merely an accessibility requirement.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="guide-card-grid">
+          <article class="type-specimen type-specimen--display" data-guide-card>
+            <p class="card-index">Display</p><h3>{{ $brand.visual.typography.display.family }}</h3><p class="type-sample">A private world,<br>brought to your home.</p><p>{{ $brand.visual.typography.display.roles }}</p><small>Fallback: {{ $brand.visual.typography.display.fallback }}</small>
+          </article>
+          <article class="type-specimen type-specimen--body" data-guide-card>
+            <p class="card-index">Body</p><h3>{{ $brand.visual.typography.body.family }}</h3><p>The world arrives prepared. Every guest receives a clear invitation into the story, and the host remains present for the evening.</p><p>{{ $brand.visual.typography.body.roles }}</p><small>Fallback: {{ $brand.visual.typography.body.fallback }}</small>
+          </article>
+        </div>
+
+        <div class="journey-table-wrap">
+          <table class="guide-table">
+            <thead><tr><th>Type role</th><th>Desktop</th><th>Mobile</th></tr></thead>
+            <tbody>{{ range $brand.visual.type_scale }}<tr><th scope="row">{{ .role }}</th><td>{{ .desktop }}</td><td>{{ .mobile }}</td></tr>{{ end }}</tbody>
+          </table>
+        </div>
+
+        <div class="guide-card-grid guide-card-grid--three">
+          <article data-guide-card><h3>Layout rules</h3><ul>{{ range $brand.visual.layout_rules }}<li>{{ . }}</li>{{ end }}</ul><p><strong>Spacing:</strong> {{ $brand.visual.spacing }}</p></article>
+          <article data-guide-card><h3>Imagery should</h3><ul>{{ range $brand.visual.imagery.do }}<li>{{ . }}</li>{{ end }}</ul></article>
+          <article class="guide-card--avoid" data-guide-card><h3>Imagery should not</h3><ul>{{ range $brand.visual.imagery.avoid }}<li>{{ . }}</li>{{ end }}</ul></article>
+        </div>
+
+        <aside class="guide-warning" data-guide-card>
+          <p class="eyebrow">Identity asset rule</p>
+          <h3>The BS seal is a digital utility mark, not a replacement crest.</h3>
+          <p>The current project does not include the approved dragon-and-shield source artwork. Preserve that recognizable shape when the owner supplies it. Do not fabricate a new dragon, redraw the crest from memory, or let the temporary monogram become the master logo by accident.</p>
+        </aside>
+      </section>
+
+      <section class="guide-section" id="guide-accessibility" data-guide-section>
+        <header class="guide-section__heading">
+          <span>08</span>
+          <div><p class="eyebrow">Hospitality in interface form</p><h2>Accessibility standards</h2><p>The digital experience should extend the same welcome, clarity, and calm promised at the table.</p></div>
+        </header>
+        <ol class="standards-list">{{ range $index, $item := $brand.accessibility.principles }}<li data-guide-card><span>{{ printf "%02d" (add $index 1) }}</span><p>{{ $item }}</p></li>{{ end }}</ol>
+      </section>
+
+      <section class="guide-section" id="guide-sales" data-guide-section>
+        <header class="guide-section__heading">
+          <span>09</span>
+          <div><p class="eyebrow">{{ $brand.sales.approach }}</p><h2>Sales system</h2><p>The sale should feel like careful mutual discovery, not a hidden checkout funnel.</p></div>
+        </header>
+
+        <div class="guide-card-grid">
+          <article data-guide-card><h3>Principles</h3><ol>{{ range $brand.sales.principles }}<li>{{ . }}</li>{{ end }}</ol></article>
+          <article data-guide-card><h3>Consultation qualification</h3><ol>{{ range $brand.sales.consultation_qualification }}<li>{{ . }}</li>{{ end }}</ol></article>
+        </div>
+
+        <div class="sales-flow" aria-label="Sales flow">
+          <span>Discover</span><i aria-hidden="true">&rarr;</i><span>Understand</span><i aria-hidden="true">&rarr;</i><span>Believe</span><i aria-hidden="true">&rarr;</i><span>Resolve</span><i aria-hidden="true">&rarr;</i><span>Consult</span>
+        </div>
+      </section>
+
+      <section class="guide-section" id="guide-governance" data-guide-section>
+        <header class="guide-section__heading">
+          <span>10</span>
+          <div><p class="eyebrow">Protect the system</p><h2>Brand governance</h2><p>Use these rules before approving public copy, design, development, photography, or campaign work.</p></div>
+        </header>
+
+        <div class="guide-card-grid">
+          <article data-guide-card><h3>Do</h3><ul class="check-list">{{ range $brand.governance.do }}<li>{{ . }}</li>{{ end }}</ul></article>
+          <article class="guide-card--avoid" data-guide-card><h3>Do not</h3><ul class="cross-list">{{ range $brand.governance.do_not }}<li>{{ . }}</li>{{ end }}</ul></article>
+        </div>
+
+        <aside class="guide-warning guide-warning--operational" data-guide-card>
+          <p class="eyebrow">Owner confirmation required before launch</p>
+          <h3>Unknown stays unknown.</h3>
+          <p>These are operational decisions, not invitations to improvise a claim:</p>
+          <ul>{{ range $brand.governance.unresolved }}<li>{{ . }}</li>{{ end }}</ul>
+        </aside>
+
+        <div class="compliance-checklist" data-guide-card>
+          <h3>Six-question release check</h3>
+          <label><input type="checkbox" data-brand-check="positioning"><span>Does it reinforce commissioned, in-home hospitality?</span></label>
+          <label><input type="checkbox" data-brand-check="host"><span>Does it keep the host present and central?</span></label>
+          <label><input type="checkbox" data-brand-check="specific"><span>Does substance demonstrate quality better than adjectives?</span></label>
+          <label><input type="checkbox" data-brand-check="voice"><span>Does it sound gracious, assured, and imaginative?</span></label>
+          <label><input type="checkbox" data-brand-check="truth"><span>Are every fact, testimonial, and inclusion verified?</span></label>
+          <label><input type="checkbox" data-brand-check="home"><span>Would it feel appropriate inside a discerning client's home?</span></label>
+          <p class="checklist-progress" role="status" aria-live="polite" data-checklist-progress>0 of 6 complete</p>
+        </div>
+      </section>
+
+      <div class="guide-empty" hidden data-guide-empty>
+        <p class="eyebrow">No matching section</p>
+        <h2>Try a broader term.</h2>
+        <p>Search for ideas such as voice, audience, color, sales, or accessibility.</p>
+      </div>
+    </div>
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,15 @@
+<header class="page-hero section-pad">
+  <div class="shell page-hero__grid">
+    <div class="page-hero__copy">
+      {{ with .Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.lede }}<p class="page-hero__lede">{{ . }}</p>{{ end }}
+    </div>
+    <div class="page-hero__motif" aria-hidden="true">
+      <span class="orbit orbit--one"></span>
+      <span class="orbit orbit--two"></span>
+      <span class="orbit__center">BS</span>
+    </div>
+  </div>
+</header>
+

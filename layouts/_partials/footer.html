@@ -1,0 +1,49 @@
+{{- if not (.Param "hideFooter") }}
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <a class="brand-home" href="{{ "" | relLangURL }}" aria-label="Binyled’s Storyscape home">
+        {{ partial "brand-mark.html" . }}
+      </a>
+      <p>You host the people. I host the world.</p>
+    </div>
+
+    <div>
+      <p class="footer-heading">Explore</p>
+      <ul class="footer-links">
+        <li><a href="{{ "experience/" | relURL }}">The experience</a></li>
+        <li><a href="{{ "how-it-works/" | relURL }}">How it works</a></li>
+        <li><a href="{{ "for-your-table/" | relURL }}">For your table</a></li>
+        <li><a href="{{ "questions/" | relURL }}">Questions</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-heading">Begin</p>
+      <ul class="footer-links">
+        <li><a href="{{ "consultation/" | relURL }}">Request a consultation</a></li>
+        <li><a href="{{ "about/" | relURL }}">About the approach</a></li>
+        <li><a href="{{ "brand-guide/" | relURL }}">Brand guide</a></li>
+        <li><a href="{{ "privacy/" | relURL }}">Privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-location">
+      <p class="footer-heading">In your home</p>
+      <p>Bentonville and Northwest Arkansas, with each date and location confirmed privately.</p>
+    </div>
+  </div>
+
+  <div class="shell footer-bottom">
+    <p>&copy; {{ now.Year }} Binyled’s Storyscape</p>
+    <p>Built with <a href="https://gohugo.io/" rel="noopener noreferrer">Hugo</a>.</p>
+  </div>
+</footer>
+{{- end }}
+
+<a href="#top" id="top-link" class="top-link hidden" aria-label="Back to top" title="Back to top">
+  <span aria-hidden="true">Up</span>
+</a>
+
+{{ partial "extend_footer.html" . }}
+

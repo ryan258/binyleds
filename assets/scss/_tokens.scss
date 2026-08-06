@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond-latin-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+$display: "Cormorant Garamond", "Iowan Old Style", Baskerville, "Times New Roman", serif;
+$body: "Manrope", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+
+$bp-wide: 1180px;
+$bp-nav: 980px;
+$bp-tablet: 800px;
+$bp-mobile: 620px;
+
+@mixin eyebrow {
+  color: var(--gold-text);
+  font-family: $body;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+@mixin hairline($color: var(--rule)) {
+  border-color: $color;
+  border-style: solid;
+  border-width: 1px;
+}
+
+:root {
+  --obsidian: #0c100f;
+  --parchment: #eee5d4;
+  --verdigris: #1e6658;
+  --mint: #73d0ab;
+  --antique-gold: #c19a52;
+  --deep-forest: #163830;
+
+  --canvas: #0c100f;
+  --canvas-soft: #101715;
+  --surface: #121a17;
+  --surface-raised: #17221e;
+  --surface-quiet: #163830;
+  --ink: #eee5d4;
+  --ink-strong: #fff9ed;
+  --muted: #bdb4a4;
+  --faint: #8f897e;
+  --gold-text: #d8b870;
+  --action: #287866;
+  --action-hover: #338c76;
+  --action-text: #fffaf0;
+  --focus-color: #73d0ab;
+  --rule: rgba(193, 154, 82, 0.42);
+  --rule-soft: rgba(238, 229, 212, 0.14);
+  --danger: #e7ab8b;
+  --success: #86d7b5;
+  --shadow: 0 30px 90px rgba(0, 0, 0, 0.22);
+
+  --header-height: 88px;
+  --shell: 1248px;
+  --gutter: clamp(24px, 5vw, 64px);
+  --section-space: clamp(80px, 9vw, 128px);
+  --radius: 2px;
+
+  --theme: var(--canvas);
+  --entry: var(--surface);
+  --primary: var(--ink);
+  --secondary: var(--muted);
+  --tertiary: var(--surface-raised);
+  --content: var(--ink);
+  --code-block-bg: var(--surface);
+  --code-bg: var(--surface-raised);
+  --border: var(--rule);
+}
+
+html[data-theme="light"] {
+  --canvas: #eee5d4;
+  --canvas-soft: #e7ddca;
+  --surface: #f5edde;
+  --surface-raised: #fffaf1;
+  --surface-quiet: #dce7df;
+  --ink: #0c100f;
+  --ink-strong: #090c0b;
+  --muted: #514e47;
+  --faint: #756e64;
+  --gold-text: #76571d;
+  --action: #155b4e;
+  --action-hover: #0f4a3f;
+  --action-text: #fffdf8;
+  --focus-color: #155b4e;
+  --rule: rgba(129, 97, 32, 0.46);
+  --rule-soft: rgba(12, 16, 15, 0.14);
+  --danger: #7b4129;
+  --success: #155b4e;
+  --shadow: 0 28px 80px rgba(33, 24, 11, 0.12);
+
+  --theme: var(--canvas);
+  --entry: var(--surface);
+  --primary: var(--ink);
+  --secondary: var(--muted);
+  --tertiary: var(--surface-raised);
+  --content: var(--ink);
+  --code-block-bg: var(--surface);
+  --code-bg: var(--surface-raised);
+  --border: var(--rule);
+}
+

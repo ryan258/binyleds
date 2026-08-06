@@ -1,0 +1,62 @@
+baseURL: https://example.org/
+locale: en-US
+title: Binyled’s Storyscape
+copyright: Binyled’s Storyscape
+enableRobotsTXT: true
+timeZone: America/Chicago
+
+# Keeps Hugo from generating empty /tags/ and /categories/ list pages,
+# which would otherwise need a list template this site does not have.
+taxonomies: {}
+
+outputs:
+  home:
+    - HTML
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+minify:
+  disableXML: false
+  minifyOutput: true
+
+menus:
+  main:
+    - name: The experience
+      pageRef: /experience
+      weight: 10
+    - name: How it works
+      pageRef: /how-it-works
+      weight: 20
+    - name: For your table
+      pageRef: /for-your-table
+      weight: 30
+    - name: About
+      pageRef: /about
+      weight: 40
+    - name: Questions
+      pageRef: /questions
+      weight: 50
+    - name: Request a consultation
+      pageRef: /consultation
+      weight: 60
+      params:
+        cta: true
+
+params:
+  author: Binyled’s Storyscape
+  description: >-
+    Bespoke in-home tabletop adventures created around your guests and
+    professionally guided in Bentonville and Northwest Arkansas.
+  keywords:
+    - private tabletop experience
+    - game master Bentonville
+    - tabletop roleplaying Northwest Arkansas
+    - in-home game night
+    - bespoke tabletop adventure
+  defaultTheme: dark
+  images:
+    - images/storyscape-social-card.png
+  consultationPath: /consultation/
