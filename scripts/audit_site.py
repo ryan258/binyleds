@@ -12,7 +12,7 @@ from urllib.parse import unquote, urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC = ROOT / "public"
+PUBLIC = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT / "public"
 
 REQUIRED_ROUTES = (
     "index.html",

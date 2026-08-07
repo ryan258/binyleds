@@ -1,0 +1,149 @@
+// Scroll choreography: the page's storyline, scrubbed to scroll position.
+//
+// Built on native CSS scroll-driven animations (animation-timeline: view()),
+// so this file adds no JavaScript and no dependency. As of August 2026 that is
+// Chrome/Edge 115+ and Safari 18+ but still flagged off in Firefox, so it is
+// roughly 84% of traffic and explicitly NOT Baseline.
+//
+// Two gates wrap everything, and both are load-bearing:
+//
+//   @supports  - Firefox and older browsers never see the opacity:0 start
+//                state, so they get today's fully visible page instead of
+//                blank sections. Never move an opacity:0 outside this block.
+//
+//   @media     - the global reduced-motion guard in _responsive.scss works by
+//                forcing animation-duration to 0.01ms, which scroll-driven
+//                animations ignore entirely; their progress comes from the
+//                timeline, not a duration. Left ungated, a reduced-motion
+//                visitor would be pinned to the from-state with the content
+//                invisible. This gate is the actual protection.
+//
+// Ranges always finish inside the `entry` phase. Ending in `cover` or `exit`
+// would leave anything near the bottom of a short page stranded mid-animation,
+// because the document cannot scroll far enough to complete the range.
+
+@keyframes scroll-rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scroll-recede {
+  to { opacity: 0.3; transform: scale(0.88) translateY(-26px); }
+}
+
+@keyframes scroll-settle {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+
+    // Signature moment -----------------------------------------------------
+    //
+    // The hero motif recedes as the hero scrolls away: the table is left
+    // behind as the story moves on. Applied to the container, never to the
+    // rings themselves, so the ambient spin in _motion.scss keeps running on
+    // the children and the two transforms compose instead of fighting.
+
+    .story-table,
+    .page-hero__motif {
+      animation: scroll-recede linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 95%;
+    }
+
+    // Section reveals ------------------------------------------------------
+    //
+    // One rule for every block that should arrive rather than just be there.
+
+    // .closing-cta__inner is deliberately absent. It is the last block before
+    // the footer, so the document runs out of scroll before its range can
+    // resolve and it sits pinned at progress 1 — the rule would cost bytes to
+    // do nothing. The closing invitation simply arrives already present.
+    .proof-grid > article,
+    .section-intro,
+    .section-copy,
+    .section-heading-row,
+    .process-list li,
+    .detail-list article,
+    .philosophy-mark,
+    .location-band__inner > div {
+      animation: scroll-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 65%;
+    }
+
+    // Staggering -----------------------------------------------------------
+    //
+    // Grid siblings enter the viewport at the same moment, so a view() range
+    // alone would fire them simultaneously. Offsetting each sibling's range
+    // staggers them against scroll position rather than against a clock,
+    // which keeps the sequence scrubbable in both directions.
+
+    .proof-grid > article:nth-child(2),
+    .process-list li:nth-child(2),
+    .detail-list article:nth-child(2) {
+      animation-range: entry 11% entry 71%;
+    }
+
+    .proof-grid > article:nth-child(3),
+    .process-list li:nth-child(3),
+    .detail-list article:nth-child(3) {
+      animation-range: entry 17% entry 77%;
+    }
+
+    // The process list is a hard-coded 3-column grid, so there is no fourth
+    // step to stagger. The detail list is data-driven and currently runs to
+    // six, which all share the last offset rather than drifting ever later.
+    .detail-list article:nth-child(n + 4) {
+      animation-range: entry 23% entry 83%;
+    }
+
+    // The process numbers settle a beat after their own step, so the eye
+    // lands on the numeral last.
+    .process-number {
+      animation: scroll-settle linear both;
+      animation-timeline: view();
+      animation-range: entry 25% entry 85%;
+    }
+
+    // Standard page copy ---------------------------------------------------
+    //
+    // These pages run to fifteen paragraphs each, so only the structural
+    // beats move: the headings that divide the page, the one callout, the one
+    // action, and the FAQ rows. Revealing body copy as well would read as an
+    // effect rather than atmosphere, which is the wrong side of brand rule 5.
+    //
+    // A single quieter register for all of them, deliberately calmer than the
+    // homepage, matching how these pages already take a slower ambient tempo
+    // in _motion.scss.
+    //
+    // The :not() matters. Callouts carry their own h2 and sit inside .prose,
+    // so without it the heading would animate independently inside its
+    // already-animating parent.
+    //
+    // Left static on purpose:
+    //   .page-toc         sticky navigation; a scroll transform fights
+    //                     position:sticky, and nav should not arrive late
+    //   consultation form the conversion path — inputs are present the
+    //                     instant the page is
+    //   .brand-guide      internal reference whose search toggles [hidden]
+    //                     and which is built to print; motion fights both
+    //   .closing-cta      last block before the footer, so its range never
+    //                     resolves, exactly as on the homepage
+    //
+    // FAQ rows are block-stacked rather than a grid, so each one reaches the
+    // viewport at its own moment and staggers for free. No nth-child offsets
+    // needed here, unlike the homepage grids above.
+
+    .prose h2:not(.content-callout *),
+    .content-callout,
+    .content-action,
+    .faq-item {
+      animation: scroll-settle linear both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 60%;
+    }
+  }
+}
