@@ -93,6 +93,7 @@ usable without fabricated answers.
 - Page templates: `layouts/`
 - Sass source: `assets/scss/`
 - Interactions: `assets/js/site.js`
+- Hosting, CI, and the staging mirror: `doc/hosting-ci-cd-gh-pages-setup.md`
 - Internal production bible: `brand/PRODUCTION_BIBLE.md`
 - Brand-writing skill: `brand/SKILL.md`
 - Asset provenance and social-card prompt: `brand/ASSET_REGISTER.md`
