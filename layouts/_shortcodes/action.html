@@ -1,4 +1,8 @@
+{{- /* Trim any leading slash before relURL. A root-relative value skips the
+       baseURL path, which 404s wherever the site is served from a subpath
+       (the GitHub Pages staging mirror). Normalising here means content can
+       be written either way. */ -}}
+{{- $url := strings.TrimPrefix "/" (.Get "url") -}}
 <p class="content-action">
-  <a class="button button--primary" href="{{ .Get "url" | relURL }}">{{ .Get "label" }}</a>
+  <a class="button button--primary" href="{{ $url | relURL }}">{{ .Get "label" }}</a>
 </p>
-

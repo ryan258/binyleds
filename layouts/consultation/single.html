@@ -15,6 +15,17 @@
       </ul>
     </aside>
 
+    {{- /* GitHub Pages serves static files only, so this form cannot POST
+           anywhere on the staging mirror. Without this notice a shared link
+           would look like a working inquiry form and silently discard a real
+           enquiry. Production on Netlify never renders it. */}}
+    {{ if eq hugo.Environment "staging" }}
+    <p class="content-callout content-callout--reassurance" role="status">
+      <strong>Staging preview.</strong> This form is not connected here and
+      submissions are not received. Use the live site to request a consultation.
+    </p>
+    {{ end }}
+
     <form
       class="consultation-form"
       name="private-consultation"

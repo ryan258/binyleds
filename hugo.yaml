@@ -59,4 +59,4 @@ params:
   defaultTheme: dark
   images:
     - images/storyscape-social-card.png
-  consultationPath: /consultation/
+  consultationPath: consultation/

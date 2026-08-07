@@ -9,6 +9,15 @@ on:
 permissions:
   contents: read
 
+# Pages deployments are serialised, but never cancelled mid-flight: cancelling
+# a half-finished deploy can leave the published site in a broken state.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  HUGO_VERSION: "0.164.0"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,9 +28,86 @@ jobs:
       - name: Install Hugo Extended
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.164.0"
+          hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
       - name: Build and audit
         run: bash scripts/check.sh
 
+  # Staging mirror only. Netlify remains production: it is the host that can
+  # capture the consultation form, send the security headers in netlify.toml,
+  # and serve the /consult and /book redirects. GitHub Pages can do none of
+  # those, so nothing here should be treated as the live site.
+  #
+  # Built with `-e staging`, which leaves hugo.IsProduction false and so emits
+  # `noindex, nofollow` on every page. That is deliberate: this mirror is a
+  # byte-for-byte copy of production and would otherwise compete with the real
+  # site in search results as duplicate content.
+  deploy-staging:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Hugo Extended
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Build staging site
+        run: |
+          hugo --gc --minify --panicOnWarning \
+            --environment staging \
+            --baseURL "https://ryan258.github.io/binyleds/"
+
+      # scripts/check.sh builds at a root baseURL, so it structurally cannot
+      # catch subpath bugs. Both failures below are invisible until something
+      # is served from /binyleds/, which only ever happens here.
+      - name: Verify the staging build
+        run: |
+          python3 - <<'PY'
+          import glob, os, re, sys
+
+          failures = []
+
+          for path in glob.glob("public/**/*.html", recursive=True):
+              html = open(path).read()
+              page = os.path.relpath(path, "public")
+
+              # Duplicate content: this mirror is byte-identical to production.
+              robots = re.search(r'name=["\']?robots["\']? content="([^"]*)"', html)
+              if not robots or "noindex" not in robots.group(1):
+                  failures.append(f"{page} is missing noindex")
+
+              # Root-relative refs that skipped the /binyleds/ prefix 404 here.
+              for ref in re.findall(r'(?:href|src)="?(/[^" >]*)', html):
+                  if not ref.startswith("/binyleds/"):
+                      failures.append(f"{page} has unprefixed ref {ref}")
+
+          if failures:
+              print("Staging build rejected:", file=sys.stderr)
+              for f in sorted(set(failures)):
+                  print(f"- {f}", file=sys.stderr)
+              sys.exit(1)
+
+          print("Staging build verified.")
+          PY
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

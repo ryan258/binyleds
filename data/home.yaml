@@ -9,10 +9,10 @@ hero:
     decision.
   primary_cta:
     label: Request a private consultation
-    url: /consultation/
+    url: consultation/
   secondary_cta:
     label: Explore the experience
-    url: /experience/
+    url: experience/
   signature: I build the world. You shape the story.
 
 proof:
@@ -111,7 +111,7 @@ philosophy:
       for them to surprise one another.
   link:
     label: Read the hosting philosophy
-    url: /about/
+    url: about/
 
 location:
   eyebrow: Bentonville, Arkansas
@@ -122,7 +122,7 @@ location:
     location confirmed during consultation.
   link:
     label: See if the experience fits your table
-    url: /for-your-table/
+    url: for-your-table/
 
 closing:
   eyebrow: Your evening begins here
@@ -133,5 +133,5 @@ closing:
     evening and begin building the story around your table.
   cta:
     label: Request a private consultation
-    url: /consultation/
+    url: consultation/
 

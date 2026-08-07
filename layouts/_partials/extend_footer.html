@@ -1,5 +1,6 @@
-{{- $script := resources.Get "js/site.js" | js.Build (dict "targetPath" "assets/js/storyscape.js" "minify" hugo.IsProduction) -}}
-{{- if hugo.IsProduction -}}
+{{- $built := not hugo.IsServer -}}
+{{- $script := resources.Get "js/site.js" | js.Build (dict "targetPath" "assets/js/storyscape.js" "minify" $built) -}}
+{{- if $built -}}
   {{- $script = $script | fingerprint -}}
   <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous" defer></script>
 {{- else -}}

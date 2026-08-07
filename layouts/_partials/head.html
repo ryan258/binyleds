@@ -24,12 +24,17 @@
 <meta name="color-scheme" content="dark light">
 <meta name="format-detection" content="telephone=no">
 
+{{- /* Gated on IsServer, not IsProduction, so the staging mirror on GitHub
+       Pages ships byte-identical assets to production and is worth trusting.
+       The robots meta above stays on IsProduction, which is what keeps that
+       mirror out of search results. */ -}}
+{{- $built := not hugo.IsServer }}
 {{- $styles := resources.Get "scss/main.scss" | css.Sass (dict
   "targetPath" "assets/css/storyscape.css"
-  "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
-  "enableSourceMap" (not hugo.IsProduction)
+  "outputStyle" (cond $built "compressed" "expanded")
+  "enableSourceMap" (not $built)
 ) }}
-{{- if hugo.IsProduction }}
+{{- if $built }}
   {{- $styles = $styles | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
 {{- else }}
