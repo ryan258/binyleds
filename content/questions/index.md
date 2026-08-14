@@ -32,6 +32,13 @@ all matter, so this site does not promise a standard duration before those
 details are understood.
 {{< /faq >}}
 
+{{< faq question="What is the timeline and space needed for the evening?" >}}
+Setup, table space, and departure timing depend on your home, your schedule,
+and the confirmed scope. Those specifics are agreed directly during
+consultation rather than assumed here, so you know exactly what to expect
+before the evening is accepted.
+{{< /faq >}}
+
 {{< faq question="What is included?" >}}
 The commission may include a story created for the group, prepared characters,
 guest onboarding, rules guidance, maps, music, miniatures, or selected physical

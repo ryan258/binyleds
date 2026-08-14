@@ -18,6 +18,18 @@ This is also where practical fit is established: the preferred date, location,
 expected guest count, tone, comfort boundaries, accessibility needs, and any
 details that would make the evening feel distinctly yours.
 
+If it helps to start somewhere, a few directions guests often react to:
+
+- **The First-Timer's Journey** — light mechanics, high narrative, and a
+  relaxed atmosphere for a table that is brand new to the hobby.
+- **The Puzzle Box** — built for guests who love escape rooms, logic puzzles,
+  and figuring things out together.
+- **The Epic Continuation** — deeper lore and tactical stakes for a table of
+  experienced players.
+
+None of these are fixed packages. Naming one is optional — it only gives the
+consultation somewhere to start.
+
 The consultation is discovery, not a disguised checkout. A request does not
 reserve a date or create a payment obligation.
 

@@ -41,6 +41,13 @@ These are ingredients, not a checklist designed to make the evening look busy.
 If a map, miniature, or prop does not help the guests enter the story, it does
 not need to be there.
 
+{{< callout title="One possibility" >}}
+Imagine the table settling as a hand-drawn coastal map unrolls, a low playlist
+eases in, and a small carved token passes to whoever speaks next. Not a
+promise of maps or tokens for your table — an example of the kind of detail a
+story might earn once it is shaped around your guests.
+{{< /callout >}}
+
 ## What the host no longer has to carry
 
 A meaningful tabletop evening usually asks one person to do several jobs at
