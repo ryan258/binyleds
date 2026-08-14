@@ -8,10 +8,16 @@
   TZ = "America/Chicago"
 
 [context.deploy-preview]
-  command = "hugo --gc --minify --panicOnWarning --baseURL \"$DEPLOY_PRIME_URL\""
+  command = "hugo --gc --minify --panicOnWarning --environment staging --disableKinds sitemap --baseURL \"$DEPLOY_PRIME_URL\""
+
+[context.deploy-preview.environment]
+  HUGO_ENV = "staging"
 
 [context.branch-deploy]
-  command = "hugo --gc --minify --panicOnWarning --baseURL \"$DEPLOY_PRIME_URL\""
+  command = "hugo --gc --minify --panicOnWarning --environment staging --disableKinds sitemap --baseURL \"$DEPLOY_PRIME_URL\""
+
+[context.branch-deploy.environment]
+  HUGO_ENV = "staging"
 
 [[headers]]
   for = "/*"

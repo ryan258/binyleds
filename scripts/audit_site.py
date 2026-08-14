@@ -12,7 +12,9 @@ from urllib.parse import unquote, urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT / "public"
+EXPECT_NOINDEX = "--expect-noindex" in sys.argv[1:]
+POSITIONAL_ARGS = [arg for arg in sys.argv[1:] if not arg.startswith("--")]
+PUBLIC = Path(POSITIONAL_ARGS[0]).resolve() if POSITIONAL_ARGS else ROOT / "public"
 
 REQUIRED_ROUTES = (
     "index.html",
@@ -45,7 +47,7 @@ class PageParser(HTMLParser):
         self.refs: list[tuple[str, str]] = []
         self.headings: list[int] = []
         self.images_without_alt = 0
-        self.controls: list[tuple[str, str, str]] = []
+        self.controls: list[dict[str, str]] = []
         self.label_fors: set[str] = set()
         self.forms: list[dict[str, str]] = []
         self.meta: list[dict[str, str]] = []
@@ -68,10 +70,7 @@ class PageParser(HTMLParser):
             self.images_without_alt += 1
 
         if tag in {"input", "select", "textarea"}:
-            control_type = values.get("type", "text")
-            control_id = values.get("id", "")
-            control_name = values.get("name", "")
-            self.controls.append((control_type, control_id, control_name))
+            self.controls.append(values)
 
         if tag == "label" and values.get("for"):
             self.label_fors.add(values["for"])
@@ -153,7 +152,10 @@ def audit() -> list[str]:
                 f"{page.relative_to(PUBLIC)} has {parser.images_without_alt} image(s) without alt"
             )
 
-        for control_type, control_id, control_name in parser.controls:
+        for control in parser.controls:
+            control_type = control.get("type", "text")
+            control_id = control.get("id", "")
+            control_name = control.get("name", "")
             if control_type in {"hidden", "submit", "button"}:
                 continue
             if control_id and control_id not in parser.label_fors:
@@ -164,6 +166,11 @@ def audit() -> list[str]:
         has_description = any(item.get("name") == "description" and item.get("content") for item in parser.meta)
         if not has_description:
             failures.append(f"{page.relative_to(PUBLIC)} lacks a non-empty meta description")
+
+        if EXPECT_NOINDEX:
+            robots = next((item for item in parser.meta if item.get("name") == "robots"), {})
+            if "noindex" not in robots.get("content", ""):
+                failures.append(f"{page.relative_to(PUBLIC)} should be noindex in a preview build")
 
         for index, payload in enumerate(parser.json_ld, start=1):
             try:
@@ -209,6 +216,15 @@ def audit() -> list[str]:
             if not expected_form.get("netlify-honeypot"):
                 failures.append("consultation form lacks a spam honeypot")
 
+        guest_count = next(
+            (control for control in consultation_parser.controls if control.get("name") == "guest-count"),
+            None,
+        )
+        if not guest_count:
+            failures.append("consultation form lacks the guest-count control")
+        elif guest_count.get("max"):
+            failures.append("guest-count must not enforce an unapproved maximum")
+
     brand_guide = PUBLIC / "brand-guide/index.html"
     brand_parser = parsed_pages.get(brand_guide.resolve())
     if brand_parser:
@@ -217,6 +233,8 @@ def audit() -> list[str]:
             failures.append("brand guide should remain noindex by default")
 
     sitemap = PUBLIC / "sitemap.xml"
+    if EXPECT_NOINDEX and sitemap.is_file():
+        failures.append("preview build should not publish sitemap.xml")
     if sitemap.is_file():
         sitemap_text = sitemap.read_text(encoding="utf-8")
         for private_route in ("/brand-guide/", "/thank-you/"):
