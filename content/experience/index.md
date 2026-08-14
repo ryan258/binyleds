@@ -68,6 +68,11 @@ without sitting through a lecture.
 The aim is not for everyone to admire a performance. It is for the table to
 notice what they created together.
 
+A quieter guest who came in unsure of the format may find the story has quietly
+made room for them — a decision that only makes sense in their hands, arriving
+right when they are ready to take it. That is not a script. It is what
+attentive pacing is for.
+
 ## What this experience is not
 
 - A public event or convention session
