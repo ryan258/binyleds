@@ -1,4 +1,4 @@
-<header class="page-hero section-pad">
+<header class="page-hero section-pad"{{ with .Params.heroImage }} style="--hero-photo: url('{{ . | relURL }}')"{{ end }}>
   <div class="shell page-hero__grid">
     <div class="page-hero__copy">
       {{ with .Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}

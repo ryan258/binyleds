@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{- $home := hugo.Data.home -}}
 <div id="main-content" class="home-page">
-  <section class="home-hero" aria-labelledby="home-title">
+  <section class="home-hero" aria-labelledby="home-title" style="--hero-photo: url('{{ "images/home-hero.webp" | relURL }}')">
     <div class="shell home-hero__grid">
       <div class="home-hero__copy">
         <p class="eyebrow">{{ $home.hero.eyebrow }}</p>
