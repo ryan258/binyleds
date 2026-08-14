@@ -15,18 +15,19 @@
       </ul>
     </aside>
 
-    {{- /* GitHub Pages serves static files only, so this form cannot POST
-           anywhere on the staging mirror. Without this notice a shared link
-           would look like a working inquiry form and silently discard a real
-           enquiry. Production on Netlify never renders it. */}}
-    {{ if eq hugo.Environment "staging" }}
-    <p class="content-callout content-callout--reassurance" role="status">
-      <strong>Staging preview.</strong> This form is not connected here and
-      submissions are not received. Use the live site to request a consultation.
-    </p>
-    {{ end }}
+    <div class="consultation-main">
+      {{- /* GitHub Pages serves static files only, so this form cannot POST
+             anywhere on the staging mirror. Without this notice a shared link
+             would look like a working inquiry form and silently discard a real
+             enquiry. Production on Netlify never renders it. */}}
+      {{ if eq hugo.Environment "staging" }}
+      <p class="content-callout content-callout--reassurance" role="status">
+        <strong>Staging preview.</strong> This form is not connected here and
+        submissions are not received. Use the live site to request a consultation.
+      </p>
+      {{ end }}
 
-    <form
+      <form
       class="consultation-form"
       name="private-consultation"
       method="POST"
@@ -74,7 +75,7 @@
 
         <div class="field">
           <label for="guest-count">Expected guests <span aria-hidden="true">*</span></label>
-          <input id="guest-count" name="guest-count" type="number" min="2" max="20" inputmode="numeric" required>
+          <input id="guest-count" name="guest-count" type="number" min="2" inputmode="numeric" required>
         </div>
 
         <div class="field field--full">
@@ -113,8 +114,8 @@
 
       <button class="button button--primary form-submit" type="submit">Request a private consultation</button>
       <p class="form-note">This request begins a conversation. It does not reserve a date or create a payment obligation.</p>
-    </form>
+      </form>
+    </div>
   </div>
 </article>
 {{ end }}
-
