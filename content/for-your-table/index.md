@@ -3,6 +3,7 @@ title: A place in the story for every guest
 eyebrow: For your table
 lede: The Storyscape is built for close gatherings where different personalities and experience levels should feel equally welcome.
 description: Learn which hosts, guests, occasions, and groups are a good fit for a private Storyscape.
+heroImage: /images/for-your-table-hero.webp
 toc: true
 showCta: true
 weight: 30
@@ -12,7 +13,7 @@ weight: 30
 
 This experience is for someone who enjoys bringing people together but does not
 want to spend weeks writing, teaching, organizing, and performing the entire
-night. You care about the details because you care about the guests - and you
+night. You care about the details because you care about the guests, and you
 would also like to sit down with them.
 
 The right host values originality, reliability, social awareness, and an
@@ -55,7 +56,7 @@ The occasion does not need a theme. The people are enough to begin.
 ## When another format may be better
 
 The Private Storyscape may not be the right fit for a large public event, a
-drop-in crowd, a rules tournament, a children's entertainment booking, or a
+drop-in crowd, a rules tournament, a children’s entertainment booking, or a
 gathering where the game is expected to remain background noise.
 
 That does not make the idea wrong. It simply means a different format may serve

@@ -4,8 +4,8 @@ hero:
   line_two: I host the world.
   lede: >-
     Commission a private tabletop adventure created around your guests and
-    brought to life in your home - with thoughtful preparation, welcoming
-    guidance, and an expertly hosted evening from the opening scene to the final
+    brought to life in your home, with thoughtful preparation, welcoming
+    guidance, and a fully hosted evening from the opening scene to the final
     decision.
   primary_cta:
     label: Request a private consultation
@@ -32,15 +32,15 @@ positioning:
       the rules. They are defined by the moment every guest realizes they have a
       place in the story.
     - >-
-      Binyled’s Storyscape creates a private adventure around the people you
-      invite - their personalities, experience levels, interests, and sense of
-      humor. Every detail is prepared so you can remain part of the gathering
+      Personalities, experience levels, interests, sense of humor: every
+      detail becomes raw material for the story instead of a guessing game.
+      It is prepared so thoroughly that you can remain part of the gathering
       rather than responsible for running it.
   pullquote: You invite the guests. The world arrives prepared.
 
 process:
   eyebrow: How the evening takes shape
-  title: Thoughtfully prepared. Effortlessly hosted.
+  title: How the world gets built
   intro: >-
     A clear three-part process keeps the practical details calm and gives the
     imagination room to work.
@@ -58,8 +58,8 @@ process:
     - number: "03"
       title: A fully guided evening
       text: >-
-        The world arrives at your home and is guided from the opening scene
-        through the final decision.
+        The world arrives at your home, guided at every turn, from your
+        guests’ first choice to their last.
 
 details:
   eyebrow: What the commission can hold
@@ -99,7 +99,7 @@ reassurance:
 
 philosophy:
   eyebrow: The approach
-  title: Prepared with care. Guided with presence.
+  title: Presence, not performance.
   paragraphs:
     - >-
       Every commission is approached as a private gathering first and a tabletop

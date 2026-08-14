@@ -3,6 +3,7 @@ title: The Private Storyscape
 eyebrow: The flagship experience
 lede: A private tabletop adventure created around the people you invite and guided in your home from the opening scene to the final decision.
 description: Explore the Private Storyscape, a bespoke in-home tabletop roleplaying evening for hosts in Bentonville and Northwest Arkansas.
+heroImage: /images/experience-hero.webp
 toc: true
 showCta: true
 weight: 10
@@ -41,12 +42,15 @@ These are ingredients, not a checklist designed to make the evening look busy.
 If a map, miniature, or prop does not help the guests enter the story, it does
 not need to be there.
 
+![A hand-drawn coastal map unrolls across a candlelit table as a small carved token passes between two hands](/images/experience-callout.webp)
+
 {{< callout title="One possibility" >}}
 Imagine the table settling as a hand-drawn coastal map unrolls, a low playlist
-eases in, and a small carved token passes to whoever speaks next. Not a
-promise of maps or tokens for your table — an example of the kind of detail a
-story might earn once it is shaped around your guests.
+eases in, and a small carved token passes to whoever speaks next.
 {{< /callout >}}
+
+One possibility, not a promise: the kind of detail a story might earn once it
+is shaped around your guests.
 
 ## What the host no longer has to carry
 
@@ -69,7 +73,7 @@ The aim is not for everyone to admire a performance. It is for the table to
 notice what they created together.
 
 A quieter guest who came in unsure of the format may find the story has quietly
-made room for them — a decision that only makes sense in their hands, arriving
+made room for them, a decision that only makes sense in their hands, arriving
 right when they are ready to take it. That is not a script. It is what
 attentive pacing is for.
 
@@ -77,7 +81,7 @@ attentive pacing is for.
 
 - A public event or convention session
 - A rules competition
-- A children's party performance
+- A children’s party performance
 - A costume requirement
 - A generic adventure with names swapped in
 - A promise that every possible prop or production element will appear

@@ -3,6 +3,7 @@ title: Thoughtfully prepared. Effortlessly hosted.
 eyebrow: How it works
 lede: A calm, consultation-first process turns a few human details into a private world your whole table can enter.
 description: See the consultation, preparation, and guided-evening process behind Binyled’s Storyscape.
+heroImage: /images/how-it-works-hero.webp
 toc: true
 showCta: true
 weight: 20
@@ -20,14 +21,14 @@ details that would make the evening feel distinctly yours.
 
 If it helps to start somewhere, a few directions guests often react to:
 
-- **The First-Timer's Journey** — light mechanics, high narrative, and a
+- **The First-Timer’s Journey**: light mechanics, high narrative, and a
   relaxed atmosphere for a table that is brand new to the hobby.
-- **The Puzzle Box** — built for guests who love escape rooms, logic puzzles,
+- **The Puzzle Box**: built for guests who love escape rooms, logic puzzles,
   and figuring things out together.
-- **The Epic Continuation** — deeper lore and tactical stakes for a table of
+- **The Epic Continuation**: deeper lore and tactical stakes for a table of
   experienced players.
 
-None of these are fixed packages. Naming one is optional — it only gives the
+None of these are fixed packages. Naming one is optional; it only gives the
 consultation somewhere to start.
 
 The consultation is discovery, not a disguised checkout. A request does not
@@ -54,7 +55,7 @@ unspoken assumption.
 On the evening, the table is introduced to the world with a light hand. Guests
 learn by making choices. Rules are explained when they become useful. The pace
 is guided, the room is read, and attention moves so no one becomes a spectator
-in someone else's story.
+in someone else’s story.
 
 You remain the host in the way that matters: you know the people, shape the
 welcome, and sit down with them. The story and facilitation no longer rest on

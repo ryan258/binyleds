@@ -3,6 +3,7 @@ title: Prepared with care. Guided with presence.
 eyebrow: About the approach
 lede: The craft of a private Storyscape is not performing at a room. It is helping the people in it surprise one another.
 description: Read the hospitality-first philosophy behind Binyled’s Storyscape.
+heroImage: /images/about-hero.webp
 toc: true
 showCta: true
 weight: 40
@@ -42,7 +43,7 @@ The aim is not to recite a world at the guests. It is to offer a world that
 listens back.
 
 {{< callout title="The north star" tone="signature" >}}
-Cultivated hospitality with a storyteller's imagination.
+Cultivated hospitality with a storyteller’s imagination.
 {{< /callout >}}
 
 ## About factual claims
@@ -53,7 +54,7 @@ appear when the owner has confirmed them and the people quoted have approved
 their use.
 
 The work should earn trust first through the clarity of the process, the care in
-the questions, and the honesty of what is - and is not yet - promised.
+the questions, and the honesty of what is, and is not yet, promised.
 
 ## The standard
 

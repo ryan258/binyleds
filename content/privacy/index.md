@@ -14,8 +14,8 @@ date, expected guest count, tabletop experience, occasion, preferences, and any
 comfort or access notes you choose to share.
 
 Do not submit sensitive medical, financial, identity, or security information.
-If a private detail becomes relevant later, it can be discussed through an
-appropriate direct channel.
+If a private detail becomes relevant later, raise it directly rather than
+through the form.
 
 ## Why it is used
 
@@ -31,7 +31,7 @@ It should not be sold or used for unrelated marketing without separate consent.
 ## Where submissions are processed
 
 When this site is hosted on Netlify, the form is processed and stored by
-Netlify's form service. The site owner controls who receives submission
+Netlify’s form service. The site owner controls who receives submission
 notifications and should configure an appropriate retention practice before
 public launch.
 

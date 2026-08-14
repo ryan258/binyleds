@@ -11,14 +11,14 @@ foundation:
   service_area: Bentonville and Northwest Arkansas, subject to date and location confirmation
   promise: You host the people. I host the world.
   signature: I build the world. You shape the story.
-  essence: Cultivated hospitality with a storyteller's imagination.
+  essence: Cultivated hospitality with a storyteller’s imagination.
   introduction: >-
     Binyled’s Storyscape creates and hosts private tabletop adventures for
     people who want to give their friends an evening that feels thoughtful,
     seamless, and entirely their own.
   what: >-
     A consultation-first service that creates and guides a private tabletop
-    roleplaying evening in the client's home.
+    roleplaying evening in the client’s home.
   who: >-
     Discerning hosts who value originality, preparation, guest comfort, and the
     chance to remain present at their own gathering.
@@ -42,7 +42,7 @@ strategy:
     the consultation.
   emotional_promise: Your guests feel transported. You remain present as the host.
   status_benefit: I did not merely organize game night. I commissioned an experience.
-  internal_standard: Polished enough for an executive's home; imaginative enough for their favorite friends.
+  internal_standard: Polished enough for an executive’s home; imaginative enough for their favorite friends.
 
 audience:
   persona: The Discerning Host
@@ -81,7 +81,7 @@ offer:
   name: The Private Storyscape
   summary: >-
     A bespoke single-evening tabletop roleplaying experience created around the
-    guests and professionally hosted in the client's home.
+    guests and professionally hosted in the client’s home.
   frame: >-
     Closer to commissioning a private chef, storyteller, or boutique hosted
     experience than hiring a casual freelance game master.
@@ -170,7 +170,7 @@ messaging:
     - Join the quest
 
 voice:
-  north_star: Cultivated hospitality with a storyteller's imagination.
+  north_star: Cultivated hospitality with a storyteller’s imagination.
   ratio:
     - label: Gracious private host
       value: 40
@@ -217,7 +217,7 @@ voice:
         - Constant references to destiny
         - Theatrical monologues
         - Generic epic language
-      good: By evening's end, the quiet guest may have negotiated with a dragon or saved the kingdom with one beautifully reckless decision.
+      good: By evening’s end, the quiet guest may have negotiated with a dragon or saved the kingdom with one beautifully reckless decision.
       bad: Enter a realm of epic legends where heroes forge their eternal destinies.
   writing_rules:
     - Use “I” when the practitioner speaks and “you” to keep the host central.
@@ -390,7 +390,7 @@ governance:
     - Describe the public audience through wealth or corporate status.
     - Name-drop local employers.
     - Use fake scarcity, invented testimonials, or invented credentials.
-    - Sound like a children's party entertainer or a casual game-store listing.
+    - Sound like a children’s party entertainer or a casual game-store listing.
     - Add new colors, fonts, or motifs without updating the brand system.
   unresolved:
     - Approved game master biography and credentials

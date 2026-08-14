@@ -27,16 +27,16 @@ confirmed before the evening is accepted rather than guessed on this page.
 {{< /faq >}}
 
 {{< faq question="How long is the experience?" >}}
-Timing is agreed with the final scope. The occasion, group, location, and story
-all matter, so this site does not promise a standard duration before those
-details are understood.
+There is no standard length, because there is no standard evening. Timing is
+agreed once the occasion, group, location, and story are understood, as part
+of the final scope, not a number quoted upfront.
 {{< /faq >}}
 
 {{< faq question="What is the timeline and space needed for the evening?" >}}
+Every home is different, so this is worked out directly rather than assumed.
 Setup, table space, and departure timing depend on your home, your schedule,
-and the confirmed scope. Those specifics are agreed directly during
-consultation rather than assumed here, so you know exactly what to expect
-before the evening is accepted.
+and the confirmed scope, agreed during consultation so you know exactly what
+to expect before the evening is accepted.
 {{< /faq >}}
 
 {{< faq question="What is included?" >}}
@@ -49,8 +49,8 @@ included.
 {{< faq question="How is pricing handled?" >}}
 Pricing is confirmed after the consultation, when the date, location, group,
 preparation, and proposed scope are understood. You should receive the cost and
-what it covers before making a commitment. No invented “starting at” figure is
-used simply to make the website look complete.
+what it covers before making a commitment: a figure based on what is actually
+planned for your evening, not a placeholder “starting at” number.
 {{< /faq >}}
 
 {{< faq question="Where do you travel?" >}}
@@ -66,10 +66,10 @@ performance.
 {{< /faq >}}
 
 {{< faq question="How are comfort boundaries and accessibility handled?" >}}
-The consultation includes space to name tone, content boundaries, access needs,
-and the kinds of participation that help guests feel comfortable. Share only
-what is useful. Additional details can be discussed privately rather than placed
-in the form.
+Whatever helps your table feel comfortable has a place in the conversation.
+The consultation includes room to name tone, content boundaries, access needs,
+and the kinds of participation that help guests feel at ease. Share only
+what is useful, and save the rest for a private conversation.
 {{< /faq >}}
 
 {{< faq question="Does sending the form reserve a date?" >}}
