@@ -53,7 +53,10 @@
   window.addEventListener("scroll", updateScrollState, { passive: true });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") setMenu(false);
+    if (event.key === "Escape" && menuToggle?.getAttribute("aria-expanded") === "true") {
+      setMenu(false);
+      menuToggle.focus();
+    }
   });
 
   window.addEventListener("resize", () => {

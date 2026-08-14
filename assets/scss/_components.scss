@@ -828,6 +828,12 @@ html[data-theme="light"] .section--parchment {
   top: calc(var(--header-height) + 2rem);
 }
 
+.consultation-main {
+  min-width: 0;
+  display: grid;
+  gap: 1rem;
+}
+
 .consultation-aside h2 {
   margin-bottom: 1.25rem;
   font-size: clamp(2.1rem, 3.4vw, 3rem);
@@ -1159,4 +1165,3 @@ html[data-theme="light"] .site-footer {
   opacity: 0;
   transform: translateY(12px);
 }
-

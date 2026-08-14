@@ -126,6 +126,10 @@ html[data-theme="light"] .guide-toolbar {
   padding-block: 5rem 8rem;
 }
 
+.guide-layout > * {
+  min-width: 0;
+}
+
 .guide-nav {
   align-self: start;
   position: sticky;
