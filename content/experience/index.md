@@ -3,7 +3,7 @@ title: The Private Storyscape
 eyebrow: The flagship experience
 lede: A private tabletop adventure created around the people you invite and guided in your home from the opening scene to the final decision.
 description: Explore the Private Storyscape, a bespoke in-home tabletop roleplaying evening for hosts in Bentonville and Northwest Arkansas.
-heroImage: /images/experience-hero.webp
+heroImage: images/experience-hero.webp
 toc: true
 showCta: true
 weight: 10
@@ -42,7 +42,7 @@ These are ingredients, not a checklist designed to make the evening look busy.
 If a map, miniature, or prop does not help the guests enter the story, it does
 not need to be there.
 
-![A hand-drawn coastal map unrolls across a candlelit table as a small carved token passes between two hands](/images/experience-callout.webp)
+![A hand-drawn coastal map unrolls across a candlelit table as a small carved token passes between two hands](images/experience-callout.webp)
 
 {{< callout title="One possibility" >}}
 Imagine the table settling as a hand-drawn coastal map unrolls, a low playlist

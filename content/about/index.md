@@ -3,7 +3,7 @@ title: Prepared with care. Guided with presence.
 eyebrow: About the approach
 lede: The craft of a private Storyscape is not performing at a room. It is helping the people in it surprise one another.
 description: Read the hospitality-first philosophy behind Binyled’s Storyscape.
-heroImage: /images/about-hero.webp
+heroImage: images/about-hero.webp
 toc: true
 showCta: true
 weight: 40

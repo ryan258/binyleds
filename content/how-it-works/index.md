@@ -3,7 +3,7 @@ title: Thoughtfully prepared. Effortlessly hosted.
 eyebrow: How it works
 lede: A calm, consultation-first process turns a few human details into a private world your whole table can enter.
 description: See the consultation, preparation, and guided-evening process behind Binyled’s Storyscape.
-heroImage: /images/how-it-works-hero.webp
+heroImage: images/how-it-works-hero.webp
 toc: true
 showCta: true
 weight: 20

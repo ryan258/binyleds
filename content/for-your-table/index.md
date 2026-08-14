@@ -3,7 +3,7 @@ title: A place in the story for every guest
 eyebrow: For your table
 lede: The Storyscape is built for close gatherings where different personalities and experience levels should feel equally welcome.
 description: Learn which hosts, guests, occasions, and groups are a good fit for a private Storyscape.
-heroImage: /images/for-your-table-hero.webp
+heroImage: images/for-your-table-hero.webp
 toc: true
 showCta: true
 weight: 30
