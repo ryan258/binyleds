@@ -45,9 +45,10 @@ The generated site is written to `public/`.
 npm run check
 ```
 
-The check builds with warnings treated as failures, validates internal links,
-checks duplicate IDs and heading order, confirms form labels, and verifies the
-required brand assets and routes.
+The check builds both production and non-indexable preview variants with
+warnings treated as failures, validates internal links, checks duplicate IDs
+and heading order, confirms form labels and inquiry constraints, and verifies
+the required brand assets and routes.
 
 ## Publish on Netlify
 

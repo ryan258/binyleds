@@ -11,7 +11,7 @@ purposes, and the difference matters — one of them cannot run the business.
 | Consultation form | captured by Netlify Forms | **not connected**, shows a notice |
 | Security headers | from `netlify.toml` | none — Pages sends its own |
 | `/consult`, `/book` redirects | yes | no |
-| Search engines | `index, follow` | `noindex, nofollow` |
+| Search engines | `index, follow` | `noindex, nofollow`; no sitemap |
 | CSS/JS | minified + fingerprinted + SRI | identical |
 | Trigger | Netlify build on push | `deploy-staging` job on push to `main` |
 
@@ -45,7 +45,7 @@ push / PR ──▶ build ──────────────▶ scripts/
                  │                  (build at root baseURL + audit_site.py)
                  │
                  └─▶ deploy-staging  (main only)
-                        ├─ hugo -e staging --baseURL .../binyleds/
+                        ├─ hugo -e staging --disableKinds sitemap --baseURL .../binyleds/
                         ├─ verify the staging build   ← subpath + noindex guard
                         ├─ upload-pages-artifact
                         └─ deploy-pages
@@ -77,6 +77,10 @@ of confusion.
 
 The `hugo.yaml` value is a safe local placeholder. Every real build overrides
 it, which is why the checked-in `example.org` never reaches a visitor.
+
+Netlify deploy previews and branch deploys also use the `staging` Hugo
+environment and disable sitemap generation. Only the production context may
+emit `index, follow` or a public sitemap.
 
 ## Environment gating
 
@@ -127,6 +131,7 @@ subpath bugs. The `Verify the staging build` step is the only thing that can,
 and it fails the deploy on either:
 
 - any page missing `noindex` — prevents duplicate-content indexing
+- any generated `sitemap.xml` — keeps preview URLs out of discovery feeds
 - any `href`/`src` starting with `/` but not `/binyleds/` — prevents 404s
 
 If you move the mirror to a different path or a custom domain, **update the
@@ -146,7 +151,8 @@ Locally, reproduce the exact staging build with:
 
 ```sh
 hugo --gc --minify --panicOnWarning \
-  -e staging --baseURL "https://ryan258.github.io/binyleds/"
+  -e staging --disableKinds sitemap \
+  --baseURL "https://ryan258.github.io/binyleds/"
 ```
 
 ## Troubleshooting
