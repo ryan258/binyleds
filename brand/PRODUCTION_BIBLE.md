@@ -1,5 +1,17 @@
 # Binyled’s Storyscape production bible
 
+## Scope of this bible
+
+This is the brand system for the Storyscape expression of a broader modular
+master site. The repository is intentionally comprehensive: specialist versions
+are created by choosing and reducing its sections and page types. These brand
+rules govern Storyscape copy, not the range of modules another specialist may
+use. See `../docs/sculpting-guide.md` for the composition workflow.
+
+Additional service formats are possibilities to discuss, not confirmed offerings.
+Illustrative adventures and atmosphere artwork must stay labeled. Local trust
+and booking scaffolds are not public evidence or connected business functions.
+
 ## What is it
 
 Binyled’s Storyscape is a bespoke in-home tabletop roleplaying experience. A
@@ -79,4 +91,3 @@ promise is clear.
 The site is a static Hugo project. New copy should be drafted against the brand
 guide, checked with `npm run check`, and published through the configured host.
 Small content updates should remain possible without redesigning templates.
-

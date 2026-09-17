@@ -8,9 +8,10 @@
         <h1>Binyled’s Storyscape<br><em>Brand guide</em></h1>
         <p class="guide-hero__lede">The strategic, verbal, visual, sales, accessibility, and operating standards for every public expression of the Storyscape.</p>
         <div class="guide-status-row">
-          <span class="status-chip status-chip--approved">Production foundation</span>
+          <span class="status-chip">{{ $brand.meta.status }}</span>
           <span class="status-chip">Updated {{ $brand.meta.updated }}</span>
         </div>
+        <p>{{ $brand.meta.scope }}</p>
       </div>
       <div class="guide-seal" aria-hidden="true">
         <span>BS</span>

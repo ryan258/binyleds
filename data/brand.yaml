@@ -1,8 +1,12 @@
 meta:
   name: Binyled’s Storyscape
-  version: "1.0"
-  status: Production foundation
-  updated: August 2026
+  version: "1.1"
+  status: Specialist master foundation
+  updated: September 2026
+  scope: >-
+    Storyscape is the first expression of a modular master site, designed to
+    be sculpted into focused specialist websites. This guide governs the
+    Storyscape brand; the module workshop and sculpting guide govern composition.
   owner: Binyled
 
 foundation:

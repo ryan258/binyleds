@@ -8,6 +8,12 @@ description: Create or review public-facing Binyled’s Storyscape copy and page
 Use this project-local skill when writing, reviewing, or extending the website,
 consultation materials, proposals, social copy, or guest communications.
 
+The repository is now a comprehensive modular master for sculpting specialist
+service sites. These voice rules apply to its Storyscape expression. Keep shared
+sections reusable, place alternate content in `data/variants.yaml`, and follow
+`docs/sculpting-guide.md` for composition changes. Clearly label illustrative
+adventures and artwork; keep unapproved trust and booking scaffolds local.
+
 ## Project rules
 
 1. Lead with what the host can give their guests and the burden removed.
@@ -58,4 +64,3 @@ discreet concierge**.
 - Do not invent testimonials or credentials.
 - Do not make beginners sound like a burden.
 - Do not let fantasy ornament obscure the practical experience.
-
