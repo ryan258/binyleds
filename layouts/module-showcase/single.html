@@ -1,0 +1,58 @@
+{{ define "main" }}
+{{ if hugo.IsProduction }}{{ errorf "The module showcase is local development content. Use npm run dev, not a production build with drafts." }}{{ end }}
+<article id="main-content" class="showcase-page" data-showcase>
+  <header class="section-pad showcase-hero">
+    <div class="shell">
+      <p class="eyebrow">Local workshop · Professional DM edition</p>
+      <h1>Everything to build from.<br><em>Room to sculpt.</em></h1>
+      <p class="page-hero__lede">A visual menu of finished sections, alternate directions, and clearly marked editorial scaffolds. Choose the pieces that serve your specialist site.</p>
+      <p class="showcase-note">This page is a draft, excluded from normal builds. Preview choices below only filter this page; they do not save or change your site.</p>
+      <div class="button-row"><a class="button button--primary" href="{{ "" | relURL }}">See the assembled homepage</a><a class="text-link" href="#module-menu">Browse the section menu &darr;</a></div>
+    </div>
+  </header>
+  <div class="shell showcase-menu" id="module-menu">
+    <h2>Choose a section to explore</h2>
+    <p>Start with the default version, then compare the alternate hero and service treatments. The last two layouts need real content or a connected service before public use.</p>
+    <nav aria-label="Section previews" class="showcase-links">
+      {{ range $name, $entry := hugo.Data.modules }}<a href="#preview-{{ $name }}">{{ $entry.title }}</a>{{ end }}
+    </nav>
+    <div class="showcase-filter" data-showcase-controls hidden>
+      <label for="module-filter">Filter sections</label>
+      <input id="module-filter" type="search" placeholder="Try hero, packages, or gallery" data-module-filter aria-controls="module-previews">
+      <p role="status" aria-live="polite" data-showcase-count></p>
+    </div>
+    <details class="showcase-instructions">
+      <summary>How to make these choices permanent</summary>
+      <p>Edit the <code>sections</code> list in <code>content/_index.md</code> or a page using the <code>modular</code> layout. Reorder entries, remove them, or add <code>enabled: false</code>. Each entry needs a unique ID. Alternate versions use the <code>variant</code> key.</p>
+      <pre><code>sections:
+  - module: hero
+    id: hero
+    variant: gm
+  - module: services
+    id: services
+  - module: closing
+    id: closing</code></pre>
+      <p>The full editing and removal workflow is documented in <code>docs/sculpting-guide.md</code>.</p>
+    </details>
+  </div>
+  <div id="module-previews">
+    {{ range $name := slice "hero" "proof" "services" "positioning" "adventures" "packages" "process" "gallery" "details" "reassurance" "comfort" "philosophy" "resources" "faq" "location" "closing" "trust" "booking" }}
+      {{ $entry := index hugo.Data.modules $name }}
+      <div class="showcase-sample" id="preview-{{ $name }}" data-showcase-sample data-search="{{ $name }} {{ $entry.title }} {{ $entry.description }}">
+        <div class="showcase-label shell">
+          <div><span class="status-chip">{{ if $entry.showcaseOnly }}Editorial scaffold{{ else }}Reusable section{{ end }}</span><h2>{{ $entry.title }}</h2><p>{{ $entry.description }}</p></div>
+          <code>module: {{ $name }}</code>
+        </div>
+        {{ partial "sections/render.html" (dict "page" $ "showcase" true "sections" (slice (dict "module" $name "id" (printf "sample-%s" $name)))) }}
+        {{ range $entry.variants }}
+          <div class="showcase-variant shell"><p class="eyebrow">Alternate direction</p><code>variant: {{ . }}</code></div>
+          {{ partial "sections/render.html" (dict "page" $ "showcase" true "sections" (slice (dict "module" $name "variant" . "id" (printf "sample-%s-%s" $name .)))) }}
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+  <p class="shell showcase-empty" data-showcase-empty hidden>No sections match. Try “hero,” “story,” or clear the filter to see everything.</p>
+</article>
+{{ $script := resources.Get "js/showcase.js" | minify | fingerprint }}
+<script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
+{{ end }}
