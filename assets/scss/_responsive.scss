@@ -310,7 +310,7 @@
     grid-template-columns: minmax(0, 1fr) 48px;
   }
 
-  .home-hero h1 {
+  .home-hero .hero-title {
     font-size: clamp(3rem, 15vw, 4.2rem);
   }
 

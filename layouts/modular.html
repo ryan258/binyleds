@@ -1,0 +1,7 @@
+{{ define "main" }}
+<article id="main-content" class="modular-page">
+  {{ partial "page-hero.html" . }}
+  {{ with .Content }}<div class="shell modular-intro prose">{{ . }}</div>{{ end }}
+  {{ partial "sections/render.html" (dict "page" . "sections" .Params.sections) }}
+</article>
+{{ end }}

@@ -1,0 +1,76 @@
+hero:
+  title: Opening invitation
+  description: Three hero copy directions; choose the host, the GM, or the adventure.
+  template: hero
+  variants: [gm, adventure]
+proof:
+  title: Experience principles
+  description: Three concrete promises without invented social proof.
+  template: proof
+positioning:
+  title: Editorial introduction
+  description: A two-column statement of what makes the experience personal.
+  template: positioning
+services:
+  title: Service collection
+  description: Three core approaches, plus a broader set of formats to discuss.
+  template: cards
+  variants: [extended]
+packages:
+  title: Package comparison
+  description: Compare the shape of commissions without unapproved prices or inclusions.
+  template: packages
+adventures:
+  title: Adventure library
+  description: Illustrative story concepts with tone and participation cues.
+  template: adventures
+process:
+  title: Three-step process
+  description: Consultation, preparation, and the guided evening.
+  template: process
+gallery:
+  title: Atmosphere gallery
+  description: Existing concept artwork, explicitly distinguished from client photographs.
+  template: gallery
+details:
+  title: Inclusions list
+  description: Numbered details that can be scoped during consultation.
+  template: details
+reassurance:
+  title: Beginner reassurance
+  description: A contrasting editorial section for guests new to roleplaying.
+  template: reassurance
+comfort:
+  title: Comfort and participation
+  description: Practical prompts for tone, boundaries, breaks, and access needs.
+  template: cards
+philosophy:
+  title: Meet the approach
+  description: A profile section grounded in hosting philosophy, ready for a verified biography later.
+  template: philosophy
+resources:
+  title: Resource collection
+  description: Useful starting points for hosts and players.
+  template: cards
+faq:
+  title: Practical questions
+  description: Native expandable answers that also work without JavaScript.
+  template: faq
+location:
+  title: Service area
+  description: Location and travel expectations without inventing a radius.
+  template: location
+closing:
+  title: Consultation invitation
+  description: A final, clear next step.
+  template: closing
+trust:
+  title: Client story layout
+  description: Local editorial scaffold awaiting a real, approved client story.
+  template: trust
+  showcaseOnly: true
+booking:
+  title: Booking handoff layout
+  description: Local layout for a future provider; no calendar, payment, or reservation is connected.
+  template: booking
+  showcaseOnly: true

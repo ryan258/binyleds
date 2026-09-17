@@ -1,0 +1,11 @@
+{{- $data := .data -}}
+<section class="proof-strip" aria-label="Experience principles">
+  <div class="shell proof-grid">
+    {{ range $data }}
+    <article>
+      <h2>{{ .label }}</h2>
+      <p>{{ .detail }}</p>
+    </article>
+    {{ end }}
+  </div>
+</section>

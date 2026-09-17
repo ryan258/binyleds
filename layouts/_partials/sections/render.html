@@ -1,0 +1,43 @@
+{{- $page := .page -}}
+{{- $showcase := .showcase | default false -}}
+{{- $seen := slice "top" "main-content" "primary-menu" "theme-toggle" "top-link" -}}
+{{- $active := slice -}}
+{{- range .sections -}}{{- if ne .enabled false -}}{{- $active = $active | append . -}}{{- end -}}{{- end -}}
+{{- if and $page.IsHome (not $showcase) -}}
+  {{- $heroes := where $active "module" "hero" -}}
+  {{- if or (ne (len $heroes) 1) (ne (index $active 0).module "hero") -}}
+    {{- errorf "The homepage needs exactly one enabled hero as its first section" -}}
+  {{- end -}}
+{{- end -}}
+{{- range .sections -}}
+  {{- if ne .enabled false -}}
+    {{- $module := .module -}}
+    {{- $id := .id | default $module -}}
+    {{- $entry := index hugo.Data.modules $module -}}
+    {{- if not $entry -}}
+      {{- errorf "Unknown section module %q on %s" $module $page.RelPermalink -}}
+    {{- else if or (not (findRE `^[a-z][a-z0-9-]*$` $id)) (in $seen $id) (in $seen (printf "%s-title" $id)) (in $seen (printf "%s-hint" $id)) -}}
+      {{- errorf "Invalid or duplicate section id %q on %s" $id $page.RelPermalink -}}
+    {{- else if and $entry.showcaseOnly (not $showcase) -}}
+      {{- errorf "Section %q is showcase-only; supply approved content and remove the registry restriction before using it publicly" $module -}}
+    {{- else -}}
+      {{- $seen = $seen | append $id | append (printf "%s-title" $id) | append (printf "%s-hint" $id) -}}
+      {{- $data := index hugo.Data.home $module -}}
+      {{- with .variant -}}
+        {{- $variant := index (index hugo.Data.variants $module | default dict) . -}}
+        {{- if not $variant -}}
+          {{- errorf "Unknown variant %q for section %q" . $module -}}
+        {{- else -}}
+          {{- $data = $variant -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if not $data -}}
+        {{- errorf "Missing content for section %q" $module -}}
+      {{- else -}}
+        <div id="{{ $id }}" class="site-section" data-section-module="{{ $module }}">
+          {{ partial (printf "sections/%s.html" $entry.template) (dict "page" $page "data" $data "id" $id "showcase" (or $showcase (not $page.IsHome))) }}
+        </div>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

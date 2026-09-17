@@ -1,0 +1,17 @@
+<section class="section-pad adventure-section" aria-labelledby="{{ .id }}-title">
+  <div class="shell">
+    {{ partial "sections/heading.html" . }}
+    <div class="module-card-grid">
+      {{ range .data.items }}
+      <article class="adventure-card">
+        <div class="adventure-card__masthead"><span class="adventure-number" aria-hidden="true">{{ .number }}</span><p class="eyebrow">{{ .tone }}</p></div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .premise }}</p>
+        <p class="adventure-choice">{{ .choice }}</p>
+        <p class="adventure-play">{{ .play }}</p>
+      </article>
+      {{ end }}
+    </div>
+    {{ with .data.link }}<a class="text-link module-after-link" href="{{ .url | relURL }}">{{ .label }} <span aria-hidden="true">&rarr;</span></a>{{ end }}
+  </div>
+</section>

@@ -1,0 +1,30 @@
+{{- $data := .data -}}
+<section class="home-hero" aria-labelledby="{{ .id }}-title" style="--hero-photo: url('{{ "images/home-hero.webp" | relURL }}')">
+  <div class="shell home-hero__grid">
+    <div class="home-hero__copy">
+      <p class="eyebrow">{{ $data.eyebrow }}</p>
+      {{ if .showcase }}<h2 class="hero-title" id="{{ .id }}-title">{{ else }}<h1 class="hero-title" id="{{ .id }}-title">{{ end }}
+        <span>{{ $data.line_one }}</span>
+        <em>{{ $data.line_two }}</em>
+      {{ if .showcase }}</h2>{{ else }}</h1>{{ end }}
+      <p class="home-hero__lede">{{ $data.lede }}</p>
+      <div class="button-row">
+        <a class="button button--primary" href="{{ $data.primary_cta.url | relURL }}">{{ $data.primary_cta.label }}</a>
+        <a class="text-link" href="{{ $data.secondary_cta.url | relURL }}">{{ $data.secondary_cta.label }} <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <p class="signature-line">{{ $data.signature }}</p>
+    </div>
+
+    <div class="story-table" aria-hidden="true">
+      <span class="story-table__ring story-table__ring--outer"></span>
+      <span class="story-table__ring story-table__ring--middle"></span>
+      <span class="story-table__ring story-table__ring--inner"></span>
+      <span class="story-table__label story-table__label--guests">Your guests</span>
+      <span class="story-table__label story-table__label--story">The story</span>
+      <span class="story-table__label story-table__label--host">You, at the table</span>
+      <span class="story-table__spark story-table__spark--one"></span>
+      <span class="story-table__spark story-table__spark--two"></span>
+      <span class="story-table__spark story-table__spark--three"></span>
+    </div>
+  </div>
+</section>

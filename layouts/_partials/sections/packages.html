@@ -1,0 +1,14 @@
+<section class="section-pad package-section" aria-labelledby="{{ .id }}-title">
+  <div class="shell">
+    {{ partial "sections/heading.html" . }}
+    <p class="table-scroll-hint" id="{{ .id }}-hint">On smaller screens, scroll across to compare all three approaches.</p>
+    <div class="package-table-wrap" role="region" aria-labelledby="{{ .id }}-title" aria-describedby="{{ .id }}-hint" tabindex="0">
+      <table class="package-table">
+        <caption class="sr-only">{{ .data.caption }}</caption>
+        <thead><tr><th scope="col">At a glance</th>{{ range .data.columns }}<th scope="col">{{ . }}</th>{{ end }}</tr></thead>
+        <tbody>{{ range .data.rows }}<tr><th scope="row">{{ .label }}</th>{{ range .values }}<td>{{ . }}</td>{{ end }}</tr>{{ end }}</tbody>
+      </table>
+    </div>
+    {{ with .data.link }}<a class="text-link module-after-link" href="{{ .url | relURL }}">{{ .label }} <span aria-hidden="true">&rarr;</span></a>{{ end }}
+  </div>
+</section>

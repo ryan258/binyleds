@@ -1,0 +1,21 @@
+{{- $data := .data -}}
+<section class="section-pad" aria-labelledby="{{ .id }}-title">
+  <div class="shell">
+    <div class="section-heading-row">
+      <div>
+        <p class="eyebrow">{{ $data.eyebrow }}</p>
+        <h2 id="{{ .id }}-title">{{ $data.title }}</h2>
+      </div>
+      <p>{{ $data.intro }}</p>
+    </div>
+    <div class="detail-list">
+      {{ range $index, $item := $data.items }}
+      <article>
+        <span aria-hidden="true">{{ printf "%02d" (add $index 1) }}</span>
+        <h3>{{ $item.title }}</h3>
+        <p>{{ $item.text }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>

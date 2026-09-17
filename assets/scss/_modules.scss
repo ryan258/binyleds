@@ -1,0 +1,114 @@
+.site-section {
+  scroll-margin-top: calc(var(--header-height) + 24px);
+}
+
+.home-hero .hero-title {
+  font-size: clamp(3.3rem, 7vw, 5.4rem);
+  line-height: 0.98;
+}
+
+.module-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.module-card,
+.adventure-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.4rem, 3vw, 2.5rem);
+  border: 1px solid var(--rule);
+  background: var(--surface);
+
+  h3 { margin-bottom: 1rem; }
+  p { color: var(--muted); }
+  .eyebrow { color: var(--gold-text); font-size: 0.62rem; }
+  .text-link { margin-top: auto; padding-top: 1.25rem; }
+}
+
+.collection-section,
+.gallery-section { border-bottom: 1px solid var(--rule-soft); }
+.package-section { background: var(--canvas-soft); border-block: 1px solid var(--rule); }
+.module-after-link { margin-top: 2.25rem; }
+.table-scroll-hint { font-size: 0.75rem; color: var(--muted); }
+.package-table-wrap { overflow-x: auto; }
+.package-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+
+  th, td { padding: 1.4rem; vertical-align: top; border: 1px solid var(--rule); }
+  thead th { width: 25%; font-family: $display; font-size: 1.7rem; font-weight: 500; color: var(--ink-strong); }
+  tbody th { font-size: 0.75rem; color: var(--gold-text); }
+  td { color: var(--muted); }
+}
+
+.adventure-section { background: radial-gradient(ellipse at top, rgba(193, 154, 82, 0.08), transparent 70%); }
+.adventure-card {
+  border-top: 3px solid var(--antique-gold);
+  background: linear-gradient(160deg, rgba(193, 154, 82, 0.07), transparent), var(--surface);
+  .adventure-choice { color: var(--ink-strong); font-family: $display; font-size: 1.55rem; font-style: italic; line-height: 1.35; }
+  .adventure-play { margin-top: auto; margin-bottom: 0; padding-top: 1.3rem; border-top: 1px solid var(--rule); font-size: 0.78rem; }
+}
+.adventure-card__masthead { margin-bottom: 2rem; }
+.adventure-number { color: var(--gold-text); font-family: $display; font-size: 3.5rem; line-height: 1.2; }
+.module-gallery {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  figure { margin: 0; min-width: 0; }
+  figure:first-child { grid-row: span 2; }
+  img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--rule); }
+  figure:first-child img { aspect-ratio: 4 / 5; }
+  figcaption { padding-top: 1.25rem; }
+  h3 { margin-bottom: 0.5rem; }
+  p { color: var(--muted); font-size: 0.85rem; }
+}
+
+.modular-intro { padding-top: 3rem; }
+.showcase-hero { border-bottom: 1px solid var(--rule); background: var(--canvas-soft); }
+.showcase-hero h1 { max-width: 17ch; }
+.showcase-hero em { color: var(--gold-text); }
+.showcase-note { margin-block: 2rem; color: var(--muted); font-size: 0.85rem; }
+.showcase-menu { padding-block: 4rem; }
+.showcase-menu > p { color: var(--muted); }
+.showcase-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-block: 2rem; }
+.showcase-links a { padding: 0.7rem 1rem; border: 1px solid var(--rule); font-size: 0.8rem; text-decoration: none; }
+.showcase-links a:hover { background: var(--surface-raised); border-color: var(--gold-text); }
+.showcase-filter {
+  max-width: 640px;
+  label { display: block; margin-bottom: 0.5rem; font-weight: 700; }
+  input { width: 100%; min-height: 48px; padding: 0.8rem; border: 1px solid var(--rule); background: var(--canvas-soft); color: var(--ink); }
+  p { margin-top: 0.6rem; font-size: 0.8rem; color: var(--muted); }
+}
+.showcase-instructions { margin-top: 2rem; padding: 1.5rem; border: 1px solid var(--rule); }
+.showcase-instructions summary { cursor: pointer; font-weight: 700; }
+.showcase-instructions p:first-of-type { margin-top: 1.5rem; }
+.showcase-instructions pre { overflow-x: auto; padding: 1rem; background: var(--canvas-soft); }
+.showcase-sample { border-top: 5px solid var(--antique-gold); scroll-margin-top: var(--header-height); }
+.showcase-label { display: flex; align-items: start; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-block: 2rem; }
+.showcase-label h2 { margin: 0.8rem 0 0.6rem; font-size: 2rem; }
+.showcase-label p { margin-bottom: 0; color: var(--muted); font-size: 0.85rem; }
+.showcase-label code, .showcase-variant code { color: var(--gold-text); font-size: 0.85rem; overflow-wrap: anywhere; }
+.showcase-variant { padding-block: 2rem; border-top: 1px dashed var(--rule); }
+.showcase-variant p { margin-bottom: 0.5rem; }
+.showcase-empty { padding-bottom: 4rem; }
+.showcase-page [hidden] { display: none !important; }
+
+@media (max-width: $bp-nav) {
+  .module-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: $bp-tablet) {
+  .module-gallery { grid-template-columns: 1fr; }
+  .module-gallery figure:first-child img { aspect-ratio: 16 / 9; }
+}
+@media (max-width: $bp-mobile) {
+  .module-card-grid { grid-template-columns: 1fr; }
+  .showcase-hero h1 { font-size: 3rem; }
+  .showcase-label { display: block; }
+  .showcase-label > code { display: block; margin-top: 1rem; }
+}

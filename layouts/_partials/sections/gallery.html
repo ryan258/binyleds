@@ -1,0 +1,13 @@
+<section class="section-pad gallery-section" aria-labelledby="{{ .id }}-title">
+  <div class="shell">
+    {{ partial "sections/heading.html" . }}
+    <div class="module-gallery">
+      {{ range .data.items }}
+      <figure>
+        <img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" decoding="async" width="640" height="640">
+        <figcaption><h3>{{ .title }}</h3><p>{{ .caption }}</p></figcaption>
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+</section>

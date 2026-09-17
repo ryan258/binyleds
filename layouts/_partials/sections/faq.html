@@ -1,0 +1,11 @@
+<section class="section-pad" aria-labelledby="{{ .id }}-title">
+  <div class="shell editorial-grid">
+    <div class="section-intro"><p class="eyebrow">{{ .data.eyebrow }}</p><h2 id="{{ .id }}-title">{{ .data.title }}</h2></div>
+    <div>
+      {{ range .data.items }}
+      <details class="faq-item"><summary>{{ .question }}</summary><div class="faq-answer"><p>{{ .answer }}</p></div></details>
+      {{ end }}
+      {{ with .data.link }}<a class="text-link module-after-link" href="{{ .url | relURL }}">{{ .label }} <span aria-hidden="true">&rarr;</span></a>{{ end }}
+    </div>
+  </div>
+</section>

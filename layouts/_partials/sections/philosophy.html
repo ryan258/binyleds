@@ -1,0 +1,16 @@
+{{- $data := .data -}}
+<section class="section-pad philosophy-section" aria-labelledby="{{ .id }}-title">
+  <div class="shell philosophy-grid">
+    <div class="philosophy-mark" aria-hidden="true">
+      <span>Host</span>
+      <strong>+</strong>
+      <span>Story</span>
+    </div>
+    <div>
+      <p class="eyebrow">{{ $data.eyebrow }}</p>
+      <h2 id="{{ .id }}-title">{{ $data.title }}</h2>
+      {{ range $data.paragraphs }}<p>{{ . }}</p>{{ end }}
+      <a class="text-link" href="{{ $data.link.url | relURL }}">{{ $data.link.label }} <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>

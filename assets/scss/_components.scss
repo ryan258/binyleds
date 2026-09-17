@@ -193,17 +193,17 @@ html[data-theme="light"] .theme-control__sun {
   z-index: 2;
 }
 
-.home-hero h1 {
+.home-hero .hero-title {
   max-width: 11ch;
   margin-bottom: 1.8rem;
 }
 
-.home-hero h1 span,
-.home-hero h1 em {
+.home-hero .hero-title span,
+.home-hero .hero-title em {
   display: block;
 }
 
-.home-hero h1 em {
+.home-hero .hero-title em {
   color: var(--gold-text);
   font-weight: 500;
 }

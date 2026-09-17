@@ -1,0 +1,47 @@
+hero:
+  gm:
+    eyebrow: Professional game mastering · Northwest Arkansas
+    line_one: Your friends.
+    line_two: My world. Our story.
+    lede: Bring your group together for a private tabletop adventure, with a game master who prepares the story, welcomes new players, and guides the evening around your table.
+    primary_cta: {label: Talk about your table, url: consultation/}
+    secondary_cta: {label: Explore the services, url: services/}
+    signature: A prepared world. Room for your choices.
+  adventure:
+    eyebrow: Private tabletop adventures
+    line_one: One evening.
+    line_two: A world of possibility.
+    lede: A mysterious invitation. An unlikely alliance. A choice your friends will still be talking about. Begin with the gathering, and let the story grow around it.
+    primary_cta: {label: Imagine your evening, url: consultation/}
+    secondary_cta: {label: Browse story ideas, url: adventures/}
+    signature: The most interesting part of the story is you.
+services:
+  extended:
+    eyebrow: More ways to gather
+    title: Start with the format you have in mind
+    intro: These are requests to discuss, not a list of confirmed offerings. Availability, suitability, delivery format, and scope need to be agreed before booking.
+    items:
+      - title: A private one-shot
+        tag: A complete story
+        text: Ask about a self-contained adventure for a single gathering with friends.
+        link: {label: Discuss a private adventure, url: consultation/}
+      - title: An ongoing campaign
+        tag: A possible next chapter
+        text: Discuss whether a continuing story, recurring group, and regular schedule could fit.
+        link: {label: Discuss a continuing story, url: consultation/}
+      - title: A beginner introduction
+        tag: A welcoming first table
+        text: Bring questions about learning the game and helping new players feel comfortable.
+        link: {label: Discuss a first session, url: consultation/}
+      - title: A celebration
+        tag: An occasion worth sharing
+        text: Explore how a birthday, reunion, or gathering could inform the adventure.
+        link: {label: Discuss an occasion, url: consultation/}
+      - title: A team gathering
+        tag: Colleagues around a table
+        text: Ask whether the group, venue, and purpose suit a shared roleplaying experience.
+        link: {label: Discuss a team event, url: consultation/}
+      - title: A remote table
+        tag: A format to explore
+        text: Ask about the feasibility of playing online, including platform and access needs.
+        link: {label: Discuss remote play, url: consultation/}

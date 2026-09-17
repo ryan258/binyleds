@@ -12,6 +12,8 @@
       <p class="footer-heading">Explore</p>
       <ul class="footer-links">
         <li><a href="{{ "experience/" | relURL }}">The experience</a></li>
+        <li><a href="{{ "services/" | relURL }}">Services and formats</a></li>
+        <li><a href="{{ "adventures/" | relURL }}">Adventure ideas</a></li>
         <li><a href="{{ "how-it-works/" | relURL }}">How it works</a></li>
         <li><a href="{{ "for-your-table/" | relURL }}">For your table</a></li>
         <li><a href="{{ "questions/" | relURL }}">Questions</a></li>
@@ -25,6 +27,7 @@
         <li><a href="{{ "about/" | relURL }}">About the approach</a></li>
         <li><a href="{{ "brand-guide/" | relURL }}">Brand guide</a></li>
         <li><a href="{{ "privacy/" | relURL }}">Privacy</a></li>
+        {{ if hugo.IsServer }}{{ with site.GetPage "/module-showcase" }}<li><a href="{{ .RelPermalink }}">Local module workshop</a></li>{{ end }}{{ end }}
       </ul>
     </div>
 
@@ -46,4 +49,3 @@
 </a>
 
 {{ partial "extend_footer.html" . }}
-
