@@ -135,3 +135,149 @@ closing:
     label: Request a private consultation
     url: consultation/
 
+
+services:
+  eyebrow: Find your kind of evening
+  title: A table for every starting point
+  intro: Begin with the people you want to gather. Together, we can work out the right story, pace, and practical fit.
+  items:
+    - title: A private adventure
+      tag: One memorable gathering
+      text: Gather your friends for a self-contained story, with the preparation and game mastering taken care of within an agreed scope.
+      link: {label: Explore a private evening, url: experience/}
+    - title: Your first table
+      tag: New to roleplaying
+      text: Give curious guests an approachable way into the game, with space to ask questions and learn through their own choices.
+      link: {label: Help new players feel at home, url: for-your-table/}
+    - title: A personal occasion
+      tag: A reason to gather
+      text: Bring a birthday, reunion, or long-awaited night with friends into the conversation. The occasion can shape the story without taking it over.
+      link: {label: Plan around your gathering, url: gatherings/}
+
+packages:
+  eyebrow: Shape the commission
+  title: Start with the evening you have in mind
+  intro: These are starting points for a conversation. Timing, guest count, materials, pricing, and availability are agreed individually before you commit.
+  caption: Compare possible approaches
+  columns: [A first adventure, An occasion to remember, A continuing story]
+  rows:
+    - label: Your starting point
+      values: [Curious friends trying roleplaying, A gathering with a personal reason, A table interested in another chapter]
+    - label: What we discuss
+      values: [Guidance and a welcoming introduction, Tone and meaningful personal details, Continuity and a sustainable rhythm]
+    - label: Story shape
+      values: [A self-contained beginning and ending, A story shaped around the gathering, A possible follow-up to discuss]
+    - label: Confirmed privately
+      values: [Scope and quote, Scope and quote, Feasibility and quote]
+  link: {label: Talk through the possibilities, url: consultation/}
+
+adventures:
+  eyebrow: A glimpse of the possible
+  title: Which story would your table choose?
+  intro: Illustrative adventure concepts, offered as conversation starters. The actual story and game system are agreed with your group; these are not scheduled or bookable products.
+  items:
+    - title: The last light of Lantern Bay
+      number: "01"
+      tone: Wonder · Discovery
+      premise: Once a year, the lighthouse shines inland. Tonight, it has revealed a path no one remembers building.
+      choice: Follow the light, or find out who lit it?
+      play: For guests who enjoy exploration and shared discoveries.
+    - title: The midnight invitation
+      number: "02"
+      tone: Mystery · Conversation
+      premise: Every guest at a secluded manor has received the same invitation. The host insists they never sent it.
+      choice: Trust your fellow guests, or keep your own counsel?
+      play: For a table drawn to clues, characters, and lively discussion.
+    - title: One very inconvenient dragon
+      number: "03"
+      tone: Wit · Negotiation
+      premise: A dragon has claimed the town bridge. It wants neither gold nor a fight. It wants someone to hear its complaint.
+      choice: Bargain, investigate, or attempt something unreasonable?
+      play: For friends who enjoy improvisation and unexpected solutions.
+  link: {label: Bring your own story idea, url: consultation/}
+
+gallery:
+  eyebrow: Around the table
+  title: Make room for a little wonder
+  intro: Concept artwork showing the atmosphere behind Storyscape. These images are illustrative, not photographs of client events or a promise of particular equipment.
+  items:
+    - image: images/experience-hero.webp
+      alt: Illustrative tabletop setting for a private fantasy adventure.
+      title: A world within reach
+      caption: An invitation to settle in and become part of the story.
+    - image: images/how-it-works-hero.webp
+      alt: Concept artwork representing preparation for a guided tabletop evening.
+      title: Care before the first scene
+      caption: The mood begins with thoughtful preparation.
+    - image: images/for-your-table-hero.webp
+      alt: Illustrative atmosphere for a welcoming tabletop gathering.
+      title: A place for every guest
+      caption: The people at the table give the world its meaning.
+
+comfort:
+  eyebrow: Before the first scene
+  title: A comfortable table starts with a conversation
+  intro: Share what would help your group participate. Practical arrangements are confirmed together, and personal details can wait for a private conversation.
+  items:
+    - title: Choose the tone
+      text: Lighthearted discovery, dramatic choices, gentle mystery—tell me what your guests would enjoy and what they would prefer to leave out.
+    - title: Make participation easier
+      text: We can discuss explanations, breaks, seating, and access needs before agreeing on the evening. You do not need to share a diagnosis.
+    - title: Leave room to adjust
+      text: Discuss how guests can ask a question, pause, or raise a concern. Comfort belongs in the preparation as much as the story does.
+
+resources:
+  eyebrow: Arrive with confidence
+  title: A little guidance goes a long way
+  intro: Useful starting points for the host who likes to know what comes next.
+  items:
+    - title: A host’s starting checklist
+      tag: Plan the gathering
+      text: The people, the room, and the few details worth having ready before a consultation.
+      link: {label: Read the host guide, url: host-guide/}
+    - title: What happens before play?
+      tag: Understand the process
+      text: Follow the path from an initial idea to an agreed scope and a guided evening.
+      link: {label: Walk through the process, url: how-it-works/}
+    - title: First time at the table?
+      tag: Welcome new players
+      text: See how guests with different experience levels can share the same adventure.
+      link: {label: Find your place at the table, url: for-your-table/}
+
+faq:
+  eyebrow: A few practical answers
+  title: Before you gather the party
+  items:
+    - question: Do we need to know how to play D&D?
+      answer: No prior tabletop experience is needed. Tell me if you have D&D or another game in mind; the system and approach are confirmed during consultation, with guidance for newcomers.
+    - question: What does a commission cost?
+      answer: The quote follows the conversation about your group, location, preparation, and scope. The cost and what it covers are confirmed before you commit.
+    - question: Can we request a particular occasion or theme?
+      answer: Yes. Share the occasion, the atmosphere you want, and any ideas your group already has. We can discuss what fits the table and the agreed scope.
+    - question: Does an inquiry reserve a date?
+      answer: No. An inquiry begins a conversation. A reservation requires direct confirmation of availability, fit, scope, pricing, and terms.
+  link: {label: Read all the practical answers, url: questions/}
+
+trust:
+  eyebrow: Client story layout · Local preview
+  title: Let a real experience tell the story
+  intro: This layout is reserved for an approved account from a real client. No testimonial or endorsement is being represented here.
+  items:
+    - title: The gathering
+      text: Describe the actual occasion and what the host wanted, using details they have agreed can be shared.
+    - title: The experience
+      text: Explain the preparation and choices that made a difference, grounded in what actually happened.
+    - title: The host’s words
+      text: Add the exact approved quotation and agreed attribution when available. Leave this module unpublished until then.
+
+booking:
+  eyebrow: Booking handoff · Local preview
+  title: A clear next step when you are ready
+  intro: A future booking provider can take over after the scope is agreed. No live availability, payment collection, or reservation is connected in this layout.
+  items:
+    - title: Agree the experience
+      text: Confirm the people, place, scope, quote, and terms directly.
+    - title: Confirm an available date
+      text: A connected provider would show actual availability here after it has been configured and verified.
+    - title: Receive confirmation
+      text: The booking service would supply the receipt and confirmation. This preview cannot reserve a date.

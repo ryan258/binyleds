@@ -27,14 +27,14 @@ menus:
     - name: The experience
       pageRef: /experience
       weight: 10
+    - name: Services
+      pageRef: /services
+      weight: 20
+    - name: Adventures
+      pageRef: /adventures
+      weight: 30
     - name: How it works
       pageRef: /how-it-works
-      weight: 20
-    - name: For your table
-      pageRef: /for-your-table
-      weight: 30
-    - name: About
-      pageRef: /about
       weight: 40
     - name: Questions
       pageRef: /questions
