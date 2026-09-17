@@ -11,18 +11,28 @@ same rule the site follows.
 is a hospitality booking, not a product launch — the plan below optimizes for
 trust and referral density in one metro area, not reach.
 
-## Who to target
+## Companion Playbooks
+
+- [Networking & Finding Clients](how-to-dm-network-and-find-more-dm-clients.md):
+  The human layer underneath this strategy—scripts, conversation mechanics,
+  connector outreach, and asking for referrals without friction.
+- [Fun & Profit Playbook](how-to-dm-dnd-for-fun-and-profit.md): The unit
+  economics, prep-hour management, pricing levers, and repeat-host rebooking loop.
+- [Sculpting Guide](sculpting-guide.md): How to create focused campaign landing
+  pages from the master section library.
+
+## Who to target & Where to send them
 
 - **Warm network first**: friends, coworkers, book clubs, D&D-adjacent
   Discord/Meetup groups already in NWA. Cheapest and highest-trust channel by
-  far — start here, not with ads.
+  far—direct conversations to [The Experience](/experience/) or [Host Guide](/host-guide/).
 - **Corporate relocations**: Walmart/Tyson/JB Hunt/university bring a steady
   stream of newcomers who want to make friends and don't have an established
-  social calendar. They host "getting to know you" gatherings often.
+  social calendar. Direct them to [Services & Formats](/services/).
 - **Milestone hosts**: birthdays, reunions, "we haven't seen each other in
-  years" gatherings — the site already names these as good-fit occasions.
+  years" gatherings—direct them to [Gatherings](/gatherings/).
 - **Local hobby community**: FLGS (local game/hobby stores), board game cafes,
-  cosplay/con communities in NWA — adjacent audience, natural word-of-mouth.
+  cosplay/con communities in NWA—direct them to [Adventure Ideas](/adventures/).
 
 ## Channels, ranked by effort vs. payoff for a solo capacity-bound business
 
@@ -65,9 +75,11 @@ the calendar.
 
 **Weeks 3–6 — First bookings**
 - Run 2-3 commissions for the warm network.
-- After each: ask for a referral, and ask permission to use a quote/photo on
-  the site once earned (site currently has none — this is how it gets its
-  first real proof instead of an invented one).
+- After each: ask for a referral, and request permission to feature an
+  approved quote and detail from the evening. Use these real accounts to
+  replace the placeholder in the `trust` module (`layouts/_partials/sections/trust.html`)
+  and remove its `showcaseOnly: true` restriction in `data/modules.yaml` so
+  authentic proof can be displayed publicly.
 - One FLGS/cafe conversation.
 
 **Weeks 7–12 — Local visibility**

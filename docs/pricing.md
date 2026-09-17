@@ -6,6 +6,12 @@ confirmed during consultation). This doc is the method for arriving at a
 number, not the number itself. Nothing here should be copied to the site
 until it's a decision, not a placeholder.
 
+Companion playbooks:
+- [Fun & Profit Playbook](how-to-dm-dnd-for-fun-and-profit.md): Detailed unit
+  economics, prep-hour tracking, and repeat rebooking math.
+- [Public Package Comparison (`packages` module)](../layouts/_partials/sections/packages.html):
+  How scope and format are presented publicly without publishing fixed dollar amounts.
+
 ## Three lenses, use all three
 
 A single formula will either underprice a bespoke hospitality service or
@@ -72,6 +78,10 @@ else offers "prepared entirely around your specific guests").
 - **Travel fee threshold beyond a defined radius** — README already flags
   "final travel radius and any travel fee" as an unresolved item; resolve it
   here, not on the fly per client.
+- **Aligned with the three public commission formats** defined in `data/home.yaml` and rendered by the `packages` module:
+  - *The single evening* (1 session, 3–4 hrs, 3–6 guests): standard self-contained baseline.
+  - *The milestone table* (1 extended session, 4–5 hrs, 4–8 guests): celebration premium covering custom narrative hooks and personalized artifacts.
+  - *The short campaign* (3 sessions, 3–4 hrs each, 3–5 players): multi-session arc priced as a packaged commitment.
 - **Optional commercial/nonprofit minimum** — only if you plan to accept
   bookings beyond friends-of-friends private groups.
 

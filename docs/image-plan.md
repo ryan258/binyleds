@@ -1,8 +1,38 @@
-Current state: the site has zero photography right now — the hero and every subpage header use pure-CSS motifs (rings, orbits), and the brand guide's own layout rule is "one focal symbol or image per composition" plus "remove decoration before reducing whitespace." So I didn't slot a photo into every section — that would fight the site's own restraint principle and turn into exactly the "dense" look it explicitly avoids.
+# Photography Strategy & Asset Plan
 
-Hands/objects, not posed people: the imagery rules ("intimate tables, tactile materials, hands in conversation," avoid "generic AI fantasy decoration") point toward close still-life shots, not full posed scenes with faces. That's also the pragmatic choice — Midjourney faces read as fake customer photos (which the brand rules explicitly forbid implying), and Midjourney hands are unreliable at full-body scale but fine in tight macro crops.
+## Implementation Status
 
-That leaves a curated set of 6 images, plus a shared style-lock suffix so they read as one system.
+The photography system specified below is fully implemented across the site.
+All assets are delivered as optimized WebP files in `static/images/` and wired
+into page templates, hero partials, and the modular section library:
+
+- `home-hero.webp` (1200×1200px): Applied as the homepage hero background element.
+- `experience-hero.webp` (640×640px): Used in `/experience/` hero, reused in `/services/` and `/gatherings/` modular pages, and featured in the `gallery` module.
+- `about-hero.webp` (640×640px): Used in `/about/` page hero.
+- `how-it-works-hero.webp` (640×640px): Used in `/how-it-works/` page hero and the `gallery` module.
+- `for-your-table-hero.webp` (640×640px): Used in `/for-your-table/` hero, reused in `/adventures/` modular page, and featured in the `gallery` module.
+- `experience-callout.webp` (1520×1013px): Embedded inline within `content/experience/index.md`.
+
+In keeping with the brand honesty principles, the modular `gallery` section
+explicitly labels these images as concept atmosphere artwork rather than
+photographs of client events. The `/questions/` and `/consultation/` headers
+remain CSS-only to maintain their low-pressure, plain-speaking tone.
+
+---
+
+## Strategy & Restraint Principles
+
+Hands/objects, not posed people: the imagery rules ("intimate tables, tactile
+materials, hands in conversation," avoid "generic AI fantasy decoration") point
+toward close still-life shots, not full posed scenes with faces. That is also
+the pragmatic choice — Midjourney faces read as fake customer photos (which the
+brand rules explicitly forbid implying), and Midjourney hands are unreliable at
+full-body scale but fine in tight macro crops. The brand guide's layout rule is
+"one focal symbol or image per composition" plus "remove decoration before
+reducing whitespace."
+
+This curated set of 6 images uses a shared style-lock suffix so they read as
+one cohesive system.
 
 Style-lock suffix (append to every prompt)
 

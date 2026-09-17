@@ -150,7 +150,7 @@ build can get wrong:
 Locally, reproduce the exact staging build with:
 
 ```sh
-hugo --gc --minify --panicOnWarning \
+hugo --gc --minify --panicOnWarning --cleanDestinationDir \
   -e staging --disableKinds sitemap \
   --baseURL "https://ryan258.github.io/binyleds/"
 ```
