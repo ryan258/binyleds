@@ -5,7 +5,7 @@
   "description": "The Hugo website for Binyled’s Storyscape.",
   "scripts": {
     "dev": "hugo server --buildDrafts --disableFastRender",
-    "build": "hugo --gc --minify --panicOnWarning",
+    "build": "hugo --gc --minify --panicOnWarning --cleanDestinationDir",
     "check": "bash scripts/check.sh"
   },
   "engines": {

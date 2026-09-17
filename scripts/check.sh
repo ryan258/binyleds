@@ -12,14 +12,14 @@ preview_dir="$tmp_root/preview"
 production_log="$tmp_root/production.log"
 preview_log="$tmp_root/preview.log"
 
-if ! hugo --gc --minify --panicOnWarning --baseURL "https://binyleds.test/" --destination "$production_dir" >"$production_log" 2>&1; then
+if ! hugo --gc --minify --panicOnWarning --cleanDestinationDir --baseURL "https://binyleds.test/" --destination "$production_dir" >"$production_log" 2>&1; then
   tail -n 120 "$production_log" >&2
   exit 1
 fi
 
 python3 scripts/audit_site.py "$production_dir"
 
-if ! hugo --gc --minify --panicOnWarning \
+if ! hugo --gc --minify --panicOnWarning --cleanDestinationDir \
   --environment staging \
   --disableKinds sitemap \
   --baseURL "https://deploy-preview.binyleds.test/" \
@@ -29,3 +29,5 @@ if ! hugo --gc --minify --panicOnWarning \
 fi
 
 python3 scripts/audit_site.py "$preview_dir" --expect-noindex
+
+python3 scripts/check_modules.py

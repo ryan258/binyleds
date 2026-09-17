@@ -19,6 +19,10 @@ PUBLIC = Path(POSITIONAL_ARGS[0]).resolve() if POSITIONAL_ARGS else ROOT / "publ
 REQUIRED_ROUTES = (
     "index.html",
     "experience/index.html",
+    "services/index.html",
+    "adventures/index.html",
+    "gatherings/index.html",
+    "host-guide/index.html",
     "how-it-works/index.html",
     "for-your-table/index.html",
     "about/index.html",
@@ -121,6 +125,9 @@ def resolve_internal_target(page: Path, raw_ref: str) -> tuple[Path | None, str]
 
 def audit() -> list[str]:
     failures: list[str] = []
+
+    if (PUBLIC / "module-showcase/index.html").exists():
+        failures.append("local module workshop must not appear in release output")
 
     for relative in REQUIRED_ROUTES + REQUIRED_ASSETS:
         if not (PUBLIC / relative).is_file():
