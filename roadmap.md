@@ -32,12 +32,20 @@ targeted composition checks, and practical operational guides.
 - [x] **Targeted Verification & Security**: Dual-tier testing with `scripts/audit_site.py` and
   `scripts/check_modules.py`, wired into `scripts/check.sh`. Build commands enforced with
   `--cleanDestinationDir` across CI, Netlify, and npm scripts to prevent draft leakage.
+- [x] **Verified Cloudflare Intake Architecture**: Implemented and tested opt-in Cloudflare
+  Pages target with durable D1 SQL storage, idempotent edge endpoint (`/api/consultation`),
+  server-side Turnstile verification, client-side session retry preservation (`assets/js/intake.js`),
+  operator mail notification with manual CLI recovery (`scripts/retry-notification.mjs`),
+  and comprehensive test suites (`npm run test:intake`, `npm run test:hosting`). Fully documented
+  in [`docs/site-operations.md`](docs/site-operations.md).
 - [x] **Business & Operational Playbooks**:
   - [`docs/sculpting-guide.md`](docs/sculpting-guide.md): Step-by-step reduction and re-composition workflow.
   - [`docs/pricing.md`](docs/pricing.md): Triangulated pricing methodology (cost-plus floor, comparables, ceiling test).
   - [`docs/marketing-campaign.md`](docs/marketing-campaign.md): 90-day solo referral and awareness sequence.
   - [`docs/how-to-dm-dnd-for-fun-and-profit.md`](docs/how-to-dm-dnd-for-fun-and-profit.md): Commission unit economics and prep-hour management.
   - [`docs/how-to-dm-network-and-find-more-dm-clients.md`](docs/how-to-dm-network-and-find-more-dm-clients.md): Human-layer networking, connector outreach, and referral mechanics.
+  - [`docs/site-operations.md`](docs/site-operations.md): Cloudflare intake setup, day-2 operations, recovery, and cutover.
+  - [`docs/site-peripheral-plan.md`](docs/site-peripheral-plan.md): Comprehensive peripheral architecture and cost boundaries.
 
 ---
 
@@ -46,14 +54,14 @@ targeted composition checks, and practical operational guides.
 Before opening the calendar to external clients, finalize the real-world operational parameters
 flagged in `README.md` and `PROJECT.md`:
 
-- [ ] **Operational Policies**:
+- [ ] **Operational Policies & Intake Cutover**:
   - Define confirmed travel radius in Bentonville/Northwest Arkansas and travel surcharge formula.
   - Set required lead times, booking deposit percentage, and cancellation/rescheduling terms.
-  - Establish notification routing for Netlify form submissions in production.
+  - Choose and configure intake infrastructure: proceed with baseline Netlify Forms or complete the validated Cloudflare D1/Pages cutover per [`docs/site-operations.md`](docs/site-operations.md).
+  - Configure production notification recipients, verified sender addresses, and Turnstile widgets.
 - [ ] **Trademark & Affiliation Wording**: Confirm exact legal disclosures regarding D&D,
   Wizards of the Coast, and third-party game systems.
-- [ ] **Pre-Launch Audit**: Run the pre-commit integrity gate (`npm run check`) and test live
-  form delivery on the production deployment.
+- [ ] **Pre-Launch Audit**: Run the full verification suite (`npm run check`, `npm run test:intake`, `npm run test:hosting`) and test live form delivery on the target deployment.
 
 ---
 

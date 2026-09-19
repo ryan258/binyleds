@@ -23,8 +23,8 @@ inquiry form. Every template in `layouts/` belongs to this project.
 - Open Graph and Twitter card artwork, favicon set, sitemap, robots rules, and
   JSON-LD structured metadata
 - Netlify form capture, spam honeypot, security headers, redirects, and deploy
-  configuration
-- Deterministic build and HTML integrity checks
+  configuration; opt-in Cloudflare D1 intake with edge verification and durable storage
+- Deterministic build, intake durability, and HTML integrity checks
 
 ## Run locally
 
@@ -43,6 +43,15 @@ npm run build
 ```
 
 The generated site is written to `public/`.
+
+To run the verification suite:
+
+```sh
+npm run check              # Site audit and modular composition validation
+npm run test:intake        # In-memory SQLite durability, validation, and browser recovery tests
+npm run test:hosting       # Cloudflare Pages, Netlify, and static mirror build contract checks
+npm run build:cloudflare   # Assemble and audit the Cloudflare Pages deployment bundle
+```
 
 ## Sculpt a specialist site
 
@@ -95,7 +104,7 @@ domain (or pass `--baseURL` during the production build) and connect the form to
 that host's form service. The checked-in `https://example.org/` value is a safe
 local placeholder; Netlify replaces it automatically with `$URL`.
 
-## Before accepting commissions
+## Real-world operational checklist
 
 The site deliberately does not invent business facts. Confirm these operational
 items before public launch:
@@ -104,7 +113,7 @@ items before public launch:
 - Typical guest-count range and accessibility accommodations
 - Lead time, availability, cancellation, and rescheduling policy
 - Final service inclusions, rate calculation, and any commercial minimums
-- Who receives Netlify form notifications
+- Who receives consultation notifications (Netlify forms in baseline or Cloudflare D1 email routing in target)
 - Approved dragon-and-shield crest, if one exists
 - Trademark or game-system affiliation wording, if specific systems are named
 
@@ -122,6 +131,8 @@ usable without fabricated answers.
 - Relational networking & client outreach: `docs/how-to-dm-network-and-find-more-dm-clients.md`
 - Photography strategy & prompt system: `docs/image-plan.md`
 - Hosting, CI, and the staging mirror: `docs/hosting-ci-cd-gh-pages-setup.md`
+- Opt-in Cloudflare intake, setup, recovery, and cutover: `docs/site-operations.md`
+- Historical peripheral plan & architecture: `docs/site-peripheral-plan.md`
 - Internal production bible: `brand/PRODUCTION_BIBLE.md`
 - Brand-writing skill: `brand/SKILL.md`
 - Asset provenance: `brand/ASSET_REGISTER.md`
@@ -139,8 +150,13 @@ usable without fabricated answers.
 - Modular layout: `layouts/modular.html`
 - Local workshop layout: `layouts/module-showcase/single.html`
 - Sass source: `assets/scss/`
-- Interactions: `assets/js/site.js`, `assets/js/showcase.js`
-- Verification suite: `scripts/check.sh`, `scripts/audit_site.py`, `scripts/check_modules.py`
+- Interactions: `assets/js/site.js`, `assets/js/showcase.js`, `assets/js/intake.js`
+- Cloudflare edge functions: `functions/api/consultation.js`, `functions/api/notifications.js`
+- Intake validation & mail libraries: `lib/intake-core.mjs`, `lib/notification.mjs`
+- D1 Database migrations: `migrations/0001_consultations.sql`
+- Operational & verification scripts: `scripts/check.sh`, `scripts/build-cloudflare.mjs`, `scripts/check_cloudflare_build.py`, `scripts/retry-notification.mjs`
+- Static edge configs: `static/_headers`, `static/_redirects`, `static/_routes.json`
+- Local Wrangler preview config: `wrangler.local.jsonc`
 
 There is no theme dependency. `layouts/_partials/head.html` was originally
 derived from PaperMod's head partial; its MIT notice is kept in

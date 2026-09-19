@@ -175,10 +175,15 @@ at a root baseURL. Reproduce with the staging command above.
 **Custom domain for the mirror:** add `static/CNAME`, point DNS at GitHub,
 update `--baseURL` in `build.yml`, and relax the guard's prefix to `/`.
 
-**Promoting Pages to production:** the form must move first. It needs a
-third-party endpoint (Formspree, Getform, Basin) since Pages cannot capture a
+**Migrating to Cloudflare Pages:** see [`docs/site-operations.md`](site-operations.md).
+The repository implements a verified, opt-in Cloudflare Pages target with
+durable D1 SQL inquiry storage, an edge endpoint at `functions/api/consultation.js`,
+and `static/_headers` / `static/_redirects`.
+
+**Promoting GitHub Pages to production:** the form must move first. It needs a
+third-party endpoint (Formspree, Getform, Basin) since GitHub Pages cannot capture a
 POST. Accept also that the `netlify.toml` security headers have no equivalent on
-Pages — that is a real reduction in posture, not a formality.
+GitHub Pages — that is a real reduction in posture, not a formality.
 
 **Retiring the mirror:** delete the `deploy-staging` job and disable Pages in
 repository settings. Nothing else depends on it.
