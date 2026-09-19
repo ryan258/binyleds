@@ -6,6 +6,12 @@
 /node_modules/
 /.netlify/
 /.env
+/.env.*
+/.dev.vars*
+/.wrangler/
+/inquiries-exports/
+/wrangler.production.jsonc
+/wrangler.preview.jsonc
 *.log
 
 content/.DS_Store

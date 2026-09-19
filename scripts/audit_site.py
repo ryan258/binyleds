@@ -218,9 +218,18 @@ def audit() -> list[str]:
         else:
             if expected_form.get("method", "").lower() != "post":
                 failures.append("consultation form must use POST")
-            if "data-netlify" not in expected_form:
-                failures.append("consultation form lacks Netlify form capture")
-            if not expected_form.get("netlify-honeypot"):
+            if "data-cloudflare-intake" in expected_form:
+                if expected_form.get("action") != "/api/consultation":
+                    failures.append("Cloudflare consultation form has the wrong endpoint")
+                if not expected_form.get("data-sitekey"):
+                    failures.append("Cloudflare consultation form lacks a Turnstile sitekey")
+                if "data-netlify" in expected_form:
+                    failures.append("Cloudflare intake must not also enable Netlify capture")
+            elif "data-netlify" not in expected_form:
+                failures.append("consultation form lacks a configured intake backend")
+            elif expected_form.get("netlify-honeypot") != "company-website":
+                failures.append("Netlify form lacks its configured spam honeypot")
+            if not any(control.get("name") == "company-website" for control in consultation_parser.controls):
                 failures.append("consultation form lacks a spam honeypot")
 
         guest_count = next(

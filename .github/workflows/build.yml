@@ -34,6 +34,16 @@ jobs:
       - name: Build and audit
         run: bash scripts/check.sh
 
+      - name: Install Node for intake boundary tests
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "22"
+
+      - name: Verify inquiry intake and hosting modes
+        run: |
+          npm run test:intake
+          npm run test:hosting
+
   # Staging mirror only. Netlify remains production: it is the host that can
   # capture the consultation form, send the security headers in netlify.toml,
   # and serve the /consult and /book redirects. GitHub Pages can do none of
