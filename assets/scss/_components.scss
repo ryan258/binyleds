@@ -1002,6 +1002,9 @@ html[data-theme="light"] .section--parchment {
   margin-top: 2rem;
 }
 
+.consultation-form [hidden] { display: none !important; }
+.consultation-form button:disabled { opacity: .6; cursor: not-allowed; }
+
 .form-note {
   max-width: none;
   margin: 0.8rem 0 0;

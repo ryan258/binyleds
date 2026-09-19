@@ -1,4 +1,6 @@
 {{ define "main" }}
+{{- $cloudflare := eq site.Params.intakeBackend "cloudflare" -}}
+{{- $mirror := and (eq hugo.Environment "staging") (not $cloudflare) -}}
 <article id="main-content" class="consultation-page">
   {{ partial "page-hero.html" . }}
 
@@ -20,23 +22,38 @@
              anywhere on the staging mirror. Without this notice a shared link
              would look like a working inquiry form and silently discard a real
              enquiry. Production on Netlify never renders it. */}}
-      {{ if eq hugo.Environment "staging" }}
+      {{ if $mirror }}
       <p class="content-callout content-callout--reassurance" role="status">
         <strong>Staging preview.</strong> This form is not connected here and
         submissions are not received. Use the live site to request a consultation.
       </p>
+      {{ end }}
+      {{ if and $cloudflare (not hugo.IsProduction) }}
+      <p class="content-callout" role="status"><strong>Test intake.</strong> This preview saves test requests separately from the live site.</p>
       {{ end }}
 
       <form
       class="consultation-form"
       name="private-consultation"
       method="POST"
+      {{ if $cloudflare }}
+      action="/api/consultation"
+      data-cloudflare-intake
+      data-sitekey="{{ site.Params.turnstileSiteKey }}"
+      data-success-url="{{ "thank-you/" | relURL }}"
+      {{ else }}
       action="{{ "thank-you/" | relURL }}"
       data-netlify="true"
       netlify-honeypot="company-website"
+      {{ end }}
       aria-labelledby="consultation-form-title"
     >
+      {{ if $cloudflare }}
+      <input type="hidden" name="submission-id">
+      <input type="hidden" name="consent-version" value="{{ site.Params.intakeConsentVersion }}">
+      {{ else }}
       <input type="hidden" name="form-name" value="private-consultation">
+      {{ end }}
       <p class="form-honeypot" aria-hidden="true">
         <label>Leave this field empty <input name="company-website" tabindex="-1" autocomplete="off"></label>
       </p>
@@ -50,22 +67,22 @@
       <div class="form-grid">
         <div class="field">
           <label for="name">Your name <span aria-hidden="true">*</span></label>
-          <input id="name" name="name" type="text" autocomplete="name" required>
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="100" required>
         </div>
 
         <div class="field">
           <label for="email">Email <span aria-hidden="true">*</span></label>
-          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required>
         </div>
 
         <div class="field">
           <label for="phone">Phone <span class="field-optional">Optional</span></label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30">
         </div>
 
         <div class="field">
           <label for="city">Where would the evening take place? <span aria-hidden="true">*</span></label>
-          <input id="city" name="city" type="text" autocomplete="address-level2" placeholder="City or Northwest Arkansas area" required>
+          <input id="city" name="city" type="text" autocomplete="address-level2" placeholder="City or Northwest Arkansas area" maxlength="100" required>
         </div>
 
         <div class="field">
@@ -91,7 +108,7 @@
 
         <div class="field field--full">
           <label for="occasion">What brings everyone together? <span class="field-optional">Optional</span></label>
-          <input id="occasion" name="occasion" type="text" placeholder="A birthday, reunion, ordinary excellent evening...">
+          <input id="occasion" name="occasion" type="text" maxlength="200" placeholder="A birthday, reunion, ordinary excellent evening...">
         </div>
 
         <div class="field field--full">
@@ -108,13 +125,13 @@
 
         <div class="field field--full">
           <label for="vision">What would make the evening feel distinctly yours? <span aria-hidden="true">*</span></label>
-          <textarea id="vision" name="vision" rows="6" required></textarea>
+          <textarea id="vision" name="vision" rows="6" maxlength="4000" required></textarea>
           <p class="field-help">Interests, tone, favorite stories, group dynamics, or the feeling you want guests to carry home.</p>
         </div>
 
         <div class="field field--full">
           <label for="boundaries">Comfort, access, or accommodation notes <span class="field-optional">Optional</span></label>
-          <textarea id="boundaries" name="boundaries" rows="4"></textarea>
+          <textarea id="boundaries" name="boundaries" rows="4" maxlength="2000"></textarea>
           <p class="field-help">Share only what would help make the gathering welcoming. Details can also be discussed privately later.</p>
         </div>
 
@@ -124,9 +141,23 @@
         </label>
       </div>
 
-      <button class="button button--primary form-submit" type="submit">Request a private consultation</button>
+      {{ if $cloudflare }}
+      <div data-verification aria-label="Submission verification"></div>
+      <p data-intake-status role="status" aria-live="polite" tabindex="-1">Preparing the form. Your entries stay on this page if sending fails.</p>
+      <button type="button" class="button" data-retry-verification hidden>Retry verification</button>
+      <p>Prefer email, or having trouble? <a href="mailto:{{ site.Params.intakeContactEmail }}">{{ site.Params.intakeContactEmail }}</a></p>
+      <noscript><p>Verification requires JavaScript. Please use the email address above to request a consultation.</p></noscript>
+      {{ end }}
+      <button class="button button--primary form-submit" type="submit" {{ if or $mirror $cloudflare }}disabled{{ end }}>Request a private consultation</button>
+      {{ if $cloudflare }}
+      <button type="button" class="button" data-new-request hidden>Start a separate request</button>
+      {{ end }}
       <p class="form-note">This request begins a conversation. It does not reserve a date or create a payment obligation.</p>
       </form>
+      {{ if $cloudflare }}
+      {{ $script := resources.Get "js/intake.js" | js.Build (dict "targetPath" "assets/js/intake.js" "minify" true) | fingerprint }}
+      <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous" defer></script>
+      {{ end }}
     </div>
   </div>
 </article>

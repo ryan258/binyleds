@@ -30,10 +30,7 @@ It should not be sold or used for unrelated marketing without separate consent.
 
 ## Where submissions are processed
 
-When this site is hosted on Netlify, the form is processed and stored by
-Netlify’s form service. The site owner controls who receives submission
-notifications and should configure an appropriate retention practice before
-public launch.
+{{< intake-processing >}}
 
 ## Access, correction, or deletion
 
@@ -46,4 +43,3 @@ record, subject to any legitimate record-keeping need explained at the time.
 This note should be reviewed whenever the form provider, data use, notification
 recipients, or retention practice changes. The public version must describe the
 actual operating practice rather than an aspirational one.
-
