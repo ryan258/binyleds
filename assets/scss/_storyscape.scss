@@ -1,0 +1,127 @@
+@use "tokens";
+
+.storyscape-wordmark {
+  display: block;
+  width: 230px;
+  max-width: 100%;
+
+  img { width: 100%; height: auto; }
+}
+
+.storyscape-wordmark .storyscape-wordmark__ink,
+.storyscape-wordmark__compact {
+  display: none;
+}
+
+.site-header .storyscape-wordmark {
+  display: grid;
+  align-content: center;
+  min-height: 44px;
+}
+
+html[data-theme="light"] .site-header {
+  .storyscape-wordmark__reverse { display: none; }
+  .storyscape-wordmark__ink { display: block; }
+}
+
+.site-footer .brand-home--wordmark {
+  --focus-color: var(--mint);
+  display: inline-block;
+  max-width: 100%;
+}
+
+.home-hero--artwork {
+  min-height: auto;
+  padding-block: clamp(3.5rem, 7vw, 7.5rem);
+  background: var(--canvas);
+
+  .home-hero__grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+  }
+
+  .hero-title {
+    max-width: none;
+    font-size: clamp(3.25rem, 5.5vw, 5rem);
+    line-height: 1;
+  }
+}
+
+.artwork-figure {
+  min-width: 0;
+  margin: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid var(--rule);
+    background: var(--surface-quiet);
+  }
+
+  figcaption {
+    margin-block-start: 0.65rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+}
+
+.home-hero__artwork img {
+  aspect-ratio: 5 / 6;
+  object-position: 74% 50%;
+}
+
+.page-hero--artwork .page-hero__grid {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.page-hero--text-only .page-hero__grid { grid-template-columns: minmax(0, 1fr); }
+
+.process-number.process-glyph { margin-bottom: 2.25rem; }
+
+.module-gallery--pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  figure:first-child { grid-row: auto; }
+  img,
+  figure:first-child img { aspect-ratio: 3 / 2; }
+}
+
+@media (max-width: tokens.$bp-tablet) {
+  .home-hero--artwork .home-hero__grid,
+  .page-hero--artwork .page-hero__grid,
+  .module-gallery--pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-hero__artwork img {
+    aspect-ratio: 3 / 2;
+    object-position: center;
+  }
+
+  .process-number.process-glyph { margin: 0; }
+}
+
+@media (max-width: 430px) {
+  .site-header .storyscape-wordmark {
+    display: flex;
+    align-items: center;
+    width: auto;
+    min-height: 44px;
+
+    img.storyscape-wordmark__reverse,
+    img.storyscape-wordmark__ink { display: none; }
+  }
+
+  .storyscape-wordmark__compact {
+    display: block;
+    max-width: 11ch;
+    font-family: tokens.$display;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+}

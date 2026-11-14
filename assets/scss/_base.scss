@@ -1,3 +1,5 @@
+@use "tokens";
+
 *,
 *::before,
 *::after {
@@ -17,7 +19,7 @@ body {
     linear-gradient(115deg, rgba(115, 208, 171, 0.018), transparent 32%),
     var(--canvas);
   color: var(--ink);
-  font-family: $body;
+  font-family: tokens.$body;
   font-size: 17px;
   line-height: 1.7;
   text-rendering: optimizeLegibility;
@@ -84,7 +86,7 @@ h1,
 h2,
 h3 {
   color: var(--ink-strong);
-  font-family: $display;
+  font-family: tokens.$display;
   font-weight: 500;
   letter-spacing: -0.03em;
 }
@@ -115,7 +117,7 @@ blockquote {
   padding: 0.35rem 0 0.35rem 1.75rem;
   border-left: 1px solid var(--antique-gold);
   color: var(--ink-strong);
-  font-family: $display;
+  font-family: tokens.$display;
   font-size: clamp(1.55rem, 2.5vw, 2.1rem);
   font-style: italic;
   line-height: 1.35;
@@ -140,13 +142,13 @@ blockquote {
 }
 
 .eyebrow {
-  @include eyebrow;
+  @include tokens.eyebrow;
   margin-bottom: 1.1rem;
 }
 
 .signature-line {
   color: var(--gold-text);
-  font-family: $display;
+  font-family: tokens.$display;
   font-size: 1.15rem;
   font-style: italic;
   letter-spacing: 0.01em;

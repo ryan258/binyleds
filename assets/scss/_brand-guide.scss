@@ -1,3 +1,5 @@
+@use "tokens";
+
 .guide-hero {
   padding-block: clamp(80px, 10vw, 140px);
   border-bottom: 1px solid var(--rule);
@@ -49,7 +51,7 @@
 }
 
 .guide-seal span {
-  font-family: $display;
+  font-family: tokens.$display;
   font-size: 4rem;
   line-height: 1;
 }
@@ -92,7 +94,7 @@ html[data-theme="light"] .guide-toolbar {
 }
 
 .guide-search span {
-  @include eyebrow;
+  @include tokens.eyebrow;
   color: var(--faint);
 }
 
@@ -137,7 +139,7 @@ html[data-theme="light"] .guide-toolbar {
 }
 
 .guide-nav > p {
-  @include eyebrow;
+  @include tokens.eyebrow;
   margin-bottom: 1rem;
 }
 
@@ -170,7 +172,7 @@ html[data-theme="light"] .guide-toolbar {
 .guide-nav a:not(.text-link)::before {
   content: counter(guide-nav, decimal-leading-zero);
   color: var(--gold-text);
-  font-family: $display;
+  font-family: tokens.$display;
 }
 
 .guide-nav a:hover {
@@ -201,7 +203,7 @@ html[data-theme="light"] .guide-toolbar {
 .guide-section__heading > span {
   padding-top: 0.6rem;
   color: var(--gold-text);
-  font-family: $display;
+  font-family: tokens.$display;
   font-size: 1.25rem;
 }
 
@@ -235,7 +237,7 @@ html[data-theme="light"] .guide-toolbar {
 .guide-feature-statement p:last-child {
   margin-bottom: 0;
   color: var(--muted);
-  font-family: $display;
+  font-family: tokens.$display;
   font-size: 1rem;
   font-style: italic;
   letter-spacing: 0;
@@ -273,7 +275,7 @@ html[data-theme="light"] .guide-toolbar {
 
 .definition-grid dt,
 .card-index {
-  @include eyebrow;
+  @include tokens.eyebrow;
   margin-bottom: 0.55rem;
 }
 
@@ -305,7 +307,7 @@ html[data-theme="light"] .guide-toolbar {
 .guide-warning h3,
 .compliance-checklist h3 {
   margin-bottom: 1rem;
-  font-family: $body;
+  font-family: tokens.$body;
   font-size: 0.95rem;
   font-weight: 800;
   letter-spacing: 0;
@@ -355,7 +357,7 @@ html[data-theme="light"] .guide-toolbar {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   color: var(--ink-strong);
-  font-family: $display;
+  font-family: tokens.$display;
   font-size: 1.45rem;
   cursor: pointer;
   list-style: none;
@@ -481,13 +483,13 @@ html[data-theme="light"] .guide-toolbar {
 .message-hierarchy li > span,
 .standards-list li > span {
   color: var(--gold-text);
-  font-family: $display;
+  font-family: tokens.$display;
   font-size: 1.15rem;
 }
 
 .message-hierarchy h3 {
   margin-bottom: 0.3rem;
-  font-family: $body;
+  font-family: tokens.$body;
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0;
@@ -550,7 +552,7 @@ html[data-theme="light"] .guide-toolbar {
 .voice-ratio strong {
   display: block;
   color: var(--gold-text);
-  font-family: $display;
+  font-family: tokens.$display;
   font-size: 1.4rem;
 }
 
@@ -601,7 +603,7 @@ html[data-theme="light"] .guide-toolbar {
 
 .swatch h3 {
   margin-bottom: 0.25rem;
-  font-family: $body;
+  font-family: tokens.$body;
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0;
@@ -637,7 +639,7 @@ html[data-theme="light"] .guide-toolbar {
 
 .type-specimen--display h3,
 .type-specimen--display .type-sample {
-  font-family: $display;
+  font-family: tokens.$display;
 }
 
 .type-sample {

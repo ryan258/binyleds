@@ -25,22 +25,48 @@
     });
   }
 
-  const updateThemeLabel = () => {
-    if (!themeToggle) return;
-    const current = root.dataset.theme === "light" ? "light" : "dark";
-    const next = current === "dark" ? "light" : "dark";
-    themeToggle.setAttribute("aria-label", `Switch to ${next} theme`);
-    themeToggle.setAttribute("title", `Switch to ${next} theme`);
+  const storage = {
+    get(key) { try { return localStorage.getItem(key); } catch { return null; } },
+    set(key, value) { try { localStorage.setItem(key, value); return true; } catch { return false; } },
   };
-
-  if (themeToggle) {
-    updateThemeLabel();
-    themeToggle.addEventListener("click", () => {
-      const next = root.dataset.theme === "dark" ? "light" : "dark";
-      root.dataset.theme = next;
-      localStorage.setItem("pref-theme", next);
-      updateThemeLabel();
-    });
+  const colorScheme = window.matchMedia('(prefers-color-scheme: light)');
+  let themeChoice = storage.get('pref-theme');
+  if (!['light', 'dark', 'system'].includes(themeChoice)) themeChoice = 'system';
+  const applyTheme = () => {
+    root.dataset.theme = themeChoice === 'system' ? (colorScheme.matches ? 'light' : 'dark') : themeChoice;
+    if (themeToggle) {
+      const next = { system: 'light', light: 'dark', dark: 'system' }[themeChoice];
+      themeToggle.textContent = `Theme: ${themeChoice}`;
+      themeToggle.setAttribute('aria-label', `Theme: ${themeChoice}. Switch to ${next}.`);
+    }
+  };
+  applyTheme();
+  colorScheme.addEventListener('change', applyTheme);
+  themeToggle?.addEventListener('click', () => {
+    themeChoice = { system: 'light', light: 'dark', dark: 'system' }[themeChoice];
+    storage.set('pref-theme', themeChoice); applyTheme();
+  });
+  const motionToggle = document.querySelector('[data-motion-toggle]');
+  const systemMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let motionChoice = storage.get('pref-motion') === 'reduce' ? 'reduce' : 'system';
+  const applyMotion = () => {
+    root.dataset.motion = motionChoice === 'reduce' || systemMotion.matches ? 'reduce' : 'full';
+    if (motionToggle) {
+      motionToggle.textContent = motionChoice === 'reduce' ? 'Motion: paused' : 'Motion: system';
+      motionToggle.setAttribute('aria-pressed', String(motionChoice === 'reduce'));
+    }
+  };
+  applyMotion(); systemMotion.addEventListener('change', applyMotion);
+  motionToggle?.addEventListener('click', () => {
+    motionChoice = motionChoice === 'reduce' ? 'system' : 'reduce';
+    storage.set('pref-motion', motionChoice); applyMotion();
+  });
+  const receipt = document.querySelector('[data-receipt]');
+  if (receipt) {
+    const id = new URLSearchParams(window.location.hash.slice(1)).get('receipt');
+    if (/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id || '')) {
+      receipt.textContent = `Reference from your submission: ${id}. Keep it if you need to follow up.`;
+    }
   }
 
   const updateScrollState = () => {
@@ -60,19 +86,8 @@
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 980) setMenu(false);
+    if (window.innerWidth > 1180) setMenu(false);
   });
-
-  const preferredDate = document.getElementById("preferred-date");
-  if (preferredDate) {
-    const today = new Date();
-    const localDate = [
-      today.getFullYear(),
-      String(today.getMonth() + 1).padStart(2, "0"),
-      String(today.getDate()).padStart(2, "0")
-    ].join("-");
-    preferredDate.min = localDate;
-  }
 
   const guide = document.querySelector("[data-brand-guide]");
   if (!guide) return;
@@ -112,6 +127,24 @@
     }
   });
 
+  const revealGuideTarget = () => {
+    let id; try { id = decodeURIComponent(window.location.hash.slice(1)); } catch { return; }
+    const target = document.getElementById(id);
+    if (!target || !guide.contains(target)) return;
+    if (search) search.value = '';
+    applyGuideSearch();
+    let ancestor = target;
+    while (ancestor && ancestor !== guide) { if (ancestor.tagName === 'DETAILS') ancestor.open = true; ancestor = ancestor.parentElement; }
+    target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+    target.scrollIntoView({ block: 'start' });
+  };
+  guide.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', () => {
+    if (search) search.value = ''; applyGuideSearch();
+  }));
+  window.addEventListener('hashchange', revealGuideTarget);
+  revealGuideTarget();
+
   expandButton?.addEventListener("click", () => {
     const details = [...guide.querySelectorAll("details")];
     const shouldOpen = details.some((detail) => !detail.open);
@@ -128,8 +161,9 @@
 
   const copyText = async (value, button) => {
     const original = button.textContent;
+    let copied = false;
     try {
-      await navigator.clipboard.writeText(value);
+      await navigator.clipboard.writeText(value); copied = true;
     } catch {
       const textarea = document.createElement("textarea");
       textarea.value = value;
@@ -138,10 +172,10 @@
       textarea.style.opacity = "0";
       document.body.appendChild(textarea);
       textarea.select();
-      document.execCommand("copy");
+      try { copied = document.execCommand("copy"); } catch { copied = false; }
       textarea.remove();
     }
-    button.textContent = "Copied";
+    button.textContent = copied ? "Copied" : "Copy unavailable — select the text";
     window.setTimeout(() => { button.textContent = original; }, 1600);
   };
 
@@ -160,16 +194,18 @@
     savedChecks = {};
   }
 
+  if (!savedChecks || typeof savedChecks !== "object" || Array.isArray(savedChecks)) savedChecks = {};
+
   const updateChecklist = () => {
     const state = {};
     checks.forEach((check) => { state[check.dataset.brandCheck] = check.checked; });
-    localStorage.setItem(storageKey, JSON.stringify(state));
+    const persisted = storage.set(storageKey, JSON.stringify(state));
     const complete = checks.filter((check) => check.checked).length;
-    if (progress) progress.textContent = `${complete} of ${checks.length} complete`;
+    if (progress) progress.textContent = `${complete} of ${checks.length} complete${persisted ? "" : " · saved for this page only"}`;
   };
 
   checks.forEach((check) => {
-    check.checked = Boolean(savedChecks[check.dataset.brandCheck]);
+    check.checked = savedChecks[check.dataset.brandCheck] === true;
     check.addEventListener("change", updateChecklist);
   });
   updateChecklist();

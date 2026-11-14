@@ -1,4 +1,6 @@
-@media (max-width: $bp-wide) {
+@use "tokens";
+
+@media (max-width: tokens.$bp-wide) {
   .site-menu {
     gap: 0;
   }
@@ -13,7 +15,7 @@
   }
 }
 
-@media (max-width: $bp-nav) {
+@media (max-width: tokens.$bp-nav) {
   :root {
     --header-height: 76px;
   }
@@ -152,7 +154,7 @@
   }
 }
 
-@media (max-width: $bp-tablet) {
+@media (max-width: tokens.$bp-tablet) {
   :root {
     --section-space: 80px;
   }
@@ -282,7 +284,7 @@
   }
 }
 
-@media (max-width: $bp-mobile) {
+@media (max-width: tokens.$bp-mobile) {
   :root {
     --gutter: 24px;
     --section-space: 68px;

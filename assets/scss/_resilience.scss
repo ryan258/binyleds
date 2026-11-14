@@ -1,0 +1,39 @@
+@use "tokens";
+
+// Surface colors must remain legible regardless of the page's selected theme.
+.section--parchment {
+  --focus-color: #155b4e;
+  --gold-text: #76571d;
+  --rule: #76571d;
+}
+.section--forest, .closing-cta {
+  --focus-color: #73d0ab;
+  --gold-text: #d8b870;
+  --rule: #d8b870;
+}
+[data-motion="reduce"] {
+  &, * { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+.form-grid { border: 0; padding: 0; margin: 0; min-width: 0; }
+.field input, .field select, .field textarea { font-size: 1rem; }
+.field-help, .form-note { font-size: 0.875rem; }
+[aria-invalid="true"] { outline: 2px solid var(--danger); outline-offset: 2px; }
+[data-intake-errors] { border: 2px solid var(--danger); padding: 1rem; }
+.draft-actions { display: grid; gap: 0.75rem; margin-block: 1.5rem; }
+.theme-control { width: auto; height: auto; min-height: 44px; min-width: 44px; padding: 0.5rem; font-size: 0.75rem; white-space: nowrap; }
+@media (max-width: 800px) {
+  .consultation-page .page-hero { padding-block: 2rem; }
+}
+@media print {
+  .draft-actions, [data-verification], .theme-control { display: none !important; }
+}
+
+.consultation-grid { grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.7fr); }
+@media (max-width: 800px) { .consultation-grid { grid-template-columns: 1fr; } }
+
+@media (max-width: tokens.$bp-nav) {
+  .nav-panel { grid-template-columns: minmax(0, 1fr) auto; }
+  .site-menu { grid-column: 1; grid-row: 1 / span 2; }
+  .theme-control { grid-column: 2; justify-self: stretch; }
+}

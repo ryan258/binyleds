@@ -1,3 +1,5 @@
+@use "tokens";
+
 .site-section {
   scroll-margin-top: calc(var(--header-height) + 24px);
 }
@@ -42,7 +44,7 @@
   font-size: 0.88rem;
 
   th, td { padding: 1.4rem; vertical-align: top; border: 1px solid var(--rule); }
-  thead th { width: 25%; font-family: $display; font-size: 1.7rem; font-weight: 500; color: var(--ink-strong); }
+  thead th { width: 25%; font-family: tokens.$display; font-size: 1.7rem; font-weight: 500; color: var(--ink-strong); }
   tbody th { font-size: 0.75rem; color: var(--gold-text); }
   td { color: var(--muted); }
 }
@@ -51,11 +53,11 @@
 .adventure-card {
   border-top: 3px solid var(--antique-gold);
   background: linear-gradient(160deg, rgba(193, 154, 82, 0.07), transparent), var(--surface);
-  .adventure-choice { color: var(--ink-strong); font-family: $display; font-size: 1.55rem; font-style: italic; line-height: 1.35; }
+  .adventure-choice { color: var(--ink-strong); font-family: tokens.$display; font-size: 1.55rem; font-style: italic; line-height: 1.35; }
   .adventure-play { margin-top: auto; margin-bottom: 0; padding-top: 1.3rem; border-top: 1px solid var(--rule); font-size: 0.78rem; }
 }
 .adventure-card__masthead { margin-bottom: 2rem; }
-.adventure-number { color: var(--gold-text); font-family: $display; font-size: 3.5rem; line-height: 1.2; }
+.adventure-number { color: var(--gold-text); font-family: tokens.$display; font-size: 3.5rem; line-height: 1.2; }
 .module-gallery {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -99,14 +101,14 @@
 .showcase-empty { padding-bottom: 4rem; }
 .showcase-page [hidden] { display: none !important; }
 
-@media (max-width: $bp-nav) {
+@media (max-width: tokens.$bp-nav) {
   .module-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (max-width: $bp-tablet) {
+@media (max-width: tokens.$bp-tablet) {
   .module-gallery { grid-template-columns: 1fr; }
   .module-gallery figure:first-child img { aspect-ratio: 16 / 9; }
 }
-@media (max-width: $bp-mobile) {
+@media (max-width: tokens.$bp-mobile) {
   .module-card-grid { grid-template-columns: 1fr; }
   .showcase-hero h1 { font-size: 3rem; }
   .showcase-label { display: block; }
