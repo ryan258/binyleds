@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="consultation-title" aria-describedby="consultation-desc">
+  <title id="consultation-title">Consultation</title>
+  <desc id="consultation-desc">Speech bubble with two lines.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 3.75h12A2.25 2.25 0 0 1 20.25 6v8A2.25 2.25 0 0 1 18 16.25h-6.5L6 20.25v-4A2.25 2.25 0 0 1 3.75 14V6A2.25 2.25 0 0 1 6 3.75Z"/>
+    <path d="M8 8.25h8M8 11.75h5"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="home-title" aria-describedby="home-desc">
+  <title id="home-title">Home</title>
+  <desc id="home-desc">House with a centered doorway.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.75 11 12 3.75 21.25 11M5.25 9.75v10.5h13.5V9.75M10 20.25V14h4v6.25"/>
+  </g>
+</svg>

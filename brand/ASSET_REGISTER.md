@@ -1,12 +1,12 @@
 # Brand asset register
 
-## Social preview card
+## Earlier social preview card
 
 - **File:** `static/images/storyscape-social-card.png`
 - **Dimensions:** 1672 x 941 px
-- **Purpose:** Open Graph and large social-link previews
+- **Original purpose:** Open Graph and large social-link previews
 - **Created:** 2026-08-06 with the built-in image-generation tool
-- **Status:** Approved for the first production release
+- **Status:** Retained in the release inventory. The November `images/storyscape/social-link.png` is the current Storyscape metadata image. The earlier register records first-release approval. Broader reuse rights remain pending.
 
 ### Final production prompt
 
@@ -57,3 +57,65 @@ python3 scripts/generate_favicons.py
 The WOFF2 files are self-hosted under `static/fonts/`. Both families use the SIL
 Open Font License; license texts are stored in `LICENSES/`.
 
+
+## Earlier illustrative scene WebPs
+
+The six earlier concept illustrations remain in the release inventory. The current
+Storyscape composition uses the November scenes below. The uses in this table are
+historical. Generation records, dates, and redistribution permissions remain open.
+
+| File under `static/images/` | Earlier editorial use | Provenance / reuse status |
+| --- | --- | --- |
+| `home-hero.webp` | Homepage atmosphere | Source record and reuse confirmation pending |
+| `experience-hero.webp` | Experience hero and gallery | Source record and reuse confirmation pending |
+| `how-it-works-hero.webp` | Process hero and gallery | Source record and reuse confirmation pending |
+| `about-hero.webp` | Approach hero | Source record and reuse confirmation pending |
+| `for-your-table-hero.webp` | Welcoming-table hero and gallery | Source record and reuse confirmation pending |
+| `experience-callout.webp` | Experience illustration | Source record and reuse confirmation pending |
+
+The Hugo static mount excludes the ignored original PNGs under `static/images/temp/`.
+The release manifest controls the build’s file inventory. See the reuse policy for
+redistribution status. [Release manifest](../data/release.json) · [Reuse policy](../REUSE.md)
+
+## Wayfarer Table example graphic
+
+`static/images/remote-social.svg` is a text and vector graphic for the fictional
+remote profile. That profile uses it for social metadata and its icons. Social
+platform rendering and original-project redistribution rights remain unverified.
+[Remote configuration](../config/remote.json) · [Reuse policy](../REUSE.md)
+
+## November 2026 owner kit
+
+The [brand kit](README.md) includes original exports of the established visual
+system, two new illustrative scenes, and collateral using those scenes.
+The vector wordmarks use outlined Cormorant Garamond and Manrope from the
+repository. The utility seal reproduces the BS digital mark. The glyph family
+was drawn for this kit. See [identity and glyph usage](visual-usage.md) for
+minimum sizes, pairing, and implementation.
+
+| New asset | Source and status |
+| --- | --- |
+| [Identity SVG masters and PNG exports](assets/identity/) | Existing brand name, typography, and utility-seal design exported as reusable files. Owner review before external use. |
+| [Glyph masters, sprite, and specimen](assets/glyphs/) | Original vector set from November 2026. Owner review before external use. |
+| [The Prepared Table](assets/imagery/prepared-table.webp) | Built-in ImageGen, November 12, 2026, 1536 × 1024 WebP. Illustrative concept. |
+| [World in the Details](assets/imagery/world-in-the-details.webp) | Built-in ImageGen, November 12, 2026, 1536 × 1024 WebP. Illustrative concept. |
+| [Brand standards](brand-standards.pdf), [mood boards](mood-boards/), [collateral](collateral/) | Derived from the above art and the live brand palette and type. Editable [copy](collateral/copy.json) and [export source](render.py). Owner previews. |
+
+These entries record provenance. The [reuse policy](../REUSE.md) governs
+redistribution. Display the scene as concept imagery and avoid representing it
+as a real gathering, client, or evidence of materials supplied.
+
+The Storyscape profiles use 720 × 480 and 1200 × 800 WebP renditions of each scene,
+the two wordmark SVGs, the process glyph sprite, and the 1200 × 630 link preview.
+Artwork data supplies scene paths and alt text. The figure template gives the
+hero artwork a visible “AI-generated concept artwork” caption. [Web exports](../static/images/storyscape/) · [Artwork data](../data/storyscape_artwork.yaml) · [Figure template](../layouts/_partials/storyscape-photo.html)
+
+### Built-in ImageGen prompts
+
+**The Prepared Table**
+
+> Generate a single landscape 3:2 high-end editorial photograph for the 'Prepared Table' art-direction board of Binyled’s Storyscape, a private in-home tabletop roleplaying service in Northwest Arkansas. A normal, beautifully cared-for walnut dining table at blue hour in a welcoming home, viewed at seated height, two adults' hands sharing a folded unlettered cream map and a tiny brushed brass polyhedral die, water glasses and dark green woven runner, with one warmly lit lamp. Dark forest and parchment neutrals with warm human hands. Compose the action on the right half, but keep enough interest to crop the right half as a full-height portrait. Close and intimate, tactile and natural, quiet hospitality, photographic realism, plausible anatomy and props, gentle depth of field, clean shadows with detail. No visible faces, text, letters, insignia, logos, candles, weapons, glowing magic, game-box branding, costumes or wealth signaling. No collage or type overlay.
+
+**World in the Details**
+
+> Generate a single landscape 3:2 high-end editorial detail photograph for the 'World in the Details' art-direction board of Binyled’s Storyscape, a private in-home tabletop roleplaying service in Northwest Arkansas. A close overhead view of a cream paper hand-drawn fictional shoreline map, thin restrained cartographic strokes and absolutely no labels, its edge overlapping an olive green book cloth swatch on dark walnut, one muted brass polyhedral die at the shoreline and a plain dark verdigris pencil. Place the die and strongest contour in the center-right so the frame works as a right-side vertical crop. Low warm grazing sidelight creates tactile details, with readable midtones. Hand-prepared play material, real fibers and patina, intimate human scale, restrained editorial photography. No people, text, alphabet, logos, game trademarks, glow, weapons, crests or ornate framing. No collage or type overlay.

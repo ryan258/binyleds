@@ -22,6 +22,10 @@ adventures and artwork; keep unapproved trust and booking scaffolds local.
 4. Speak as one practitioner using “I”; use “you” to keep the host central.
 5. Never invent biography, credentials, inclusions, testimonials, pricing,
    capacity, service area, policies, or affiliation claims.
+6. Match the invitation to the operating mode. The default Storyscape build
+   uses “Preview the consultation.” Use “Request a private consultation” for a
+   service with owner-approved scope and a verified contact path. For a public
+   portfolio, identify the site as an example at the entry point.
 
 ## Voice profiles
 
@@ -39,7 +43,7 @@ discreet concierge**.
 1. Practical reassurance
 2. Specific act of care
 3. Imaginative payoff
-4. Calm consultation invitation
+4. Calm next step for the selected operating mode
 
 ## Output template
 
@@ -52,7 +56,7 @@ discreet concierge**.
 
 [One restrained imaginative image that returns agency to the guests.]
 
-[Specific consultation invitation.]
+[Specific next step for the example or active service.]
 ```
 
 ## What not to do

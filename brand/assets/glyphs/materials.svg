@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="materials-title" aria-describedby="materials-desc">
+  <title id="materials-title">Materials</title>
+  <desc id="materials-desc">Open box with a visible center seam.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m4.75 10.25 7.25-3 7.25 3L12 13.5l-7.25-3.25Zm0 0v7.5L12 21l7.25-3.25v-7.5M12 13.5V21m-7.25-10.75L3 7l7.25-3L12 7.25 13.75 4 21 7l-1.75 3.25"/>
+  </g>
+</svg>

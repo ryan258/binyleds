@@ -15,9 +15,10 @@ and booking scaffolds are not public evidence or connected business functions.
 ## What is it
 
 Binyled’s Storyscape is a bespoke in-home tabletop roleplaying experience. A
-private host gathers the people; the Storyscape practitioner prepares and guides
-the world. The first public product is **The Private Storyscape**, a single-evening
-commission created around the guests.
+private host gathers the people. The Storyscape practitioner prepares and guides
+the world. **The Private Storyscape** is the named one-evening commission concept
+shown in the default exemplar. The exemplar previews the consultation with intake
+disabled. The owner decides whether to offer the service. [Readiness ledger](../docs/readiness.md)
 
 ## Setting
 
@@ -39,7 +40,8 @@ promise is clear.
 4. Keep the host and guests at the center; the game master is the guide.
 5. Move from practical reassurance to a specific act of care, then to an
    imaginative payoff.
-6. End with a calm invitation to a private consultation.
+6. End with a clear next step for the current operating mode. Point to the
+   preview or a worked example when intake is disabled.
 
 ## What it is not
 
@@ -88,6 +90,8 @@ promise is clear.
 
 ## Production window
 
-The site is a static Hugo project. New copy should be drafted against the brand
-guide, checked with `npm run check`, and published through the configured host.
-Small content updates should remain possible without redesigning templates.
+Hugo renders the service pages, with optional Cloudflare or Netlify intake
+configured separately. Draft new copy against the brand guide and use
+`npm run check` for local build, module, and output checks. The operations guide
+covers the profile and intake acceptance needed for an owner-approved release.
+[Site operations](../docs/site-operations.md)

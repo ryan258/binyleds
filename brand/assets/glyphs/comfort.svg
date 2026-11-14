@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="comfort-title" aria-describedby="comfort-desc">
+  <title id="comfort-title">Comfort</title>
+  <desc id="comfort-desc">Heart with two rounded lobes.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19.25 4.75 12.2a4.33 4.33 0 0 1 6.1-6.15L12 7.2l1.15-1.15a4.33 4.33 0 0 1 6.1 6.15L12 19.25Z"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="story-title" aria-describedby="story-desc">
+  <title id="story-title">Story</title>
+  <desc id="story-desc">Open book with a visible center fold.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 6.5C9.5 4.75 6.75 4.5 3.5 5.25v12.5c3.25-.75 6-.5 8.5 1.25 2.5-1.75 5.25-2 8.5-1.25V5.25c-3.25-.75-6-.5-8.5 1.25Zm0 0V19"/>
+  </g>
+</svg>

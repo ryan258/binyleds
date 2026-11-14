@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="map-title" aria-describedby="map-desc">
+  <title id="map-title">Map</title>
+  <desc id="map-desc">Folded map with alternating panels.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m3.5 6.5 5.5-2 6 2 5.5-2V18l-5.5 2-6-2-5.5 2V6.5Zm5.5-2V18m6-11.5V20"/>
+  </g>
+</svg>

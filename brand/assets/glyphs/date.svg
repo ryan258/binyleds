@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="date-title" aria-describedby="date-desc">
+  <title id="date-title">Date</title>
+  <desc id="date-desc">Calendar with a single marked day.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="5.5" width="16" height="14.75" rx="1.75"/>
+    <path d="M8.25 3.75v3.5m7.5-3.5v3.5M4 10.25h16m-9.5 5h3"/>
+  </g>
+</svg>

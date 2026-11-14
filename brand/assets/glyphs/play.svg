@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="play-title" aria-describedby="play-desc">
+  <title id="play-title">Play</title>
+  <desc id="play-desc">Faceted twenty-sided die silhouette.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m12 3.25 7.75 4.5v8.5L12 20.75l-7.75-4.5v-8.5L12 3.25Zm0 2L6 15h12L12 5.25ZM6 15l6 5.75L18 15M4.25 7.75 6 15m13.75-7.25L18 15"/>
+  </g>
+</svg>
