@@ -1,163 +1,114 @@
 # Binyled’s Storyscape
 
-A comprehensive Hugo master site to sculpt into specialist service websites,
-expressed first as a professional DM and tabletop-party brand in Bentonville
-and Northwest Arkansas. The project uses Hugo
-Extended with no theme, a custom Sass design system, and a native Netlify
-inquiry form. Every template in `layouts/` belongs to this project.
+A modular Hugo exemplar for thoughtful tabletop game-master sites and working
+materials. Storyscape is the in-home hospitality example; Wayfarer Table is a
+fictional remote-play example. This repository is a personal toolkit. The
+professional-service workflows are optional examples, not a requirement to launch
+a business or accept bookings.
 
-## What is included
+The local implementation includes reusable sections, configurable identity,
+keyboard and motion controls, optional inquiry storage, a short-command
+operator inbox, and a worked session pack. The [readiness ledger](docs/readiness.md)
+records the checks that passed, open source issues, and what would need real
+browser or provider acceptance.
 
-- Configurable homepage with independently selectable, reorderable sections
-- Sixteen reusable modules plus two local editorial scaffolds, three hero
-  directions, and two service collections
-- Draft-only local module workshop at `/module-showcase/`
-- Service, adventure, occasion, and host-guide pages, alongside the original routes
-- The Experience, How It Works, For Your Table, About, Questions, and
-  Consultation routes
-- A searchable, print-friendly HTML brand guide at `/brand-guide/`
-- Honest copy that avoids unverified credentials, fabricated testimonials, and
-  invented pricing
-- Dark and light themes, reduced-motion support, keyboard navigation, visible
-  focus states, and responsive layouts
-- Open Graph and Twitter card artwork, favicon set, sitemap, robots rules, and
-  JSON-LD structured metadata
-- Netlify form capture, spam honeypot, security headers, redirects, and deploy
-  configuration; opt-in Cloudflare D1 intake with edge verification and durable storage
-- Deterministic build, intake durability, and HTML integrity checks
+## Start here
 
-## Run locally
-
-Requirements: Hugo Extended 0.156 or newer (the templates use `hugo.Data`). The
-project is verified with Hugo 0.164.0, which is the version pinned in
-`netlify.toml` and CI.
+Use Hugo Extended **0.164.0** to match the checked-in GitHub Actions and Netlify
+pin, native Dart Sass on `PATH`, Node **22.13+**, and Python 3. On macOS, install
+Dart Sass with `brew install sass/sass/sass`. `hugo env` should list the Dart Sass compiler.
+There are no npm package dependencies to install.
 
 ```sh
 npm run dev
 ```
 
-Open the local address printed by Hugo. To create the production site:
+Open the address Hugo prints. The draft-only `/module-showcase/` shows every
+registered module and variant. Its filters do not change saved compositions.
+Intake is disabled unless a build explicitly selects a supported backend.
 
 ```sh
-npm run build
+npm run build          # Audited, noindex exemplar at the local base URL
+npm run build:remote   # Audited, fictional Wayfarer Table profile
+npm run session        # New private working copy of the Lantern Bay session pack
 ```
 
-The generated site is written to `public/`.
+Builds clean `public/` or the directory you set as `BUILD_DESTINATION`.
+The session command creates a new ignored folder under `.local/sessions/` and
+prints its path. See [readiness](docs/readiness.md#local-checks) for verification
+commands and results.
 
-To run the verification suite:
+## Choose a profile and host
 
-```sh
-npm run check              # Site audit and modular composition validation
-npm run test:intake        # In-memory SQLite durability, validation, and browser recovery tests
-npm run test:hosting       # Cloudflare Pages, Netlify, and static mirror build contract checks
-npm run build:cloudflare   # Assemble and audit the Cloudflare Pages deployment bundle
-```
+| Profile | Purpose | Internal brand guide | Inquiry default |
+| --- | --- | --- | --- |
+| `exemplar` | Full Storyscape reference site | Included, noindex; publicly readable if hosted | Disabled |
+| `client` | Public Storyscape website | Excluded from output | Disabled unless explicitly selected |
+| `remote` | Fictional Wayfarer Table reuse example | Excluded | Disabled; keep it that way |
 
-## Sculpt a specialist site
+For a client build, set `SITE_PROFILE=client` and the actual `SITE_URL`. Set
+`SITE_ENV=production` only for the intended indexable release. The checked-in
+Netlify production command selects Netlify Forms and requires a real
+`INTAKE_CONTACT_EMAIL`; its previews disable capture. Cloudflare uses
+`npm run build:cloudflare`, its own settings, and the client profile.
+GitHub Pages is configured as a static staging mirror with intake disabled.
+These are repository settings; the active host and intake status are unverified.
+See [site operations](docs/site-operations.md) for configuration and recovery.
+The [November 21 handoff plan](docs/site-operations.md#november-21-handoff-plan)
+records the tentative Cloudflare move and client-owned domain, billing, and
+Zoho mailbox.
 
-With `npm run dev` running, open `/module-showcase/` to compare the available
-sections. Edit the `sections` list in `content/_index.md` to reorder, remove,
-or disable pieces. Copy and adapt the modular service and occasion pages when
-you need another landing page. See [the sculpting guide](docs/sculpting-guide.md)
-for examples, variants, removal steps, and the targeted module check.
+Keep `INTAKE_BACKEND=disabled` for Wayfarer Table. The general build wrapper
+currently allows a Netlify override for the remote profile, but the demo's
+privacy page says it collects nothing.
 
-The workshop is excluded from normal builds. The trust and booking layouts are
-local editorial scaffolds; they do not contain testimonials, live availability,
-payments, or a connected booking provider. Adventure concepts and gallery artwork
-are labeled as illustrative. Additional service formats are consultation topics,
-not promises of availability.
+No command in this README authorizes publishing, changing DNS, sending mail,
+applying remote migrations, or modifying a live database. Those remain owner actions.
 
-## Verify everything
+## Editing map
 
-```sh
-npm run check
-```
+| Concern | Owning source |
+| --- | --- |
+| Identity, metadata, navigation | `hugo.yaml`, `config/*.json` |
+| Storyscape web artwork and alt text | `data/storyscape_artwork.yaml`, `static/images/storyscape/`, [asset register](brand/ASSET_REGISTER.md) |
+| Page composition | `content/`, `examples/remote/content/` |
+| Module copy and variants | `data/home.yaml`, `data/variants.yaml`, `data/remote.json` |
+| Registry and content contracts | `data/modules.yaml`, `data/module_schema.json` |
+| Templates and schema enforcement | `layouts/`, especially `sections/render.html` and `sections/validate.html` |
+| Shared form limits and choices | `data/intake.json` |
+| Theme, focus, motion, responsive layout | `assets/scss/`, `assets/js/site.js` |
+| Inquiry validation and storage | `lib/intake.mjs`, `functions/api/consultation.js` |
+| Environment isolation and operator access | `lib/environment.mjs`, `lib/operator.mjs`, `functions/api/inbox.js` |
+| Notification contract and retry | `lib/notifications.mjs`, `functions/api/notifications.js` |
+| SQLite/D1 schema | `migrations/0001_consultations.sql` through `0003_guest_count_policy.sql` |
+| Short operator and session commands | `scripts/inbox.mjs`, `scripts/session.mjs` |
+| Build and output checks | `scripts/build-site.mjs`, `scripts/build-cloudflare.mjs`, `scripts/audit_site.py` |
+| Expected output routes and declared static assets | `data/release.json`; Hugo excludes `static/images/temp/` |
 
-The check builds both production and non-indexable preview variants with
-warnings treated as failures, validates internal links, checks duplicate IDs
-and heading order, confirms form labels and inquiry constraints, verifies
-the required brand assets and routes via `scripts/audit_site.py`, and runs
-the composition and variant test suite via `scripts/check_modules.py`.
+There is no theme dependency. The retained PaperMod-derived material and fonts
+have notices in `LICENSES/`. See the [reuse policy](REUSE.md) and
+[asset register](brand/ASSET_REGISTER.md) for pending redistribution rights.
 
-For quick, targeted verification of composition changes and renderer logic:
+## Learn the whole workflow
 
-```sh
-python3 scripts/check_modules.py
-```
+Start with the [Storyscape brand and marketing kit](brand/README.md) for the
+illustrated standards, artwork, collateral, and market analysis.
 
-## Publish on Netlify
+1. [Architecture and contracts](docs/architecture.md): request flow, trust boundaries, editing ownership.
+2. [Sculpting guide](docs/sculpting-guide.md): choose modules and switch profiles.
+3. [Lantern Bay worked example](examples/lantern-bay/README.md): synthetic inquiry → scope → prep → player handout → runnable adventure → follow-up draft.
+4. [Operations](docs/site-operations.md): configure, review, contact, close, recover.
+5. [Readiness](docs/readiness.md): what is implemented, unverified, or still an owner decision.
+6. [Roadmap](roadmap.md): the next useful steps and optional extensions.
 
-1. Put this directory in a Git repository and push it to the Git provider you
-   want Netlify to use.
-2. In Netlify, choose **Add new project** and import the repository.
-3. Keep the build settings detected from `netlify.toml` and deploy.
-4. In **Forms**, enable notifications for the `private-consultation` form.
-5. Connect the final domain. Netlify supplies the production URL to Hugo during
-   each build, so canonical and social URLs update automatically.
+The [October 3 review](docs/project-review-2026-10-03.md),
+[October 3 remediation](docs/remediation-2026-10-03.md), and
+[October 5 follow-up](docs/project-review-2026-10-05.md) preserve their original
+findings. The [Cloudflare cost guide](docs/how-to-get-all-this-you-can-from-cloudflare-for-free-or-on-the-cheap.md)
+is dated planning research; use the runbook for current repository instructions.
 
-No public contact address is required for the inquiry form. Submissions are
-captured by Netlify and can trigger email notifications configured by the site
-owner.
-
-If you choose another static host, set `baseURL` in `hugo.yaml` to the final
-domain (or pass `--baseURL` during the production build) and connect the form to
-that host's form service. The checked-in `https://example.org/` value is a safe
-local placeholder; Netlify replaces it automatically with `$URL`.
-
-## Real-world operational checklist
-
-The site deliberately does not invent business facts. Confirm these operational
-items before public launch:
-
-- Final travel radius and any travel fee
-- Typical guest-count range and accessibility accommodations
-- Lead time, availability, cancellation, and rescheduling policy
-- Final service inclusions, rate calculation, and any commercial minimums
-- Who receives consultation notifications (Netlify forms in baseline or Cloudflare D1 email routing in target)
-- Approved dragon-and-shield crest, if one exists
-- Trademark or game-system affiliation wording, if specific systems are named
-
-These items are also tracked in the HTML brand guide. The public copy remains
-usable without fabricated answers.
-
-## Strategy & documentation map
-
-- Project evolution & phases: `roadmap.md`
-- Master site premise & direction: `PROJECT.md`
-- Specialist sculpting workflow: `docs/sculpting-guide.md`
-- Pricing methodology & comparables: `docs/pricing.md`
-- Marketing & referral campaign: `docs/marketing-campaign.md`
-- Unit economics & margin defense: `docs/how-to-dm-dnd-for-fun-and-profit.md`
-- Relational networking & client outreach: `docs/how-to-dm-network-and-find-more-dm-clients.md`
-- Photography strategy & prompt system: `docs/image-plan.md`
-- Hosting, CI, and the staging mirror: `docs/hosting-ci-cd-gh-pages-setup.md`
-- Opt-in Cloudflare intake, setup, recovery, and cutover: `docs/site-operations.md`
-- Historical peripheral plan & architecture: `docs/site-peripheral-plan.md`
-- Internal production bible: `brand/PRODUCTION_BIBLE.md`
-- Brand-writing skill: `brand/SKILL.md`
-- Asset provenance: `brand/ASSET_REGISTER.md`
-
-## Architecture & editing map
-
-- Site settings and navigation: `hugo.yaml`
-- Homepage copy: `data/home.yaml`
-- Homepage composition: `content/_index.md`
-- Module registry and variants: `data/modules.yaml`, `data/variants.yaml`
-- Reusable module templates: `layouts/_partials/sections/`
-- Shared brand system: `data/brand.yaml`
-- Standard page copy: `content/`
-- Page templates: `layouts/`
-- Modular layout: `layouts/modular.html`
-- Local workshop layout: `layouts/module-showcase/single.html`
-- Sass source: `assets/scss/`
-- Interactions: `assets/js/site.js`, `assets/js/showcase.js`, `assets/js/intake.js`
-- Cloudflare edge functions: `functions/api/consultation.js`, `functions/api/notifications.js`
-- Intake validation & mail libraries: `lib/intake-core.mjs`, `lib/notification.mjs`
-- D1 Database migrations: `migrations/0001_consultations.sql`
-- Operational & verification scripts: `scripts/check.sh`, `scripts/build-cloudflare.mjs`, `scripts/check_cloudflare_build.py`, `scripts/retry-notification.mjs`
-- Static edge configs: `static/_headers`, `static/_redirects`, `static/_routes.json`
-- Local Wrangler preview config: `wrangler.local.jsonc`
-
-There is no theme dependency. `layouts/_partials/head.html` was originally
-derived from PaperMod's head partial; its MIT notice is kept in
-`LICENSES/PaperMod-MIT.txt`.
+Optional service-planning guides cover [pricing](docs/pricing.md),
+[communications](docs/marketing-campaign.md), [sustainable preparation](docs/how-to-dm-dnd-for-fun-and-profit.md),
+and [relationships](docs/how-to-dm-network-and-find-more-dm-clients.md).
+Rates, credentials, testimonials, live availability, and provider acceptance are
+never inferred from these examples.

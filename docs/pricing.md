@@ -1,111 +1,49 @@
-# Pricing — how to land on a market-value rate
+# Scope and pricing worksheet
 
-Internal working doc. Not published — the site intentionally shows no price
-(see README's pre-launch checklist and `content/questions/index.md`: cost is
-confirmed during consultation). This doc is the method for arriving at a
-number, not the number itself. Nothing here should be copied to the site
-until it's a decision, not a placeholder.
+This is an optional planning tool for someone choosing to offer paid sessions.
+Set any Storyscape price, deposit, and terms in the agreed scope. An inquiry opens
+a conversation without holding a date or creating a payment obligation. Agree
+the scope, quote, terms, and availability before any booking or payment step.
+[Consultation form](../layouts/consultation/single.html) · [Pricing FAQ](../content/questions/index.md)
 
-Companion playbooks:
-- [Fun & Profit Playbook](how-to-dm-dnd-for-fun-and-profit.md): Detailed unit
-  economics, prep-hour tracking, and repeat rebooking math.
-- [Public Package Comparison (`packages` module)](../layouts/_partials/sections/packages.html):
-  How scope and format are presented publicly without publishing fixed dollar amounts.
+## Work out the cost of the actual scope
 
-## Three lenses, use all three
+Record preparation, correspondence, travel, setup, facilitation, cleanup, and
+follow-up separately. Include the recovery time or scheduling buffer needed to
+make the work sustainable. Do not assume every available hour is billable.
 
-A single formula will either underprice a bespoke hospitality service or
-guess blind at what the market pays. Triangulate.
+For a quoted engagement:
 
-### 1. Cost-plus — your floor
+- Labor allowance = total planned working hours × chosen compensation target.
+- Direct cost = travel + materials + platform fees + other agreed expenses.
+- Planning floor = labor allowance + direct cost + allocated overhead + uncertainty allowance.
+- Review after delivery = actual working hours, actual direct cost, changes in scope, and energy impact.
 
-The price below which you're paying to work.
+A floor is a planning input, not evidence that a market will pay it. Avoid
+committing to extensive bespoke preparation before scope is agreed.
 
-```
-floor = (prep_hours + travel_hours + session_hours) × your_target_hourly_rate
-      + hard_costs (materials, mileage, any rentals)
-```
+## Keep comparable research honest
 
-- `prep_hours`: be honest — a story built around a specific group is the
-  product. Time yourself on the next 2-3 commissions if you don't know this
-  number yet.
-- `your_target_hourly_rate`: what an hour of your time is worth if this
-  weren't a passion project. Compare against what you'd otherwise bill for
-  skilled freelance/consulting time.
-- This is a floor, not the price. Cost-plus alone chronically underprices
-  anything with a creative or hospitality component, because it ignores what
-  the client is actually paying for (a night they couldn't produce
-  themselves).
+No unsourced price ranges are endorsed here. When researching alternatives,
+record the provider URL, date checked, geography, currency, group size, duration,
+included preparation/materials, delivery format, taxes/fees, and cancellation
+conditions. A per-player online session is not directly comparable with a private
+in-home commission. Mark missing details as unknown and retain the source.
 
-### 2. Market comparables — your anchor
+## Write a reviewable proposal
 
-Research current rates in these adjacent categories before setting a number.
-Don't invent figures — pull real, current quotes:
+Use the [Lantern Bay scope example](../examples/lantern-bay/02-scope.md). Explain
+what is included, what is optional, practical needs, the date and time, total
+quoted cost, and the point at which a reservation becomes confirmed. Any deposit,
+refund, or cancellation terms must be owner-approved and shared before agreement.
+The Services comparison offers three starting points for discussion: a first
+adventure, an occasion to remember, and a continuing story. Discuss the practical
+guest count, duration, materials, and availability for the actual gathering.
+[Services page](../content/services/index.md) · [Comparison copy](../data/home.yaml)
 
-- **Professional DM-for-hire / paid one-shot platforms** (e.g. StartPlaying):
-  - *Standard virtual/online rates*: $15–$35 per player per session (avg. ~$20/player, or $80–$140 for a group of 4–6).
-  - *High-end / specialized online DMs*: $30–$50+ per player ($150–$300+ total).
-  - *In-person / Private event DM flat rates*: $150–$350+ for private group sessions, with bespoke/corporate event GMs charging $350–$750+ per event.
-  - *Takeaway*: Online/virtual is a budget floor reference. In-home, fully bespoke physical hosting commands a significant premium.
-- **In-home private event entertainers in NWA** (magicians, mystery hosts, escape rooms):
-  - *Hosted murder mystery / event entertainers*: $300–$600+ flat package rates.
-  - *NWA escape rooms*: $30–$40 per person per hour ($180–$240 for a group of 6 for 1 hour of generic entertainment).
-- **Private chefs / personal event planners in Bentonville/NWA**:
-  - *In-home private chef dining*: $140–$180 per person in NWA (higher per-person rates of $160–$180 for smaller groups of 4–6, totaling $640–$1,080 for a fully hosted evening).
-  - *Takeaway*: Proves the target NWA buyer (discerning hosts in Bentonville/Rogers) routinely pays $600–$1,000+ to host a private 4–6 guest gathering in their home without cooking or managing the evening.
+## Decide deliberately
 
-### 3. Value-based sanity check — your ceiling test
-
-What would this group have spent on the evening otherwise? A dinner out for
-the same guest count, a private chef, an escape room booking, a weekend trip.
-If the Storyscape price is a fraction of what an equivalent memorable private
-evening costs elsewhere, there's room above the cost-plus floor. If it's
-already above all comparable options, that's a signal to either trim scope or
-have a clear story for why it's worth the premium (it usually is — no one
-else offers "prepared entirely around your specific guests").
-
-## Recommended price shape (not a number)
-
-- **Flat per-evening rate**, not per-guest. Per-guest pricing punishes small
-  intimate groups, which is exactly the target buyer (`for-your-table`
-  positioning is "close gatherings," not "as many seats as possible").
-- **Guest-count band with a top-end add-on**, e.g. a base rate that covers up
-  to N guests, plus a per-head amount beyond that — keeps prep-time economics
-  honest without turning into per-seat pricing.
-- **Deposit at consultation, balance at booking confirmation** — matches a
-  capacity-bound, consultation-led business; protects prep time already spent
-  once a date is held.
-- **Travel fee threshold beyond a defined radius** — README already flags
-  "final travel radius and any travel fee" as an unresolved item; resolve it
-  here, not on the fly per client.
-- **Aligned with the three public commission formats** defined in `data/home.yaml` and rendered by the `packages` module:
-  - *The single evening* (1 session, 3–4 hrs, 3–6 guests): standard self-contained baseline.
-  - *The milestone table* (1 extended session, 4–5 hrs, 4–8 guests): celebration premium covering custom narrative hooks and personalized artifacts.
-  - *The short campaign* (3 sessions, 3–4 hrs each, 3–5 players): multi-session arc priced as a packaged commitment.
-- **Optional commercial/nonprofit minimum** — only if you plan to accept
-  bookings beyond friends-of-friends private groups.
-
-## Process to actually land on the number
-
-1. Do the cost-plus math for a typical commission (pick a real recent one).
-2. Get 3-5 real comparable quotes (lens 2).
-3. Set an initial rate between the cost-plus floor and the comparable anchor,
-   biased toward the anchor — bespoke, in-home, single-practitioner work is
-   the premium end of the comparable set, not the budget end.
-4. Quote that rate on the next 3-5 consultations without discounting it.
-   Track: did they book, did they hesitate, did they negotiate. That's your
-   real market signal — better than any desk research.
-5. Revisit quarterly, or after any stretch where every consultation converts
-   to a booking without hesitation (a sign the price is too low relative to
-   demand).
-
-## What not to do
-
-- Don't publish a number publicly until it's an actual decision — the site's
-  honesty rule (`content/about/index.md`) applies to pricing the same way it
-  applies to credentials: no placeholder presented as fact.
-- Don't anchor to the cheapest comparable (online per-player DM-for-hire) —
-  wrong category. In-home, single-guest-list, fully bespoke work is a
-  different product.
-- Don't discount to win the first bookings. A capacity-bound business selling
-  below its value trains its own referral network to undersell it too.
+Discounts, sliding scales, donated sessions, and paid work can each be appropriate
+choices. Record the reason and the resource limit instead of treating a universal
+pricing rule as evidence. Revisit estimates after a few actual sessions; do not
+invent demand, margins, or client willingness to pay.

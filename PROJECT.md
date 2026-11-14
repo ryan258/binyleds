@@ -2,45 +2,38 @@
 
 ## Premise
 
-- **What it is:** A comprehensive, modular Hugo master site designed to be
-  sculpted into focused specialist service websites. Its first expression is
-  a professional DM and tabletop-party brand, with a consultation-first offer.
-- **Who it is for:** Discerning hosts in Bentonville and Northwest Arkansas who
-  want to give friends an original evening without carrying the preparation,
-  facilitation, or rules burden themselves.
-- **Why it exists:** To turn private game night from a hosting obligation into a
-  commissioned act of hospitality where the host can remain at the table.
+- **What it is:** A personal tabletop toolkit with a modular Hugo reference
+  site, private session materials, and an optional inquiry workflow.
+- **Who it is for:** It gives Ryan a way to reuse site and session materials
+  with less setup. The Storyscape example speaks to hosts in Bentonville and
+  Northwest Arkansas who want to play alongside their guests.
+- **What it demonstrates:** A consultation-first in-home experience in
+  Storyscape and a fictional remote-play site in Wayfarer Table.
 
 ## Master-site direction
 
-Build a broad collection of coherent, reusable sections and page types. Each
-specialist version is selected, rearranged, and reduced from that collection.
-The Storyscape content and brand are the first concrete expression, while the
-section architecture can support other service businesses.
-
-The homepage is the expansive assembled example. The draft-only local workshop
-at `/module-showcase/` is the visual menu. `docs/sculpting-guide.md` explains how
-to change compositions and create focused pages without duplicating templates.
+The Storyscape homepage shows the fuller composition; the client profile uses
+the same Storyscape content with the internal guide removed. Wayfarer Table
+supplies alternate copy and identity to shared templates. The draft-only
+`/module-showcase/` previews the registered modules and variants. Edit the page
+composition in source using the [sculpting guide](docs/sculpting-guide.md).
 
 Illustrative adventures and artwork are labeled. Trust and booking scaffolds
 stay local until supported by approved content or a verified integration.
 
-## Gate check
+## Current implementation and evidence
 
-- **Reveal - pass:** The service is explicitly capacity-bound and
-  consultation-led; care comes from preparation, not an illusion of unlimited
-  availability.
-- **Build - pass:** The project creates a deployable sales asset and a reusable
-  brand-production system.
-- **Deliver - pass:** Hugo keeps the site static, fast, maintainable, and viable
-  inside a constrained production window.
+The current checkout includes recursive module validation, an illustrated brand
+kit and responsive Storyscape artwork, and an optional authenticated Cloudflare
+inbox. Lantern Bay provides a synthetic inquiry, scope, prep sheet, player
+introduction, runnable adventure, follow-up draft, and blank playtest record.
+Use `npm run session` to make a private working copy. Intake and session
+preparation are separate workflows; there is no inquiry-to-session import.
 
-## Kickstart status
+The [readiness ledger](docs/readiness.md) records focused local results and
+remaining acceptance, including real browser and provider behavior, a Lantern Bay
+playtest, and licensing. The active hosting and intake status are unverified.
+Using the toolkit locally does not require operating a commercial service.
 
-- **Project:** Binyled’s Storyscape
-- **Status:** Modular master-site development; external launch readiness remains separate
-- **Bible:** Complete in `brand/PRODUCTION_BIBLE.md` and `/brand-guide/`
-- **Voice profiles:** Complete
-- **Craft rules:** Complete
-- **Skill file:** Complete in `brand/SKILL.md`
-- **First output:** Complete website
+Start with the [README](README.md) or the [Lantern Bay pack](examples/lantern-bay/README.md).
+Use the [roadmap](roadmap.md) for next steps.

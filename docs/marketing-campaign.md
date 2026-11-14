@@ -1,108 +1,45 @@
-# Binyled's Storyscape — Marketing Plan
+# Optional communications plan
 
-Grounded in what the site already commits to: a solo, capacity-bound,
-consultation-first, in-home tabletop hospitality service in Bentonville/NWA.
-No fabricated testimonials, credentials, or pricing anywhere in this plan —
-same rule the site follows.
+Use this only if the owner chooses to invite inquiries. The personal toolkit and
+sample content are useful without a public launch or a marketing schedule.
+The default site links to a disabled consultation preview. For a public example,
+label it at the entry point and share an approved destination. The brand campaign
+playbook covers the private kit, public portfolio, and active service options.
+[Campaign playbook](../brand/marketing/CAMPAIGN.md) · [Readiness ledger](readiness.md)
 
-## Positioning (already established by the site)
+## Permission and purpose
 
-"You host the people. I host the world." Premium, personal, low-volume. This
-is a hospitality booking, not a product launch — the plan below optimizes for
-trust and referral density in one metro area, not reach.
+An inquiry authorizes a response about that inquiry. It does not subscribe the
+person to updates, availability announcements, or a newsletter. Do not import
+inquiries into a mailing list. A future newsletter needs a separate, unbundled
+opt-in, a consent record, and an easy way to stop receiving it; none is currently
+implemented. Access and accommodation notes never belong in marketing tools.
 
-## Companion Playbooks
+A follow-up answering an open request stays within that conversation. Public
+photos, client quotations, and case studies need specific approval of the exact
+material and attribution. Silence is not permission. Keep illustrative artwork
+and synthetic sessions clearly identified.
 
-- [Networking & Finding Clients](how-to-dm-network-and-find-more-dm-clients.md):
-  The human layer underneath this strategy—scripts, conversation mechanics,
-  connector outreach, and asking for referrals without friction.
-- [Fun & Profit Playbook](how-to-dm-dnd-for-fun-and-profit.md): The unit
-  economics, prep-hour management, pricing levers, and repeat-host rebooking loop.
-- [Sculpting Guide](sculpting-guide.md): How to create focused campaign landing
-  pages from the master section library.
+## A bounded trial, if wanted
 
-## Who to target & Where to send them
+Choose one audience and one useful artifact, such as the host guide or an
+explanation of a welcoming first session. Share through a channel the owner
+already uses, at a pace they choose. Treat channel effectiveness as a hypothesis.
+Keep drafts ready for review; this repository sends no outreach automatically.
 
-- **Warm network first**: friends, coworkers, book clubs, D&D-adjacent
-  Discord/Meetup groups already in NWA. Cheapest and highest-trust channel by
-  far—direct conversations to [The Experience](/experience/) or [Host Guide](/host-guide/).
-- **Corporate relocations**: Walmart/Tyson/JB Hunt/university bring a steady
-  stream of newcomers who want to make friends and don't have an established
-  social calendar. Direct them to [Services & Formats](/services/).
-- **Milestone hosts**: birthdays, reunions, "we haven't seen each other in
-  years" gatherings—direct them to [Gatherings](/gatherings/).
-- **Local hobby community**: FLGS (local game/hobby stores), board game cafes,
-  cosplay/con communities in NWA—direct them to [Adventure Ideas](/adventures/).
+Record only useful outcomes: whether the artifact answered a question, whether
+an inquiry was a practical fit, time spent, and whether the effort was
+sustainable. Avoid collecting private details for attribution or analytics.
+After the trial, continue, change the artifact, or stop based on those observations.
 
-## Channels, ranked by effort vs. payoff for a solo capacity-bound business
+## Reusable messages
 
-1. **Google Business Profile** — free, and it's how "in-home tabletop
-   Bentonville" gets found. Set up once, keep hours/service area accurate to
-   what's confirmed in the README's pre-launch checklist.
-2. **Referral ask, built into the post-event follow-up** — after every
-   commission, ask the host directly if they'd introduce the experience to one
-   other group. This is the single highest-converting channel for a
-   trust-based, capacity-bound service; no incentive gimmicks needed at this
-   scale, just a direct ask.
-3. **Local Facebook groups / Nextdoor** ("Bentonville Moms," "NWA Newcomers,"
-   neighborhood groups) — one honest post when a few dates are open, not a
-   recurring ad. Matches the capacity-bound reality instead of implying
-   unlimited availability.
-4. **Instagram, process-focused** — photos/short clips of prep (maps, minis,
-   table setup), not staged marketing shots. Ties to the site's honesty rule:
-   show real preparation instead of claiming credentials.
-5. **One FLGS or board game cafe partnership** — ask to leave a card or do a
-   single demo night. Low cost, audience is pre-sold on the concept.
-6. **Consultation-request email list** — everyone who submits the Netlify form
-   (even if they don't book) gets added to an occasional "a few dates just
-   opened" note. Respect capacity — don't spam a scarce, premium offering.
+**Description:** “I prepare and guide tabletop stories around the people playing.
+The first conversation is about the group, the atmosphere, and what would help
+everyone participate.”
 
-Skipped on purpose: paid social ads, SEO content marketing, PR outreach. All
-three assume the constraint is *demand*, but the constraint here is *hours in
-a season*. Don't build acquisition machinery for a business that sells out on
-word of mouth — add paid channels only if referral + GBP genuinely can't fill
-the calendar.
+**Response to an inquiry:** “Thanks for the outline. Before shaping the session,
+I’d like to confirm the group, date, location or platform, and any practical needs.
+You can answer briefly or tell me which details are still undecided.”
 
-## 90-day sequence
-
-**Weeks 1–2 — Foundation**
-- Claim/verify Google Business Profile.
-- Confirm the operational items the README already flags as blockers (travel
-  radius, lead time, cancellation policy, who gets form notifications) —
-  can't market commitments that aren't decided yet.
-- Soft-announce to the warm network (friends, coworkers) directly, not
-  publicly — first few bookings should come from people who already trust you.
-
-**Weeks 3–6 — First bookings**
-- Run 2-3 commissions for the warm network.
-- After each: ask for a referral, and request permission to feature an
-  approved quote and detail from the evening. Use these real accounts to
-  replace the placeholder in the `trust` module (`layouts/_partials/sections/trust.html`)
-  and remove its `showcaseOnly: true` restriction in `data/modules.yaml` so
-  authentic proof can be displayed publicly.
-- One FLGS/cafe conversation.
-
-**Weeks 7–12 — Local visibility**
-- One honest local-group post about availability.
-- Start light Instagram cadence (prep photos, 1-2x/week, only when there's
-  real material — don't manufacture content).
-- Revisit capacity: if consultation requests are outpacing available dates,
-  stop marketing and raise prices or extend lead time instead of expanding
-  channels.
-
-## What to track
-
-- Consultation form submissions (already captured by Netlify).
-- Submission → booked conversion rate.
-- Referral source per booking (just ask "how did you hear about this").
-
-Three numbers, checked monthly. Skip a dashboard/CRM — a spreadsheet with one
-row per inquiry covers a solo capacity-bound operation; add tooling only when
-volume actually outgrows it.
-
-## Guardrail
-
-Every channel above must stay consistent with the site's own rule: no
-fabricated capacity, credentials, testimonials, or pricing. The scarcity here
-is real (one person, limited evenings) — that's the selling point, not a
-marketing trick to manufacture.
+These are drafts. They are not sent, proof of demand, or promises of availability.
