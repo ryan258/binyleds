@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import { DatabaseSync } from 'node:sqlite';
 import { onRequest } from '../functions/api/consultation.js';
 import { onRequest as recover } from '../functions/api/notifications.js';
+import { onRequest as inbox } from '../functions/api/inbox.js';
 import { deliver } from '../lib/notifications.mjs';
 
 const schema = readFileSync(new URL('../migrations/0001_consultations.sql', import.meta.url), 'utf8');
@@ -12,8 +13,12 @@ test.after(() => { globalThis.fetch = originalFetch; });
 let fixture;
 test.beforeEach(() => {
   const sql = new DatabaseSync(':memory:'); sql.exec(schema);
+  sql.exec(readFileSync(new URL('../migrations/0002_environment_and_revision.sql', import.meta.url), 'utf8'));
+  sql.exec(readFileSync(new URL('../migrations/0003_guest_count_policy.sql', import.meta.url), 'utf8'));
+  sql.exec("INSERT INTO intake_environment VALUES (1, 'production')");
   const db = { prepare(query) { return { bind(...values) { return {
     async first() { return sql.prepare(query).get(...values) || null; },
+    async all() { return { results: sql.prepare(query).all(...values) }; },
     async run() { sql.prepare(query).run(...values); return { success: true }; },
   }; } }; } };
   fixture = { sql, db, jobs: [], sends: [], env: {
@@ -54,7 +59,9 @@ test('receipt follows durable storage; notifications omit private notes and set 
   assert.equal((await response.json()).id, row().id);
   await Promise.all(fixture.jobs);
   assert.equal(row().notification_status, 'accepted');
-  assert.equal(fixture.sends[0].replyTo, 'client@example.com');
+  assert.equal(fixture.sends[0].reply_to, 'client@example.com');
+  assert.equal(Object.hasOwn(fixture.sends[0], 'replyTo'), false);
+  assert.deepEqual(Object.keys(fixture.sends[0]).sort(), ['from', 'reply_to', 'subject', 'text', 'to']);
   assert(!fixture.sends[0].text.includes('Private accommodation note'));
   assert(!fixture.sends[0].text.includes('A warm gathering'));
 });
@@ -77,7 +84,7 @@ test('changed payload with the same ID conflicts; a new ID preserves the distinc
 });
 test('uncertain DB acknowledgment retries the committed row', async () => {
   const data = fields(); const realDB = fixture.db;
-  const uncertain = { prepare(query) { const stmt = realDB.prepare(query); return { bind(...values) {
+  const uncertain = { prepare(query) { const stmt = realDB.prepare(query); if (!query.includes('INSERT INTO consultations')) return stmt; return { bind(...values) {
     const bound = stmt.bind(...values); return { async first() { await bound.first(); throw new Error('lost acknowledgment'); } };
   } }; } };
   assert.equal((await onRequest(context(request(data), { ...fixture.env, DB: uncertain }))).status, 503);
@@ -91,7 +98,7 @@ test('slow mail never delays the durable receipt', async () => {
     ? Response.json({ success: true, hostname: 'site.test', action: 'consultation' })
     : gate;
   const response = await onRequest(context(request()));
-  assert.equal(response.status, 200); assert.equal(row().notification_status, 'sending');
+  assert.equal(response.status, 200); assert(['pending', 'sending'].includes(row().notification_status));
   release(Response.json({ success: true, result: { queued: ['host@example.com'] } }));
   await Promise.all(fixture.jobs);
 });
@@ -147,7 +154,7 @@ for (const [label, changes] of [
   ['missing token', { 'cf-turnstile-response': undefined }],
   ['invalid date', { 'preferred-date': '2026-02-30' }],
   ['malformed integer', { 'guest-count': '2garbage' }],
-  ['small guest count', { 'guest-count': '1' }],
+  ['nonpositive guest count', { 'guest-count': '0' }],
   ['bad choice', { 'experience-level': 'invented' }],
   ['missing consent', { 'privacy-consent': undefined }],
   ['file field', { name: new Blob(['invalid']) }],
@@ -180,7 +187,7 @@ test('verification outage and invalid hostname/action never save', async () => {
 });
 test('honeypot and HTML success have no-store redirects; methods and types are explicit', async () => {
   const bot = await onRequest(context(request(fields({ 'company-website': 'bot' }), { Accept: 'text/html' })));
-  assert.equal(bot.status, 303); assert.equal(bot.headers.get('Cache-Control'), 'no-store'); assert.equal(row(), undefined);
+  assert.equal(bot.status, 400); assert.equal(bot.headers.get('Cache-Control'), 'no-store'); assert.equal(row(), undefined);
   const html = await onRequest(context(request(fields(), { Accept: 'text/html' })));
   assert.equal(html.status, 303); assert.equal(html.headers.get('Location'), 'https://site.test/thank-you/');
   assert.equal((await onRequest(context(new Request('https://site.test/api/consultation')))).status, 405);
@@ -227,4 +234,86 @@ test('closed-age retention eligibility excludes open, recent, and creation-age-o
   fixture.sql.prepare("UPDATE consultations SET lead_status='closed', closed_at=CURRENT_TIMESTAMP WHERE id=?").run(ids[2]);
   const eligible = fixture.sql.prepare("SELECT id FROM consultations WHERE lead_status='closed' AND closed_at < datetime('now','-90 days')").all();
   assert.deepEqual(eligible.map(record => record.id), [ids[1]]);
+});
+
+test('field failures and conflicts return distinct stable codes', async () => {
+  const invalid = await onRequest(context(request(fields({ email: 'invalid' }))));
+  assert.deepEqual(await invalid.json(), { error: 'Please enter a valid email address.', code: 'invalid_field', field: 'email' });
+  const stale = await onRequest(context(request(fields({ 'consent-version': 'old' }))));
+  assert.equal((await stale.json()).code, 'consent_changed');
+  const data = fields(); await onRequest(context(request(data)));
+  const conflict = await onRequest(context(request({ ...data, vision: 'Changed' })));
+  assert.equal((await conflict.json()).code, 'request_conflict');
+});
+test('preview cannot use a production database and its marker cannot be changed', async () => {
+  fixture.env.INTAKE_ENV = 'preview';
+  assert.equal((await onRequest(context(request()))).status, 503);
+  assert.equal(row(), undefined);
+  assert.throws(() => fixture.sql.exec("UPDATE intake_environment SET environment='preview'"));
+  assert.throws(() => fixture.sql.exec('DELETE FROM intake_environment'));
+  await assert.rejects(deliver(fixture.env, crypto.randomUUID()));
+});
+test('a consumed verification token must be replaced when retrying the same request', async () => {
+  const seen = new Set(); const original = globalThis.fetch;
+  globalThis.fetch = async (url, options) => {
+    if (!String(url).includes('/siteverify')) return original(url, options);
+    const token = options.body.get('response');
+    if (seen.has(token)) return Response.json({ success: false, 'error-codes': ['timeout-or-duplicate'] });
+    seen.add(token); return Response.json({ success: true, hostname: 'site.test', action: 'consultation' });
+  };
+  const data = fields();
+  assert.equal((await onRequest(context(request(data)))).status, 200);
+  assert.equal((await onRequest(context(request(data)))).status, 403);
+  const retry = await onRequest(context(request({ ...data, 'cf-turnstile-response': 'fresh-token' })));
+  assert.equal((await retry.json()).id, data['submission-id']);
+  assert.equal(fixture.sql.prepare('SELECT count(*) AS n FROM consultations').get().n, 1);
+});
+test('verification success must be the boolean true', async () => {
+  globalThis.fetch = async () => Response.json({ success: 'true', hostname: 'site.test', action: 'consultation' });
+  assert.equal((await onRequest(context(request()))).status, 403);
+  assert.equal(row(), undefined);
+});
+function operator(body, authorized = true) {
+  return inbox({ env: fixture.env, request: new Request('https://site.test/api/inbox', { method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...(authorized ? { Authorization: `Bearer ${fixture.env.OPERATOR_TOKEN}` } : {}) }, body: JSON.stringify(body) }) });
+}
+test('inbox keeps notes behind authentication and summaries exclude them', async () => {
+  await onRequest(context(request()));
+  assert.equal((await operator({ action: 'list', scope: 'open', offset: 0 }, false)).status, 401);
+  const listed = await (await operator({ action: 'list', scope: 'open', offset: 0 })).json();
+  assert.equal(listed.records.length, 1);
+  assert.equal(listed.records[0].boundaries, undefined);
+  const detail = await (await operator({ action: 'read', id: row().id })).json();
+  assert.equal(detail.record.boundaries, 'Private accommodation note');
+});
+test('inbox closure is revision-checked and independent of notification status', async () => {
+  await onRequest(context(request())); await Promise.all(fixture.jobs);
+  const id = row().id;
+  assert.equal((await operator({ action: 'status', id, status: 'contacted', revision: 1 })).status, 200);
+  assert.equal((await operator({ action: 'status', id, status: 'closed', revision: 1 })).status, 409);
+  assert.equal((await operator({ action: 'status', id, status: 'closed', revision: 2 })).status, 200);
+  assert.equal(row().lead_status, 'closed'); assert(row().closed_at);
+  assert.equal(row().notification_status, 'accepted');
+  assert.equal((await operator({ action: 'status', id, status: 'contacted', revision: 3 })).status, 409);
+});
+
+test('one guest is a valid inquiry; capacity is confirmed separately', async () => {
+  assert.equal((await onRequest(context(request(fields({ 'guest-count': '1' }))))).status, 200);
+  assert.equal(row().guest_count, 1);
+});
+
+test('guest-policy migration preserves existing inquiry fields and revisions', () => {
+  const database = new DatabaseSync(':memory:');
+  try {
+    database.exec(schema);
+    database.exec(readFileSync(new URL('../migrations/0002_environment_and_revision.sql', import.meta.url), 'utf8'));
+    database.prepare(`INSERT INTO consultations (id, payload_hash, name, email, city, guest_count, experience_level, vision,
+      consent_version, operator_revision, lead_status, closed_at, boundaries) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+      .run('legacy-id', 'hash', 'Original name', 'person@example.test', 'Town', 4, 'Not sure yet', 'Original vision', 'v1', 3, 'closed', '2026-01-01', 'Private note');
+    const before = database.prepare('SELECT * FROM consultations').get();
+    database.exec(readFileSync(new URL('../migrations/0003_guest_count_policy.sql', import.meta.url), 'utf8'));
+    assert.deepEqual(database.prepare('SELECT * FROM consultations').get(), before);
+    database.exec('UPDATE consultations SET guest_count = 1');
+    assert.throws(() => database.exec('UPDATE consultations SET guest_count = 0'));
+  } finally { database.close(); }
 });

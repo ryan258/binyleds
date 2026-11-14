@@ -1,0 +1,42 @@
+{
+  "limits": {
+    "name": 100,
+    "email": 254,
+    "phone": 30,
+    "city": 100,
+    "preferred-date": 10,
+    "guest-count": 16,
+    "experience-level": 80,
+    "occasion": 200,
+    "desired-feeling": 80,
+    "vision": 4000,
+    "boundaries": 2000,
+    "privacy-consent": 2,
+    "consent-version": 100,
+    "submission-id": 36,
+    "cf-turnstile-response": 2048,
+    "company-website": 200
+  },
+  "required": [
+    "name",
+    "email",
+    "city",
+    "vision"
+  ],
+  "guestMinimum": 1,
+  "datePolicy": "any-real-calendar-date",
+  "experience": [
+    "Mostly new players",
+    "A mix of new and experienced players",
+    "Mostly experienced players",
+    "Not sure yet"
+  ],
+  "feelings": [
+    "Triumph",
+    "Mystery and intrigue",
+    "Laughter and warmth",
+    "Quiet connection",
+    "Not sure yet"
+  ],
+  "guestPolicy": "positive-whole-number; service capacity confirmed individually"
+}
