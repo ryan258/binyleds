@@ -1,15 +1,26 @@
-<header class="page-hero section-pad"{{ with .Params.heroImage }} style="--hero-photo: url('{{ . | relURL }}')"{{ end }}>
+{{- $artwork := dict -}}
+{{- if site.Params.storyscapeArtwork -}}
+  {{- with .Params.heroArtwork -}}
+    {{- $artwork = index hugo.Data.storyscape_artwork . -}}
+    {{- if not $artwork -}}{{- errorf "Unknown hero artwork %q on %s" . $.RelPermalink -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+<header class="page-hero section-pad{{ if $artwork }} page-hero--artwork{{ else if site.Params.storyscapeArtwork }} page-hero--text-only{{ end }}"{{ with .Params.heroImage }} style="--hero-photo: url('{{ . | relURL }}')"{{ end }}>
   <div class="shell page-hero__grid">
     <div class="page-hero__copy">
       {{ with .Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
       <h1>{{ .Title }}</h1>
       {{ with .Params.lede }}<p class="page-hero__lede">{{ . }}</p>{{ end }}
     </div>
+    {{ if $artwork }}
+      {{ partial "storyscape-photo.html" (dict "art" $artwork "class" "page-hero__artwork") }}
+    {{ else if not site.Params.storyscapeArtwork }}
     <div class="page-hero__motif" aria-hidden="true">
       <span class="orbit orbit--one"></span>
       <span class="orbit orbit--two"></span>
-      <span class="orbit__center">BS</span>
+      <span class="orbit__center">{{ site.Params.monogram }}</span>
     </div>
+    {{ end }}
   </div>
 </header>
 

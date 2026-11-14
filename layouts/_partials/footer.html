@@ -2,10 +2,10 @@
 <footer class="site-footer">
   <div class="shell footer-grid">
     <div class="footer-brand">
-      <a class="brand-home" href="{{ "" | relLangURL }}" aria-label="Binyled’s Storyscape home">
-        {{ partial "brand-mark.html" . }}
+      <a class="brand-home{{ if site.Params.storyscapeArtwork }} brand-home--wordmark{{ end }}" href="{{ "" | relLangURL }}" aria-label="{{ site.Title }} home">
+        {{ partial "brand-mark.html" true }}
       </a>
-      <p>You host the people. I host the world.</p>
+      <p>{{ site.Params.tagline }}</p>
     </div>
 
     <div>
@@ -23,22 +23,22 @@
     <div>
       <p class="footer-heading">Begin</p>
       <ul class="footer-links">
-        <li><a href="{{ "consultation/" | relURL }}">Request a consultation</a></li>
+        <li><a href="{{ site.Params.consultationPath | relURL }}">{{ partial "consultation-link-label.html" (dict "url" site.Params.consultationPath "label" "Request a consultation") }}</a></li>
         <li><a href="{{ "about/" | relURL }}">About the approach</a></li>
-        <li><a href="{{ "brand-guide/" | relURL }}">Brand guide</a></li>
+        {{ if site.Params.includeInternalGuides }}<li><a href="{{ "brand-guide/" | relURL }}">Brand guide</a></li>{{ end }}
         <li><a href="{{ "privacy/" | relURL }}">Privacy</a></li>
         {{ if hugo.IsServer }}{{ with site.GetPage "/module-showcase" }}<li><a href="{{ .RelPermalink }}">Local module workshop</a></li>{{ end }}{{ end }}
       </ul>
     </div>
 
     <div class="footer-location">
-      <p class="footer-heading">In your home</p>
-      <p>Bentonville and Northwest Arkansas, with each date and location confirmed privately.</p>
+      <p class="footer-heading">{{ site.Params.serviceAreaHeading }}</p>
+      <p>{{ site.Params.serviceAreaText }}</p>
     </div>
   </div>
 
   <div class="shell footer-bottom">
-    <p>&copy; {{ now.Year }} Binyled’s Storyscape</p>
+    <p>&copy; {{ now.Year }} {{ site.Copyright | default site.Title }}</p>
     <p>Built with <a href="https://gohugo.io/" rel="noopener noreferrer">Hugo</a>.</p>
   </div>
 </footer>

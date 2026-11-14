@@ -12,6 +12,6 @@
       </article>
       {{ end }}
     </div>
-    {{ with .data.link }}<a class="text-link module-after-link" href="{{ .url | relURL }}">{{ .label }} <span aria-hidden="true">&rarr;</span></a>{{ end }}
+    {{ with .data.link }}<a class="text-link module-after-link" href="{{ .url | relURL }}">{{ partial "consultation-link-label.html" . }} <span aria-hidden="true">&rarr;</span></a>{{ end }}
   </div>
 </section>

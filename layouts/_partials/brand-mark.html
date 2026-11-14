@@ -1,10 +1,19 @@
+{{- if site.Params.storyscapeArtwork }}
+<span class="storyscape-wordmark" aria-hidden="true">
+  <img class="storyscape-wordmark__reverse" src="{{ "images/storyscape/wordmark-light.svg" | relURL }}" width="430" height="66" alt="">
+  {{ if not . }}
+    <img class="storyscape-wordmark__ink" src="{{ "images/storyscape/wordmark-dark.svg" | relURL }}" width="430" height="66" alt="">
+    <span class="storyscape-wordmark__compact">{{ site.Title }}</span>
+  {{ end }}
+</span>
+{{- else }}
 <span class="brand-lockup">
   <span class="brand-seal" aria-hidden="true">
-    <span>BS</span>
+    <span>{{ site.Params.monogram }}</span>
   </span>
   <span class="brand-lockup__copy">
-    <strong>Binyled’s</strong>
-    <span>Storyscape</span>
+    <strong>{{ site.Params.brandPrimary }}</strong>
+    <span>{{ site.Params.brandSecondary }}</span>
   </span>
 </span>
-
+{{- end }}

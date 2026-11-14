@@ -1,10 +1,11 @@
 <section class="section-pad gallery-section" aria-labelledby="{{ .id }}-title">
   <div class="shell">
     {{ partial "sections/heading.html" . }}
-    <div class="module-gallery">
+    <div class="module-gallery{{ if eq (len .data.items) 2 }} module-gallery--pair{{ end }}">
       {{ range .data.items }}
       <figure>
-        <img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" decoding="async" width="640" height="640">
+        {{ $dimensions := try (images.Config (printf "static/%s" .image)) }}
+        <img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy" decoding="async"{{ with $dimensions.Value }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}>
         <figcaption><h3>{{ .title }}</h3><p>{{ .caption }}</p></figcaption>
       </figure>
       {{ end }}

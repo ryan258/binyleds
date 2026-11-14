@@ -1,4 +1,9 @@
 {{- $data := .data -}}
+{{- $sprite := "images/storyscape/glyph-sprite.svg" -}}
+{{- $symbols := "" -}}
+{{- if site.Params.storyscapeArtwork -}}
+  {{- $symbols = readFile (printf "static/%s" $sprite) -}}
+{{- end -}}
 <section class="section-pad section--forest" aria-labelledby="{{ .id }}-title">
   <div class="shell">
     <div class="section-heading-row">
@@ -8,15 +13,25 @@
       </div>
       <p>{{ $data.intro }}</p>
     </div>
-    <ol class="process-list">
+    <ol class="process-list" role="list">
       {{ range $data.steps }}
       <li>
-        <span class="process-number">{{ .number }}</span>
+        {{ if and site.Params.storyscapeArtwork .glyph }}
+        {{ $symbol := printf "storyscape-%s" .glyph }}
+        {{ if not (in $symbols (printf "id=%q" $symbol)) }}
+          {{ errorf "Unknown process glyph %q on %s" .glyph $.page.RelPermalink }}
+        {{ end }}
+        <svg class="process-number process-glyph" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <use href="{{ $sprite | relURL }}#{{ $symbol }}"></use>
+        </svg>
+        {{ else }}
+        <span class="process-number" aria-hidden="true">{{ .number }}</span>
+        {{ end }}
         <h3>{{ .title }}</h3>
         <p>{{ .text }}</p>
       </li>
       {{ end }}
     </ol>
-    <a class="text-link text-link--light" href="{{ "how-it-works/" | relURL }}">See how the evening works <span aria-hidden="true">&rarr;</span></a>
+    <a class="text-link text-link--light" href="{{ $data.link.url | relURL }}">{{ $data.link.label }} <span aria-hidden="true">&rarr;</span></a>
   </div>
 </section>

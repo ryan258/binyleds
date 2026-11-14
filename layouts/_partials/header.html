@@ -1,8 +1,8 @@
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header" data-site-header>
   <nav class="site-nav shell" aria-label="Primary navigation">
-    <a class="brand-home" href="{{ "" | relLangURL }}" aria-label="Binyled’s Storyscape home">
-      {{ partial "brand-mark.html" . }}
+    <a class="brand-home" href="{{ "" | relLangURL }}" aria-label="{{ site.Title }} home">
+      {{ partial "brand-mark.html" false }}
     </a>
 
     <button
@@ -26,7 +26,7 @@
               href="{{ .URL | relLangURL }}"
               class="{{ if .Params.cta }}button button--primary nav-cta{{ else }}menu-link{{ end }}{{ if $isActive }} is-active{{ end }}"
               {{ if $isActive }}aria-current="page"{{ end }}
-            >{{ .Name }}</a>
+            >{{ partial "consultation-link-label.html" (dict "url" .URL "label" .Name) }}</a>
           </li>
         {{- end }}
       </ul>
@@ -35,6 +35,7 @@
         <span class="theme-control__sun" aria-hidden="true">Light</span>
         <span class="theme-control__moon" aria-hidden="true">Dark</span>
       </button>
+      <button class="theme-control" id="motion-toggle" type="button" data-motion-toggle aria-pressed="false">Motion: system</button>
     </div>
   </nav>
 </header>

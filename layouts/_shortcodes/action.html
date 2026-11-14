@@ -4,5 +4,5 @@
        be written either way. */ -}}
 {{- $url := strings.TrimPrefix "/" (.Get "url") -}}
 <p class="content-action">
-  <a class="button button--primary" href="{{ $url | relURL }}">{{ .Get "label" }}</a>
+  <a class="button button--primary" href="{{ $url | relURL }}">{{ partial "consultation-link-label.html" (dict "url" $url "label" (.Get "label")) }}</a>
 </p>

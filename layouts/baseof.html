@@ -1,7 +1,6 @@
-{{- /* hugo.Data (layouts/index.html, layouts/brand-guide/single.html) replaced
-       the deprecated site.Data in v0.156.0, so that is the real floor. */ -}}
-{{- if lt hugo.Version "0.156.0" }}
-  {{- errorf "Hugo Extended v0.156.0 or newer is required." }}
+{{- /* Match the documented and hosted Hugo baseline. */ -}}
+{{- if lt hugo.Version "0.164.0" }}
+  {{- errorf "Hugo Extended v0.164.0 or newer is required; use 0.164.0 to match CI." }}
 {{- end -}}
 <!DOCTYPE html>
 {{- $theme := site.Params.defaultTheme | default "auto" -}}

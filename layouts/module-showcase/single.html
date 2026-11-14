@@ -36,8 +36,7 @@
     </details>
   </div>
   <div id="module-previews">
-    {{ range $name := slice "hero" "proof" "services" "positioning" "adventures" "packages" "process" "gallery" "details" "reassurance" "comfort" "philosophy" "resources" "faq" "location" "closing" "trust" "booking" }}
-      {{ $entry := index hugo.Data.modules $name }}
+    {{ range $name, $entry := hugo.Data.modules }}
       <div class="showcase-sample" id="preview-{{ $name }}" data-showcase-sample data-search="{{ $name }} {{ $entry.title }} {{ $entry.description }}">
         <div class="showcase-label shell">
           <div><span class="status-chip">{{ if $entry.showcaseOnly }}Editorial scaffold{{ else }}Reusable section{{ end }}</span><h2>{{ $entry.title }}</h2><p>{{ $entry.description }}</p></div>

@@ -3,9 +3,12 @@
 <meta name="robots" content="{{ if and hugo.IsProduction (ne .Params.robotsNoIndex true) }}index, follow{{ else }}noindex, nofollow{{ end }}">
 
 {{- $title := cond .IsHome site.Title (printf "%s | %s" .Title site.Title) }}
+{{- with .Params.searchTitle }}{{ $title = printf "%s | %s" . site.Title }}{{ end }}
 {{- $description := .Description | default site.Params.description | plainify }}
 {{- $image := "" }}
-{{- with (or .Params.images site.Params.images) }}{{ $image = absURL (index . 0) }}{{ end }}
+{{- $imageAlt := "" }}
+{{- with site.Params.images }}{{ $image = absURL (index . 0) }}{{ $imageAlt = site.Params.socialImageAlt }}{{ end }}
+{{- with .Params.images }}{{ $image = absURL (index . 0) }}{{ $imageAlt = $.Params.socialImageAlt }}{{ end }}
 
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
@@ -15,27 +18,28 @@
 {{- end }}
 <link rel="canonical" href="{{ .Permalink }}">
 
-<link rel="icon" href="{{ "favicon.ico" | absURL }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | absURL }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | absURL }}">
-<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
+<link rel="icon" href="{{ site.Params.favicon | default "favicon.ico" | absURL }}">
+{{ with site.Params.appleIcon }}<link rel="apple-touch-icon" href="{{ . | absURL }}">{{ end }}
 <meta name="theme-color" content="#0C100F">
 <meta name="msapplication-TileColor" content="#0C100F">
 <meta name="color-scheme" content="dark light">
 <meta name="format-detection" content="telephone=no">
 
-{{- /* Gated on IsServer, not IsProduction, so the staging mirror on GitHub
-       Pages ships byte-identical assets to production and is worth trusting.
-       The robots meta above stays on IsProduction, which is what keeps that
-       mirror out of search results. */ -}}
+{{- /* Fingerprint assets for file builds. The default staging and production
+       builds both minify; a readable handoff keeps the expanded CSS. */ -}}
 {{- $built := not hugo.IsServer }}
+{{- $minify := and $built (not site.Params.readableOutput) }}
 {{- $styles := resources.Get "scss/main.scss" | css.Sass (dict
+  "transpiler" "dartsass"
   "targetPath" "assets/css/storyscape.css"
-  "outputStyle" (cond $built "compressed" "expanded")
+  "outputStyle" (cond $minify "compressed" "expanded")
   "enableSourceMap" (not $built)
 ) }}
+{{- if $minify }}
+  {{- $styles = $styles | minify }}
+{{- end }}
 {{- if $built }}
-  {{- $styles = $styles | minify | fingerprint }}
+  {{- $styles = $styles | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
 {{- else }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
@@ -43,22 +47,31 @@
 
 <script>
   document.documentElement.classList.add("js");
-  if (localStorage.getItem("pref-theme") === "light") document.documentElement.dataset.theme = "light";
+  (() => {
+    let theme, motion;
+    try { theme = localStorage.getItem('pref-theme'); motion = localStorage.getItem('pref-motion'); } catch {}
+    document.documentElement.dataset.theme = ['light', 'dark'].includes(theme) ? theme : (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.dataset.motion = motion === 'reduce' || matchMedia('(prefers-reduced-motion: reduce)').matches ? 'reduce' : 'full';
+  })();
 </script>
-<noscript><style>#theme-toggle,.top-link{display:none}</style></noscript>
+<noscript><style>#theme-toggle,#motion-toggle,.top-link{display:none}</style></noscript>
 
 <meta property="og:site_name" content="{{ site.Title }}">
-<meta property="og:title" content="{{ or .Title site.Title }}">
+<meta property="og:title" content="{{ or .Params.searchTitle .Title site.Title }}">
 <meta property="og:description" content="{{ $description }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:locale" content="{{ replace site.Language.Locale "-" "_" }}">
 <meta property="og:type" content="{{ cond .IsPage "article" "website" }}">
-<meta name="twitter:title" content="{{ or .Title site.Title }}">
+<meta name="twitter:title" content="{{ or .Params.searchTitle .Title site.Title }}">
 <meta name="twitter:description" content="{{ $description }}">
 {{- with $image }}
 <meta property="og:image" content="{{ . }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{{ . }}">
+{{- with $imageAlt }}
+<meta property="og:image:alt" content="{{ . }}">
+<meta name="twitter:image:alt" content="{{ . }}">
+{{- end }}
 {{- else }}
 <meta name="twitter:card" content="summary">
 {{- end }}
@@ -82,18 +95,15 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "The Private Storyscape",
-  "serviceType": "Private in-home tabletop roleplaying experience",
+  "name": {{ site.Params.serviceName | jsonify | safeJS }},
+  "serviceType": {{ site.Params.serviceType | jsonify | safeJS }},
   "description": {{ site.Params.description | jsonify | safeJS }},
   "url": {{ .Permalink | jsonify | safeJS }},
   "provider": {
     "@type": "Organization",
     "name": {{ site.Title | jsonify | safeJS }}
   },
-  "areaServed": [
-    { "@type": "City", "name": "Bentonville" },
-    { "@type": "AdministrativeArea", "name": "Northwest Arkansas" }
-  ]
+  "areaServed": {{ site.Params.areaServed | jsonify | safeJS }}
 }
 </script>
 {{- else }}

@@ -1,6 +1,8 @@
 {{ if eq site.Params.intakeBackend "cloudflare" }}
-<p>This form uses Cloudflare Turnstile to check submissions and Cloudflare D1 to store the details you send. The site owner receives a notification through Cloudflare Email Service and reads and replies using Gmail. The notification includes your name, email address, city, guest count, and request reference; your vision and accommodation notes remain in the inquiry record.</p>
-<p>You can contact <a href="mailto:{{ site.Params.intakeContactEmail }}">{{ site.Params.intakeContactEmail }}</a> to ask about access, correction, deletion, or keeping a sensitive detail out of the form.</p>
+<p>This form uses Cloudflare Turnstile to check submissions and Cloudflare D1 to store the details you send. The owner receives a notification through Cloudflare Email Service. The notification contains your name, email address, city, guest count, and request reference; vision and accommodation notes remain in the inquiry record.</p>
+{{ else if eq site.Params.intakeBackend "netlify" }}
+<p>This form sends your inquiry to Netlify’s form service. The site owner can read the submitted fields in that service and controls its notification settings.</p>
 {{ else }}
-<p>When this site is hosted on Netlify, the form is processed and stored by Netlify’s form service. The site owner controls who receives submission notifications and should configure an appropriate retention practice before public launch.</p>
+<p>This demonstration form is disabled and does not collect or send inquiries.</p>
 {{ end }}
+{{ with site.Params.intakeContactEmail }}<p>Contact <a href="mailto:{{ . }}">{{ . }}</a> about access, correction, deletion, or keeping a detail out of the form.</p>{{ end }}

@@ -2,4 +2,8 @@
 {{- if not (or (hasPrefix $dest "http://") (hasPrefix $dest "https://")) -}}
   {{- $dest = $dest | relURL -}}
 {{- end -}}
-<img src="{{ $dest }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>
+{{- $dimensions := dict -}}
+{{- if and (not (hasPrefix $dest "http")) (fileExists (printf "static/%s" (strings.TrimPrefix "/" .Destination))) -}}
+  {{- $dimensions = images.Config (printf "static/%s" (strings.TrimPrefix "/" .Destination)) -}}
+{{- end -}}
+<img loading="lazy" decoding="async"{{ with $dimensions }} width="{{ .Width }}" height="{{ .Height }}"{{ end }} src="{{ $dest }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>

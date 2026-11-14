@@ -1,6 +1,6 @@
 {{- $page := .page -}}
 {{- $showcase := .showcase | default false -}}
-{{- $seen := slice "top" "main-content" "primary-menu" "theme-toggle" "top-link" -}}
+{{- $seen := slice "top" "main-content" "primary-menu" "theme-toggle" "motion-toggle" "top-link" -}}
 {{- $active := slice -}}
 {{- range .sections -}}{{- if ne .enabled false -}}{{- $active = $active | append . -}}{{- end -}}{{- end -}}
 {{- if and $page.IsHome (not $showcase) -}}
@@ -22,7 +22,7 @@
       {{- errorf "Section %q is showcase-only; supply approved content and remove the registry restriction before using it publicly" $module -}}
     {{- else -}}
       {{- $seen = $seen | append $id | append (printf "%s-title" $id) | append (printf "%s-hint" $id) -}}
-      {{- $data := index hugo.Data.home $module -}}
+      {{- $data := index (index hugo.Data (site.Params.moduleData | default "home")) $module -}}
       {{- with .variant -}}
         {{- $variant := index (index hugo.Data.variants $module | default dict) . -}}
         {{- if not $variant -}}
@@ -34,6 +34,10 @@
       {{- if not $data -}}
         {{- errorf "Missing content for section %q" $module -}}
       {{- else -}}
+        {{ partial "sections/validate.html" (dict "value" $data "rule" (index hugo.Data.module_schema $entry.template) "path" $module) }}
+        {{ if eq $entry.template "packages" }}
+          {{ range $data.rows }}{{ if ne (len .values) (len $data.columns) }}{{ errorf "Module content %s: each package row must match the column count" $module }}{{ end }}{{ end }}
+        {{ end }}
         <div id="{{ $id }}" class="site-section" data-section-module="{{ $module }}">
           {{ partial (printf "sections/%s.html" $entry.template) (dict "page" $page "data" $data "id" $id "showcase" (or $showcase (not $page.IsHome))) }}
         </div>

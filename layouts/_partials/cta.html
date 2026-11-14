@@ -7,7 +7,7 @@
     <p class="eyebrow">Your evening begins here</p>
     <h2 id="{{ .id | default "closing-cta-title" }}">{{ $title }}</h2>
     <p>{{ $text }}</p>
-    <a class="button button--light" href="{{ $url | relURL }}">{{ $label }}</a>
+    <a class="button button--light" href="{{ $url | relURL }}">{{ partial "consultation-link-label.html" (dict "url" $url "label" $label) }}</a>
     <span class="closing-cta__signature">I build the world. You shape the story.</span>
   </div>
 </section>

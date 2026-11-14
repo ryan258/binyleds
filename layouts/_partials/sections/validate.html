@@ -1,0 +1,35 @@
+{{- $value := .value -}}
+{{- $rule := .rule -}}
+{{- $path := .path -}}
+{{- if not $rule -}}
+  {{- errorf "Module content %s: schema is missing" $path -}}
+{{- else if eq $rule.type "object" -}}
+  {{- if not (reflect.IsMap $value) -}}
+    {{- errorf "Module content %s: expected an object" $path -}}
+  {{- else -}}
+    {{- range $key, $child := $rule.required -}}
+      {{- if not (isset $value $key) -}}{{- errorf "Module content %s.%s: required field is missing" $path $key -}}
+      {{- else -}}{{- partial "sections/validate.html" (dict "value" (index $value $key) "rule" $child "path" (printf "%s.%s" $path $key)) -}}{{- end -}}
+    {{- end -}}
+    {{- range $key, $child := $rule.optional -}}
+      {{- if isset $value $key -}}{{- partial "sections/validate.html" (dict "value" (index $value $key) "rule" $child "path" (printf "%s.%s" $path $key)) -}}{{- end -}}
+    {{- end -}}
+    {{- range $key, $_ := $value -}}
+      {{- if not (or (isset $rule.required $key) (isset ($rule.optional | default dict) $key)) -}}{{- errorf "Module content %s.%s: unknown field" $path $key -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- else if eq $rule.type "array" -}}
+  {{- if not (reflect.IsSlice $value) -}}{{- errorf "Module content %s: expected a list" $path -}}
+  {{- else if not (len $value) -}}{{- errorf "Module content %s: list must not be empty" $path -}}
+  {{- else -}}
+    {{- range $i, $item := $value -}}{{- partial "sections/validate.html" (dict "value" $item "rule" $rule.items "path" (printf "%s[%d]" $path $i)) -}}{{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- if ne (printf "%T" $value) "string" -}}{{- errorf "Module content %s: expected text" $path -}}
+  {{- else if not (strings.TrimSpace $value) -}}{{- errorf "Module content %s: text must not be blank" $path -}}
+  {{- else if eq $rule.type "url" -}}
+    {{- if or (hasPrefix $value "//") (not (findRE `^(https://[^\s]+|mailto:[^\s]+|[A-Za-z0-9/_#.?=&%~-]+)$` $value)) -}}{{- errorf "Module content %s: unsupported link URL" $path -}}{{- end -}}
+  {{- else if eq $rule.type "image" -}}
+    {{- if or (in $value "..") (not (fileExists (printf "static/%s" $value))) -}}{{- errorf "Module content %s: local image does not exist" $path -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
