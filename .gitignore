@@ -15,3 +15,8 @@
 *.log
 
 content/.DS_Store
+
+# Operator selectors contain IDs only; drafts and private inquiry exports stay local.
+.local/
+__pycache__/
+*.pyc

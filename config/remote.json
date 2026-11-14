@@ -1,0 +1,34 @@
+{
+  "title": "Wayfarer Table \u00b7 Demo",
+  "copyright": "Wayfarer Table \u00b7 Demo",
+  "contentDir": "examples/remote/content",
+  "params": {
+    "profile": "remote",
+    "storyscapeArtwork": false,
+    "includeInternalGuides": false,
+    "moduleData": "remote",
+    "monogram": "WT",
+    "brandPrimary": "Wayfarer",
+    "brandSecondary": "Table",
+    "author": "Wayfarer Table example",
+    "description": "A fictional remote game-master site demonstrating reusable Storyscape modules.",
+    "tagline": "Different places. One shared adventure.",
+    "serviceName": "Wayfarer Table example",
+    "serviceType": "Fictional remote tabletop session example",
+    "serviceAreaText": "An online-play demonstration; no service is offered by this example.",
+    "areaServed": [
+      "Online example"
+    ],
+    "images": [
+      "images/remote-social.svg"
+    ],
+    "socialImageAlt": "Wayfarer Table, a fictional remote tabletop play example.",
+    "favicon": "images/remote-social.svg",
+    "appleIcon": "images/remote-social.svg",
+    "keywords": [
+      "tabletop example",
+      "remote play example"
+    ],
+    "serviceAreaHeading": "Across the distance"
+  }
+}

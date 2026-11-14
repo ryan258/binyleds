@@ -1,0 +1,9 @@
+{
+  "params": {
+    "profile": "client",
+    "includeInternalGuides": false
+  },
+  "ignoreFiles": [
+    "(^|[/\\\\])brand-guide([/\\\\]|$)"
+  ]
+}

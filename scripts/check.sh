@@ -4,6 +4,8 @@ set -euo pipefail
 project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$project_root"
 
+node scripts/check-source.mjs
+
 tmp_root="$(mktemp -d)"
 trap 'rm -rf "$tmp_root"' EXIT
 
@@ -31,3 +33,4 @@ fi
 python3 scripts/audit_site.py "$preview_dir" --expect-noindex
 
 python3 scripts/check_modules.py
+python3 scripts/check_audit.py

@@ -1,20 +1,21 @@
 [build]
-  command = "hugo --gc --minify --panicOnWarning --cleanDestinationDir --baseURL \"$URL\""
+  command = "bash scripts/with-dart-sass.sh env SITE_ENV=production SITE_PROFILE=client SITE_URL=\"$URL\" INTAKE_BACKEND=netlify node scripts/build-site.mjs"
   publish = "public"
 
 [build.environment]
+  NODE_VERSION = "22"
   HUGO_VERSION = "0.164.0"
   HUGO_ENV = "production"
   TZ = "America/Chicago"
 
 [context.deploy-preview]
-  command = "hugo --gc --minify --panicOnWarning --cleanDestinationDir --environment staging --disableKinds sitemap --baseURL \"$DEPLOY_PRIME_URL\""
+  command = "bash scripts/with-dart-sass.sh env SITE_ENV=preview SITE_PROFILE=client SITE_URL=\"$DEPLOY_PRIME_URL\" INTAKE_BACKEND=disabled node scripts/build-site.mjs"
 
 [context.deploy-preview.environment]
   HUGO_ENV = "staging"
 
 [context.branch-deploy]
-  command = "hugo --gc --minify --panicOnWarning --cleanDestinationDir --environment staging --disableKinds sitemap --baseURL \"$DEPLOY_PRIME_URL\""
+  command = "bash scripts/with-dart-sass.sh env SITE_ENV=preview SITE_PROFILE=client SITE_URL=\"$DEPLOY_PRIME_URL\" INTAKE_BACKEND=disabled node scripts/build-site.mjs"
 
 [context.branch-deploy.environment]
   HUGO_ENV = "staging"

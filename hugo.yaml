@@ -48,15 +48,38 @@ menus:
 params:
   author: Binyled’s Storyscape
   description: >-
-    Bespoke in-home tabletop adventures created around your guests and
-    professionally guided in Bentonville and Northwest Arkansas.
+    Explore a private tabletop adventure in Bentonville and Northwest Arkansas.
+    I prepare and guide the evening so you can play alongside your guests.
   keywords:
     - private tabletop experience
     - game master Bentonville
     - tabletop roleplaying Northwest Arkansas
     - in-home game night
-    - bespoke tabletop adventure
-  defaultTheme: dark
+    - private in-home tabletop adventure
+  favicon: favicon.ico
+  appleIcon: apple-touch-icon.png
+  profile: exemplar
+  storyscapeArtwork: true
+  includeInternalGuides: true
+  intakeBackend: disabled
+  monogram: BS
+  brandPrimary: Binyled’s
+  brandSecondary: Storyscape
+  tagline: You host the people. I host the world.
+  serviceName: The Private Storyscape
+  serviceType: Private in-home tabletop roleplaying experience
+  serviceAreaHeading: In your home
+  serviceAreaText: Bentonville and Northwest Arkansas, with each date and location confirmed privately.
+  areaServed: [Bentonville, Northwest Arkansas]
+  defaultTheme: system
   images:
-    - images/storyscape-social-card.png
+    - images/storyscape/social-link.png
+  socialImageAlt: "Binyled’s Storyscape. You host the people. I host the world. Private in-home tabletop adventures in Bentonville and Northwest Arkansas, with an illustrative tabletop scene."
   consultationPath: consultation/
+
+# Hugo copies ignored files unless its static mount excludes them explicitly.
+module:
+  mounts:
+    - source: static
+      target: static
+      files: ["! temp/**", "! images/temp/**", "! .DS_Store", "! **/.DS_Store", "**"]

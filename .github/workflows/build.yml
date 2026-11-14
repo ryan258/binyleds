@@ -31,28 +31,21 @@ jobs:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
-      - name: Build and audit
-        run: bash scripts/check.sh
-
       - name: Install Node for intake boundary tests
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: "22"
 
-      - name: Verify inquiry intake and hosting modes
+      - name: Build, audit, and verify inquiry and hosting modes
         run: |
-          npm run test:intake
-          npm run test:hosting
+          bash scripts/with-dart-sass.sh bash -e -c '
+            bash scripts/check.sh
+            npm run test:intake
+            npm run test:hosting
+          '
 
-  # Staging mirror only. Netlify remains production: it is the host that can
-  # capture the consultation form, send the security headers in netlify.toml,
-  # and serve the /consult and /book redirects. GitHub Pages can do none of
-  # those, so nothing here should be treated as the live site.
-  #
-  # Built with `-e staging`, which leaves hugo.IsProduction false and so emits
-  # `noindex, nofollow` on every page. That is deliberate: this mirror is a
-  # byte-for-byte copy of production and would otherwise compete with the real
-  # site in search results as duplicate content.
+  # Static staging mirror: no inquiry backend, noindex, no sitemap.
+  # Configured host behavior is not evidence of an actual production deployment.
   deploy-staging:
     needs: build
     if: github.ref == 'refs/heads/main'
@@ -76,46 +69,15 @@ jobs:
 
       - name: Build staging site
         run: |
-          hugo --gc --minify --panicOnWarning --cleanDestinationDir \
+          bash scripts/with-dart-sass.sh hugo --gc --minify --panicOnWarning --cleanDestinationDir \
             --environment staging \
             --disableKinds sitemap \
             --baseURL "https://ryan258.github.io/binyleds/"
 
-      # scripts/check.sh builds at a root baseURL, so it structurally cannot
-      # catch subpath bugs. Both failures below are invisible until something
-      # is served from /binyleds/, which only ever happens here.
+      # Reuse the root/subpath-aware audit for the deployed project prefix.
       - name: Verify the staging build
         run: |
-          python3 - <<'PY'
-          import glob, os, re, sys
-
-          failures = []
-
-          if os.path.isfile("public/sitemap.xml"):
-              failures.append("staging build should not publish sitemap.xml")
-
-          for path in glob.glob("public/**/*.html", recursive=True):
-              html = open(path).read()
-              page = os.path.relpath(path, "public")
-
-              # Duplicate content: this mirror is byte-identical to production.
-              robots = re.search(r'name=["\']?robots["\']? content="([^"]*)"', html)
-              if not robots or "noindex" not in robots.group(1):
-                  failures.append(f"{page} is missing noindex")
-
-              # Root-relative refs that skipped the /binyleds/ prefix 404 here.
-              for ref in re.findall(r'(?:href|src)="?(/[^" >]*)', html):
-                  if not ref.startswith("/binyleds/"):
-                      failures.append(f"{page} has unprefixed ref {ref}")
-
-          if failures:
-              print("Staging build rejected:", file=sys.stderr)
-              for f in sorted(set(failures)):
-                  print(f"- {f}", file=sys.stderr)
-              sys.exit(1)
-
-          print("Staging build verified.")
-          PY
+          python3 scripts/audit_site.py public --expect-noindex --base-url "https://ryan258.github.io/binyleds/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3

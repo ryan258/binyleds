@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "eyebrow": "Fictional remote-play example",
+    "line_one": "Different places.",
+    "line_two": "One shared adventure.",
+    "lede": "Wayfarer Table is a synthetic example of an online, beginner-friendly game-master site. Explore how the same modules can support a different format and voice.",
+    "signature": "Bring a question. Make a choice.",
+    "primary_cta": {
+      "label": "Explore the example",
+      "url": "services/"
+    },
+    "secondary_cta": {
+      "label": "Read the sample adventure",
+      "url": "adventures/"
+    }
+  },
+  "proof": [
+    {
+      "label": "Small decisions first",
+      "detail": "New players can start with a spoken choice."
+    },
+    {
+      "label": "A pace you can change",
+      "detail": "Pauses and different ways to participate belong in the plan."
+    },
+    {
+      "label": "A complete session",
+      "detail": "Each example has an opening, a decision, and a closing."
+    }
+  ],
+  "services": {
+    "eyebrow": "Example formats",
+    "title": "Choose a starting point",
+    "intro": "These are demonstration formats, not available bookings.",
+    "items": [
+      {
+        "title": "Your first adventure",
+        "text": "A guided introduction with room to ask questions."
+      },
+      {
+        "title": "The next chapter",
+        "text": "A repeatable session plan for an existing group."
+      }
+    ]
+  },
+  "closing": {
+    "eyebrow": "Continue exploring",
+    "title": "Read the worked example",
+    "text": "Follow a synthetic inquiry through scope, preparation, play, and follow-up in the repository example pack.",
+    "cta": {
+      "label": "Meet Lantern Bay",
+      "url": "adventures/"
+    }
+  }
+}

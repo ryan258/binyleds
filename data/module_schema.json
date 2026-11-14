@@ -1,0 +1,620 @@
+{
+  "hero": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "line_one": {
+        "type": "string"
+      },
+      "line_two": {
+        "type": "string"
+      },
+      "lede": {
+        "type": "string"
+      },
+      "signature": {
+        "type": "string"
+      },
+      "primary_cta": {
+        "type": "object",
+        "required": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "url"
+          }
+        }
+      },
+      "secondary_cta": {
+        "type": "object",
+        "required": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "url"
+          }
+        }
+      }
+    },
+    "optional": {}
+  },
+  "proof": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "required": {
+        "label": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        }
+      },
+      "optional": {}
+    }
+  },
+  "cards": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": {
+            "title": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "optional": {
+            "tag": {
+              "type": "string"
+            },
+            "link": {
+              "type": "object",
+              "required": {
+                "label": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "url"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "optional": {
+      "intro": {
+        "type": "string"
+      }
+    }
+  },
+  "packages": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "caption": {
+        "type": "string"
+      },
+      "columns": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "rows": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": {
+            "label": {
+              "type": "string"
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "optional": {}
+        }
+      }
+    },
+    "optional": {
+      "intro": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "required": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "url"
+          }
+        }
+      }
+    }
+  },
+  "adventures": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": {
+            "number": {
+              "type": "string"
+            },
+            "tone": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "premise": {
+              "type": "string"
+            },
+            "choice": {
+              "type": "string"
+            },
+            "play": {
+              "type": "string"
+            }
+          },
+          "optional": {}
+        }
+      }
+    },
+    "optional": {
+      "intro": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "required": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "url"
+          }
+        }
+      }
+    }
+  },
+  "process": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "intro": {
+        "type": "string"
+      },
+      "steps": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": {
+            "number": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "optional": {
+            "glyph": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "link": {
+        "type": "object",
+        "required": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "url"
+          }
+        }
+      }
+    },
+    "optional": {}
+  },
+  "gallery": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": {
+            "image": {
+              "type": "image"
+            },
+            "alt": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "caption": {
+              "type": "string"
+            }
+          },
+          "optional": {}
+        }
+      }
+    },
+    "optional": {
+      "intro": {
+        "type": "string"
+      }
+    }
+  },
+  "details": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "intro": {
+        "type": "string"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": {
+            "title": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "optional": {
+            "tag": {
+              "type": "string"
+            },
+            "link": {
+              "type": "object",
+              "required": {
+                "label": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "url"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "optional": {}
+  },
+  "positioning": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "paragraphs": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "pullquote": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "required": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "url"
+          }
+        }
+      }
+    },
+    "optional": {}
+  },
+  "reassurance": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "paragraphs": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "pullquote": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "required": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "url"
+          }
+        }
+      }
+    },
+    "optional": {}
+  },
+  "philosophy": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "paragraphs": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "link": {
+        "type": "object",
+        "required": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "url"
+          }
+        }
+      }
+    },
+    "optional": {}
+  },
+  "faq": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": {
+            "question": {
+              "type": "string"
+            },
+            "answer": {
+              "type": "string"
+            }
+          },
+          "optional": {}
+        }
+      }
+    },
+    "optional": {
+      "link": {
+        "type": "object",
+        "required": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "url"
+          }
+        }
+      }
+    }
+  },
+  "location": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "text": {
+        "type": "string"
+      },
+      "link": {
+        "type": "object",
+        "required": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "url"
+          }
+        }
+      }
+    },
+    "optional": {}
+  },
+  "closing": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "text": {
+        "type": "string"
+      },
+      "cta": {
+        "type": "object",
+        "required": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "url"
+          }
+        }
+      }
+    },
+    "optional": {}
+  },
+  "trust": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": {
+            "title": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "optional": {
+            "tag": {
+              "type": "string"
+            },
+            "link": {
+              "type": "object",
+              "required": {
+                "label": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "url"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "optional": {
+      "intro": {
+        "type": "string"
+      }
+    }
+  },
+  "booking": {
+    "type": "object",
+    "required": {
+      "eyebrow": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": {
+            "title": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "optional": {
+            "tag": {
+              "type": "string"
+            },
+            "link": {
+              "type": "object",
+              "required": {
+                "label": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "url"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "optional": {
+      "intro": {
+        "type": "string"
+      }
+    }
+  }
+}
