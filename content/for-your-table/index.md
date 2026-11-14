@@ -1,9 +1,9 @@
 ---
 title: A place in the story for every guest
 eyebrow: For your table
-lede: The Storyscape is built for close gatherings where different personalities and experience levels should feel equally welcome.
+lede: Bring curious newcomers, longtime players, or a mix of both. I explain what’s happening and help everyone find a way into the story.
 description: Learn which hosts, guests, occasions, and groups are a good fit for a private Storyscape.
-heroImage: images/for-your-table-hero.webp
+heroArtwork: prepared-table
 toc: true
 showCta: true
 weight: 30
@@ -11,19 +11,15 @@ weight: 30
 
 ## For the host who wants to be present
 
-This experience is for someone who enjoys bringing people together but does not
-want to spend weeks writing, teaching, organizing, and performing the entire
-night. You care about the details because you care about the guests, and you
-would also like to sit down with them.
-
-The right host values originality, reliability, social awareness, and an
-evening that feels personal without becoming showy.
+You know your guests and what makes them comfortable. I prepare the adventure
+and guide play so you can sit down with them. If you’re usually the person who
+runs the game, this is a chance to take a turn as a player.
 
 ## For mixed-experience groups
 
-Some guests may know every convention of tabletop roleplaying. Others may not
-know what a character sheet is. That difference is not a problem to solve before
-the evening. It is part of the table the experience is designed to welcome.
+Some guests may know the rules by heart. Others may be seeing a character
+sheet for the first time. I start with a choice everyone can understand and
+explain what each player needs as the story moves along.
 
 New players receive:
 

@@ -1,12 +1,11 @@
 hero:
-  eyebrow: Bespoke in-home tabletop experiences
+  eyebrow: Private in-home tabletop adventures
   line_one: You host the people.
   line_two: I host the world.
   lede: >-
-    Commission a private tabletop adventure created around your guests and
-    brought to life in your home, with thoughtful preparation, welcoming
-    guidance, and a fully hosted evening from the opening scene to the final
-    decision.
+    Invite your favorite people and take a seat with them. I prepare the
+    adventure around your guests, help everyone get started, and guide the
+    evening at your table.
   primary_cta:
     label: Request a private consultation
     url: consultation/
@@ -16,57 +15,58 @@ hero:
   signature: I build the world. You shape the story.
 
 proof:
-  - label: Created around your guests
-    detail: Personalities, experience levels, and the occasion shape the story.
-  - label: Welcoming from the first scene
-    detail: New and experienced players are guided into the same shared evening.
-  - label: Prepared from beginning to end
-    detail: The creative and facilitation burden no longer sits with the host.
+  - label: Take a seat with your guests
+    detail: I prepare the adventure and guide play while you join in.
+  - label: Start with a simple choice
+    detail: I explain the scene, ask what you’d like to do, and introduce rules as they come up.
+  - label: Shape the story around your group
+    detail: Tell me what brings everyone together and what they’d enjoy playing.
 
 positioning:
+  link: {label: Explore the Private Storyscape, url: experience/}
   eyebrow: The Private Storyscape
-  title: An evening created around your table
+  title: Play at your own gathering
   paragraphs:
     - >-
-      The most memorable game nights are not defined by how well everyone knows
-      the rules. They are defined by the moment every guest realizes they have a
-      place in the story.
+      The Private Storyscape is a guided tabletop roleplaying adventure for one
+      evening at your home. You bring the people. I take care of the story,
+      the rules, and the pace so you can play alongside them.
     - >-
-      Personalities, experience levels, interests, sense of humor: every
-      detail becomes raw material for the story instead of a guessing game.
-      It is prepared so thoroughly that you can remain part of the gathering
-      rather than responsible for running it.
+      Tell me what your friends enjoy and how familiar they are with tabletop
+      games. I can open with a gentle mystery for first-time players or give an
+      experienced group more room to investigate and improvise.
   pullquote: You invite the guests. The world arrives prepared.
 
 process:
-  eyebrow: How the evening takes shape
-  title: How the world gets built
+  link: {label: See how the evening works, url: how-it-works/}
+  eyebrow: The process
+  title: From a first conversation to the table
   intro: >-
-    A clear three-part process keeps the practical details calm and gives the
-    imagination room to work.
+    Start with a possible date, the general location, and a rough guest count.
   steps:
     - number: "01"
-      title: A private consultation
+      glyph: consultation
+      title: Tell me about your gathering
       text: >-
-        We discuss your guests, the occasion, their experience, and the
-        atmosphere you want to create.
+        Share what brings everyone together and how you’d like the evening to feel.
     - number: "02"
-      title: A story prepared for the group
+      glyph: materials
+      title: Agree on the evening
       text: >-
-        The adventure, characters, encounters, and supporting materials are
-        shaped around the people at the table.
+        I confirm fit, timing, materials, scope, and price with you before you decide.
     - number: "03"
-      title: A fully guided evening
+      glyph: play
+      title: Take a seat with your guests
       text: >-
-        The world arrives at your home, guided at every turn, from your
-        guests’ first choice to their last.
+        I prepare the agreed adventure and guide the story as your guests decide
+        what happens.
 
 details:
   eyebrow: What the commission can hold
-  title: Every detail serves the evening
+  title: What I can prepare for your table
   intro: >-
-    The final scope is confirmed during consultation. These are the parts that
-    may be shaped around the table rather than a one-size-fits-all package.
+    The story, materials, and practical arrangements depend on your guests and
+    your space. I confirm what’s included with you before you commit.
   items:
     - title: Story and characters
       text: A focused adventure, approachable roles, and choices tuned to the group.
@@ -82,64 +82,59 @@ details:
       text: When the table wants more, the conversation can continue after the final scene.
 
 reassurance:
-  eyebrow: Designed for mixed experience
-  title: Curiosity is the only prerequisite
+  link: {label: See who the experience is for, url: for-your-table/}
+  eyebrow: First-time and experienced players
+  title: Everyone can start with a choice
   paragraphs:
     - >-
-      Some guests may have played for years. Others may be opening a character
-      sheet for the first time. The experience is created for both.
+      I’ll describe what your characters see and ask what they do. You can
+      speak as a character or tell the table what you’d like to try.
     - >-
-      New players receive enough guidance to begin making meaningful choices
-      immediately, while experienced players have room to explore, improvise,
-      and surprise the table.
-    - >-
-      No one is expected to study beforehand. No one is left waiting for the
-      story to make sense.
+      First-time players learn the rules as they need them. Experienced players
+      have room to explore and improvise, including the friend who usually
+      runs the game.
   pullquote: Within the first scene, the evening belongs to everyone.
 
 philosophy:
   eyebrow: The approach
-  title: Presence, not performance.
+  title: Make space for the people at the table
   paragraphs:
     - >-
-      Every commission is approached as a private gathering first and a tabletop
-      game second. That means understanding the guests, reading the room,
-      explaining without condescension, adapting without losing direction, and
-      knowing when to let the table take control of the story.
+      I ask what would help your guests feel comfortable. We can talk about
+      breaks, how guests prefer to take a turn, and anything the story should
+      leave out.
     - >-
-      The goal is not to perform at your guests. It is to create the conditions
-      for them to surprise one another.
+      During play, I keep track of the pace and give guests time to ask a
+      question, consider a choice, or pass the turn.
   link:
     label: Read the hosting philosophy
     url: about/
 
 location:
   eyebrow: Bentonville, Arkansas
-  title: A private world, brought to your home
+  title: At home in Northwest Arkansas
   text: >-
-    Binyled’s Storyscape creates in-home tabletop experiences for private
-    gatherings in Bentonville and across Northwest Arkansas, with each date and
-    location confirmed during consultation.
+    The Private Storyscape is designed for homes in Bentonville and Northwest
+    Arkansas. Date, location, and travel fit are confirmed during consultation.
   link:
     label: See if the experience fits your table
     url: for-your-table/
 
 closing:
   eyebrow: Your evening begins here
-  title: Begin with the evening you want to create
+  title: Tell me about your gathering
   text: >-
-    Tell me who you are gathering, what they enjoy, and what would make the night
-    feel distinctly yours. From there, we can determine the right shape for the
-    evening and begin building the story around your table.
+    A possible date, the general location, and a rough guest count are enough
+    to start. I’ll confirm the practical details with you before you decide.
   cta:
     label: Request a private consultation
     url: consultation/
 
 
 services:
-  eyebrow: Find your kind of evening
-  title: A table for every starting point
-  intro: Begin with the people you want to gather. Together, we can work out the right story, pace, and practical fit.
+  eyebrow: Your gathering
+  title: Bring the people you want to play with
+  intro: Tell me who’s coming. Their interests and experience can help shape the opening scene, pace, and practical details.
   items:
     - title: A private adventure
       tag: One memorable gathering
@@ -174,9 +169,9 @@ packages:
 adventures:
   eyebrow: A glimpse of the possible
   title: Which story would your table choose?
-  intro: Illustrative adventure concepts, offered as conversation starters. The actual story and game system are agreed with your group; these are not scheduled or bookable products.
+  intro: These fictional openings show how a first choice might feel. I confirm the actual story and game system with you.
   items:
-    - title: The last light of Lantern Bay
+    - title: The Last Light of Lantern Bay
       number: "01"
       tone: Wonder · Discovery
       premise: Once a year, the lighthouse shines inland. Tonight, it has revealed a path no one remembers building.
@@ -197,22 +192,18 @@ adventures:
   link: {label: Bring your own story idea, url: consultation/}
 
 gallery:
-  eyebrow: Around the table
-  title: Make room for a little wonder
-  intro: Concept artwork showing the atmosphere behind Storyscape. These images are illustrative, not photographs of client events or a promise of particular equipment.
+  eyebrow: Concept artwork
+  title: Around the Storyscape table
+  intro: AI-generated scenes show the atmosphere and details that can inspire a private adventure.
   items:
-    - image: images/experience-hero.webp
-      alt: Illustrative tabletop setting for a private fantasy adventure.
-      title: A world within reach
-      caption: An invitation to settle in and become part of the story.
-    - image: images/how-it-works-hero.webp
-      alt: Concept artwork representing preparation for a guided tabletop evening.
-      title: Care before the first scene
-      caption: The mood begins with thoughtful preparation.
-    - image: images/for-your-table-hero.webp
-      alt: Illustrative atmosphere for a welcoming tabletop gathering.
-      title: A place for every guest
-      caption: The people at the table give the world its meaning.
+    - image: images/storyscape/prepared-table-720.webp
+      alt: Hands unfold a cream map beside a brass die and a glass of water on a warmly lit table.
+      title: The Prepared Table
+      caption: A map gives the group somewhere to start. The guests decide where to go.
+    - image: images/storyscape/world-in-the-details-720.webp
+      alt: A brass die and pencil rest beside a hand-drawn shoreline on cream paper.
+      title: World in the Details
+      caption: A shoreline, a path, and just enough detail to invite a first choice.
 
 comfort:
   eyebrow: Before the first scene
@@ -246,10 +237,10 @@ resources:
 
 faq:
   eyebrow: A few practical answers
-  title: Before you gather the party
+  title: What to know before you plan
   items:
     - question: Do we need to know how to play D&D?
-      answer: No prior tabletop experience is needed. Tell me if you have D&D or another game in mind; the system and approach are confirmed during consultation, with guidance for newcomers.
+      answer: You can learn as you play. Tell me if you have D&D or another game in mind. I’ll confirm the system and explain the rules as they come up.
     - question: What does a commission cost?
       answer: The quote follows the conversation about your group, location, preparation, and scope. The cost and what it covers are confirmed before you commit.
     - question: Can we request a particular occasion or theme?

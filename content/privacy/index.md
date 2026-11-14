@@ -26,7 +26,8 @@ The information is used to:
 - Prepare for a direct conversation about the evening
 - Keep an accurate record of what the host asked for
 
-It should not be sold or used for unrelated marketing without separate consent.
+Inquiry details are used for this conversation and are not sold or added to a
+marketing list. Any future newsletter would require a separate opt-in.
 
 ## Where submissions are processed
 
@@ -34,12 +35,20 @@ It should not be sold or used for unrelated marketing without separate consent.
 
 ## Access, correction, or deletion
 
-After receiving a reply, you can use that same email conversation to ask for a
-correction, a copy of the details supplied, or deletion of the consultation
-record, subject to any legitimate record-keeping need explained at the time.
+Use the contact option on the consultation page to ask for a correction, a copy
+of your details, or deletion. You can also reply to an existing conversation.
+
+## Retention and browser drafts
+
+{{< retention-note >}}
+
+The Cloudflare form remembers a random request reference and a fingerprint of
+an attempted submission in session storage. It does not automatically save the
+words you entered. You may download a private draft yourself; that file includes
+your entries and stays under your control. Keep it somewhere private and delete
+it when you no longer need it.
 
 ## Changes to this note
 
-This note should be reviewed whenever the form provider, data use, notification
-recipients, or retention practice changes. The public version must describe the
-actual operating practice rather than an aspirational one.
+The notice beside the form applies when you submit. If it changes while the
+form is open, review the current notice before sending again.

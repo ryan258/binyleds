@@ -1,8 +1,8 @@
 ---
-title: Begin with the evening you want to create
-eyebrow: Request a private consultation
-lede: Tell me who you are gathering, what they enjoy, and what would make the night feel distinctly yours.
-description: Request a private consultation for a Binyled’s Storyscape tabletop evening in Bentonville or Northwest Arkansas.
+title: Tell me about your gathering
+eyebrow: Private Storyscape consultation
+lede: A rough guest count, the general location, and a possible date are enough to begin. Timing, scope, and price are confirmed before you decide.
+description: See what to bring to a private Storyscape consultation about an in-home tabletop adventure in Bentonville or Northwest Arkansas.
 layout: single
 weight: 60
 ---

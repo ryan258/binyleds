@@ -1,8 +1,6 @@
 ---
 title: Binyled’s Storyscape
-description: Bespoke in-home tabletop adventures created around your guests and guided in Bentonville and Northwest Arkansas.
-images:
-  - images/storyscape-social-card.png
+searchTitle: Private in-home tabletop adventures in Northwest Arkansas
 # Remove entries or set enabled: false to sculpt this composition.
 sections:
   - module: hero

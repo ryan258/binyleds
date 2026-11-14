@@ -17,11 +17,11 @@ hero:
     signature: The most interesting part of the story is you.
 services:
   extended:
-    eyebrow: More ways to gather
-    title: Start with the format you have in mind
-    intro: These are requests to discuss, not a list of confirmed offerings. Availability, suitability, delivery format, and scope need to be agreed before booking.
+    eyebrow: Possible starting points
+    title: What would your guests enjoy?
+    intro: The Private Storyscape starts with one evening at your table. These ideas can guide the conversation. I confirm availability, format, and scope with you.
     items:
-      - title: A private one-shot
+      - title: A private adventure
         tag: A complete story
         text: Ask about a self-contained adventure for a single gathering with friends.
         link: {label: Discuss a private adventure, url: consultation/}
@@ -29,9 +29,9 @@ services:
         tag: A possible next chapter
         text: Discuss whether a continuing story, recurring group, and regular schedule could fit.
         link: {label: Discuss a continuing story, url: consultation/}
-      - title: A beginner introduction
-        tag: A welcoming first table
-        text: Bring questions about learning the game and helping new players feel comfortable.
+      - title: A first game together
+        tag: For guests new to tabletop play
+        text: Ask how first-time players can try a simple opening choice and learn the rules as they go.
         link: {label: Discuss a first session, url: consultation/}
       - title: A celebration
         tag: An occasion worth sharing

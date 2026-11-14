@@ -1,62 +1,51 @@
 ---
-title: Questions before the first scene
+title: Questions about your private tabletop evening
 eyebrow: Practical answers
-lede: A private commission should feel clear before it feels magical. These answers cover the common starting points without inventing details that belong in your consultation.
+lede: Find out what your guests need, what I can prepare, and how we confirm the date and price.
 description: Answers about guests, experience level, location, pricing, preparation, and the private Storyscape consultation.
 showCta: true
 weight: 50
 ---
 
 {{< faq question="Do my guests need tabletop experience?" >}}
-No. The experience is designed to welcome new and experienced players at the
-same table. Guests learn what they need through play, with guidance offered when
-it becomes useful. No one is expected to study beforehand.
+Guests can learn as they play. I describe the opening scene, ask what they’d
+like to do, and explain the rules as they come up.
 {{< /faq >}}
 
 {{< faq question="Is this only for a particular game system?" >}}
-The Storyscape is described publicly as a tabletop roleplaying experience so
-the people and the evening remain more important than a trademark. Any preferred
-system, rules approach, or familiarity is discussed during consultation and
-confirmed in the scope.
+Bring any game system you enjoy or would like to try. We will discuss the
+rules, the group’s familiarity, and the kind of story you want, then confirm
+the approach in your scope.
 {{< /faq >}}
 
 {{< faq question="How many guests can take part?" >}}
-The best group size depends on the people, room, desired pace, and final format.
-Share the expected number in the consultation request. The practical fit is
-confirmed before the evening is accepted rather than guessed on this page.
+Bring a rough guest count. I’ll confirm what suits the group, room, and
+kind of adventure before we agree.
 {{< /faq >}}
 
 {{< faq question="How long is the experience?" >}}
-There is no standard length, because there is no standard evening. Timing is
-agreed once the occasion, group, location, and story are understood, as part
-of the final scope, not a number quoted upfront.
+Tell me when you want to start and when guests need to leave. We’ll agree
+on the length once we’ve discussed the group, occasion, and story.
 {{< /faq >}}
 
 {{< faq question="What is the timeline and space needed for the evening?" >}}
-Every home is different, so this is worked out directly rather than assumed.
-Setup, table space, and departure timing depend on your home, your schedule,
-and the confirmed scope, agreed during consultation so you know exactly what
-to expect before the evening is accepted.
+Tell me about your table, seating, and timing. We’ll confirm the room setup,
+arrival, and departure as part of the scope.
 {{< /faq >}}
 
 {{< faq question="What is included?" >}}
-The commission may include a story created for the group, prepared characters,
-guest onboarding, rules guidance, maps, music, miniatures, or selected physical
-details. Only the items named in the confirmed scope should be treated as
-included.
+I prepare and guide the agreed adventure. The scope spells out any characters,
+maps, music, miniatures, or other materials included for your evening.
 {{< /faq >}}
 
 {{< faq question="How is pricing handled?" >}}
-Pricing is confirmed after the consultation, when the date, location, group,
-preparation, and proposed scope are understood. You should receive the cost and
-what it covers before making a commitment: a figure based on what is actually
-planned for your evening, not a placeholder “starting at” number.
+I’ll confirm the price and what it covers before you commit. The quote follows
+the conversation about your group, location, and what I’ll prepare.
 {{< /faq >}}
 
 {{< faq question="Where do you travel?" >}}
-The service is centered in Bentonville and Northwest Arkansas. Each address and
-date is confirmed privately, along with any travel considerations, before the
-evening is accepted.
+The Private Storyscape is designed for Bentonville and Northwest Arkansas.
+I’ll confirm the date, location, and travel details with you privately.
 {{< /faq >}}
 
 {{< faq question="Can the story reflect a birthday or other occasion?" >}}

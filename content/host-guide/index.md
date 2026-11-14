@@ -1,8 +1,8 @@
 ---
-title: A little preparation. A more relaxed host.
-eyebrow: Your gathering checklist
-lede: You do not need to design the adventure before getting in touch. A few practical details are enough to begin a useful conversation.
-description: A practical checklist for planning a private tabletop gathering, from guests and tone to room arrangements and consultation questions.
+title: A host’s checklist for a private tabletop evening
+eyebrow: Plan your gathering
+lede: Start with who’s coming, a possible date, and the general location. You can work out the story and the room together during consultation.
+description: Plan your guest list, timing, room, and the kind of story your group would enjoy. Bring a few simple details to a private consultation.
 toc: true
 showCta: true
 ---
@@ -18,10 +18,10 @@ initial inquiry; suitability is confirmed during consultation.
 
 A birthday, reunion, or ordinary night with friends can each suggest a different
 pace. Bring a preferred date or a few possibilities, plus any timing constraints.
-Dates and duration remain subject to direct agreement.
+Confirm the date and duration directly before making plans with guests.
 
-Think in terms of atmosphere: playful, curious, mysterious, or dramatic. You do
-not need a plot. A sense of what the group would enjoy is more useful.
+Think about the atmosphere your guests would enjoy. They might like a playful
+adventure, a gentle mystery, or a more dramatic story.
 
 ## Consider the room
 
@@ -52,6 +52,6 @@ Before committing, confirm:
 - The price, any travel costs, and applicable payment and cancellation terms.
 - What you and your guests need to do beforehand.
 
-An inquiry starts the conversation; it does not reserve a date.
+An inquiry starts the conversation. A reservation requires direct agreement.
 
 {{< action url="/consultation/" label="Bring your gathering into the conversation" >}}

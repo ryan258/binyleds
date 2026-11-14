@@ -1,10 +1,9 @@
 ---
-title: Begin with the people you want to gather.
-eyebrow: Professional game mastering
-lede: A first adventure, a personal occasion, or a possible next chapter. Tell me what you have in mind, and we can shape the right experience together.
-description: Explore private tabletop adventures, beginner-friendly gatherings, and possible formats to discuss with Binyled’s Storyscape.
+title: Private tabletop adventures for your gathering
+eyebrow: The Private Storyscape
+lede: The Private Storyscape is a single evening shaped around the people you invite. Bring a first game, a birthday, or another reason to gather, and we can talk about what would fit.
+description: Explore a guided private tabletop adventure, ways to welcome first-time players, and possible formats to discuss with Binyled’s Storyscape.
 layout: modular
-heroImage: images/experience-hero.webp
 sections:
   - module: services
     id: services

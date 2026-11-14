@@ -1,10 +1,10 @@
 ---
-title: The next choice belongs to your table.
-eyebrow: Adventure inspiration
-lede: Start with a mood, a mystery, or a question no one can resist. These concepts show how different a shared evening can feel.
-description: Explore illustrative tabletop adventure concepts for a private game night, from discovery and mystery to playful negotiation.
+title: Sample tabletop adventures
+eyebrow: Illustrative story openings
+lede: See the kinds of choices your guests might make in a guided tabletop adventure. A lighthouse mystery, a manor invitation, and a dragon with a complaint each give the table a different place to begin.
+description: Explore fictional Storyscape openings and the choices they offer a private tabletop group, from discovery and mystery to playful negotiation.
 layout: modular
-heroImage: images/for-your-table-hero.webp
+heroArtwork: world-in-the-details
 sections:
   - module: adventures
     id: adventures
