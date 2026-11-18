@@ -10,7 +10,8 @@ and enhancement registers.
 
 The repository contains a theme-free Hugo site, module contracts and a local
 workshop, three build profiles, a Storyscape brand kit with responsive artwork,
-and shared inquiry rules. The optional Cloudflare inbox and the private Lantern
+polished client-facing copy (with public AI-generation notices removed), and
+shared inquiry rules. The optional Cloudflare inbox and the private Lantern
 Bay session-copy command are in place. The exemplar and remote static builds
 have focused local evidence; see readiness for the limits.
 

@@ -110,7 +110,7 @@ Intake is disabled by default. Active intake requires explicit backend
 configuration and a public fallback contact address. Form capture,
 notification delivery, and business operations require separate verification.
 
-Adventure concepts and AI-generated gallery artwork illustrate what a
+Adventure concepts and gallery artwork illustrate what a
 conversation could lead to. Package comparisons leave rates, capacities,
 schedules, and inclusions for consultation. The broader formats are examples
 to discuss.

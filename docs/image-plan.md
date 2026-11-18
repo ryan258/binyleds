@@ -13,7 +13,7 @@ illustrate the atmosphere of a Storyscape session.
 | Storyscape link card | Open Graph and social preview metadata, and the exemplar brand guide |
 
 Each hero scene offers 720 px and 1200 px WebP renditions with descriptive alt
-text and a visible “AI-generated concept artwork” caption. The gallery uses
+text. The gallery uses
 the 720 px files and has its own captions. Storyscape pages without a scene,
 including Questions and Consultation, use text-only headers. The fictional
 Wayfarer Table profile uses the CSS hero motif and its own example social SVG.
