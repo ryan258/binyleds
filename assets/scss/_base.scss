@@ -14,10 +14,14 @@ html {
 
 body {
   margin: 0;
-  background:
+  background-color: var(--canvas);
+  background-image:
+    url("../../images/texture-canvas-grain.webp"),
     radial-gradient(circle at 82% 6%, rgba(193, 154, 82, 0.06), transparent 28rem),
-    linear-gradient(115deg, rgba(115, 208, 171, 0.018), transparent 32%),
-    var(--canvas);
+    linear-gradient(115deg, rgba(115, 208, 171, 0.018), transparent 32%);
+  background-repeat: repeat, no-repeat, no-repeat;
+  background-size: 256px 256px, auto, auto;
+  background-blend-mode: soft-light, normal, normal;
   color: var(--ink);
   font-family: tokens.$body;
   font-size: 17px;

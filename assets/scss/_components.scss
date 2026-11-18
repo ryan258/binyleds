@@ -180,6 +180,11 @@ html[data-theme="light"] .theme-control__sun {
   background-image: var(--hero-photo, none);
   background-size: cover;
   background-position: center;
+  opacity: 0.22;
+}
+
+html[data-theme="light"] .home-hero::before,
+html[data-theme="light"] .page-hero::before {
   opacity: 0.1;
 }
 
@@ -299,7 +304,7 @@ html[data-theme="light"] .story-table::before {
 
 .proof-strip {
   border-bottom: 1px solid var(--rule);
-  background: var(--canvas-soft);
+  @include tokens.texture-cartography;
 }
 
 .proof-grid {
@@ -368,11 +373,25 @@ html[data-theme="light"] .story-table::before {
 }
 
 .section--forest {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   border-block: 1px solid rgba(193, 154, 82, 0.48);
   background:
     linear-gradient(115deg, rgba(115, 208, 171, 0.05), transparent 38%),
     var(--deep-forest);
   color: var(--parchment);
+}
+
+.section--forest::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("../../images/texture-forest-felt.webp") repeat;
+  background-size: 512px 512px;
+  opacity: 0.28;
+  pointer-events: none;
 }
 
 .section--forest h2,
@@ -467,8 +486,23 @@ html[data-theme="light"] .story-table::before {
 }
 
 .section--parchment {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background: var(--parchment);
   color: var(--obsidian);
+}
+
+.section--parchment::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("../../images/texture-parchment.webp") repeat;
+  background-size: 512px 512px;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 
 .section--parchment h2,
@@ -513,7 +547,9 @@ html[data-theme="light"] .section--parchment {
   padding: 2rem;
   border: 1px solid var(--rule);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(115, 208, 171, 0.08), transparent 65%);
+  background:
+    radial-gradient(circle, rgba(115, 208, 171, 0.08), transparent 65%),
+    url("../../images/texture-cartography-lines.webp") center / 320px 320px repeat;
   color: var(--gold-text);
   font-family: tokens.$display;
   font-size: clamp(1.4rem, 2.5vw, 2.1rem);
@@ -528,7 +564,7 @@ html[data-theme="light"] .section--parchment {
 .location-band {
   padding-block: 4.5rem;
   border-block: 1px solid var(--rule);
-  background: var(--canvas-soft);
+  @include tokens.texture-walnut;
 }
 
 .location-band__inner {
@@ -553,6 +589,8 @@ html[data-theme="light"] .section--parchment {
   border-top: 1px solid rgba(193, 154, 82, 0.6);
   background:
     radial-gradient(circle at 75% 50%, rgba(115, 208, 171, 0.13), transparent 30rem),
+    linear-gradient(180deg, rgba(16, 40, 34, 0.78), rgba(12, 29, 25, 0.84)),
+    url("../../images/closing-cta-bg.webp") center / cover no-repeat,
     var(--deep-forest);
   color: var(--parchment);
   text-align: center;
@@ -616,7 +654,7 @@ html[data-theme="light"] .section--parchment {
   background-image: var(--hero-photo, none);
   background-size: cover;
   background-position: center;
-  opacity: 0.1;
+  opacity: 0.22;
 }
 
 .page-hero__grid {
@@ -764,7 +802,7 @@ html[data-theme="light"] .section--parchment {
   margin-block: 3rem;
   padding: 2rem;
   border: 1px solid var(--rule);
-  background: var(--surface);
+  @include tokens.texture-linen;
 }
 
 .content-callout h2 {
@@ -1102,12 +1140,12 @@ html[data-theme="light"] .section--parchment {
 .site-footer {
   padding-top: 5rem;
   border-top: 1px solid var(--rule);
-  background: #090d0c;
+  @include tokens.texture-walnut(#090d0c);
   color: var(--parchment);
 }
 
 html[data-theme="light"] .site-footer {
-  background: var(--obsidian);
+  background-color: var(--obsidian);
 }
 
 .footer-grid {

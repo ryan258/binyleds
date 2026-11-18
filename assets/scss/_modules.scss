@@ -22,7 +22,7 @@
   flex-direction: column;
   padding: clamp(1.4rem, 3vw, 2.5rem);
   border: 1px solid var(--rule);
-  background: var(--surface);
+  @include tokens.texture-linen;
 
   h3 { margin-bottom: 1rem; }
   p { color: var(--muted); }
@@ -32,7 +32,11 @@
 
 .collection-section,
 .gallery-section { border-bottom: 1px solid var(--rule-soft); }
-.package-section { background: var(--canvas-soft); border-block: 1px solid var(--rule); }
+.gallery-section { @include tokens.texture-cartography(transparent); }
+.package-section {
+  border-block: 1px solid var(--rule);
+  @include tokens.texture-walnut;
+}
 .module-after-link { margin-top: 2.25rem; }
 .table-scroll-hint { font-size: 0.75rem; color: var(--muted); }
 .package-table-wrap { overflow-x: auto; }
@@ -49,10 +53,21 @@
   td { color: var(--muted); }
 }
 
-.adventure-section { background: radial-gradient(ellipse at top, rgba(193, 154, 82, 0.08), transparent 70%); }
+.adventure-section {
+  background:
+    radial-gradient(ellipse at top, rgba(193, 154, 82, 0.08), transparent 70%),
+    url("../../images/texture-cartography-lines.webp") repeat;
+  background-size: auto, 512px 512px;
+}
 .adventure-card {
   border-top: 3px solid var(--antique-gold);
-  background: linear-gradient(160deg, rgba(193, 154, 82, 0.07), transparent), var(--surface);
+  background-color: var(--surface);
+  background-image:
+    linear-gradient(160deg, rgba(193, 154, 82, 0.07), transparent),
+    url("../../images/texture-linen-weave.webp");
+  background-repeat: no-repeat, repeat;
+  background-size: auto, 256px 256px;
+  background-blend-mode: normal, soft-light;
   .adventure-choice { color: var(--ink-strong); font-family: tokens.$display; font-size: 1.55rem; font-style: italic; line-height: 1.35; }
   .adventure-play { margin-top: auto; margin-bottom: 0; padding-top: 1.3rem; border-top: 1px solid var(--rule); font-size: 0.78rem; }
 }
