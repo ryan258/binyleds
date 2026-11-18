@@ -1,6 +1,6 @@
 # Readiness ledger
 
-Updated November 14, 2026 against the local working tree. Implementation below
+Updated November 18, 2026 against the local working tree. Implementation below
 describes the source in this checkout. The active host, live intake, and
 provider configuration have not been verified.
 
@@ -13,13 +13,13 @@ provider configuration have not been verified.
 | Notifications | Separate delivery state, REST `reply_to`, manual retry | Provider acceptance, receipt at the verified operator mailbox, and working Reply-To |
 | Operator inbox | Authenticated list/read/status, numbered selectors, revision checks | End-to-end private operation, status conflicts, notification recovery, and a scratch restore |
 | Visitor recovery | Download/restore draft, receipt reference, field and conflict errors | File round trip in a real browser; privacy notice version gap below |
-| Accessibility | Theme and motion controls, focus and help/error affordances | Keyboard, zoom, screen reader, mobile, and visual contrast checks; no conformance claim |
+| Accessibility | Theme control, native reduced-motion support, focus and help/error affordances | Keyboard, zoom, screen reader, mobile, and visual contrast checks; no conformance claim |
 | Lantern Bay | Synthetic pack and ignored private copy command | Facilitator read-through and playtest; no saved playtest results |
 | Reuse | Notices, reuse policy, and asset provenance register | Owner license decision and confirmation of missing rights before redistribution |
 
 ## Local checks
 
-On November 14, 2026, the complete verification suite (`npm run test:all`,
+On November 18, 2026, the complete verification suite (`npm run test:all`,
 including `check`, `test:intake`, and `test:hosting`) passed cleanly against
 the local working tree with Hugo Extended 0.168.0, Dart Sass 1.106.1, and Node 22.22.3.
 Output checks confirmed both profiles had disabled intake, noindex, and no sitemap;

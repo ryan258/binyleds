@@ -47,6 +47,20 @@ These are editorial reference sizes from the Hugo guide. Live components can sca
 
 Use the established 4, 8, 12, 16, 24, 32, 48, 64, 96, 128 px spacing scale. Align practical information to a clear left edge. Use a single focal image, a thin rule to mark a transition, and mostly square corners. Give the brand name and key action generous clearance. Position a real label next to a glyph and make the entire control easy to target. Keep the skip link, meaningful focus, and visible text labels for fields. Let a reader pause decorative motion and honor the reduced-motion setting.
 
+### Material surfaces and texture mapping
+
+Tactile `.webp` textures are assigned consistently by section role through shared SCSS mixins in `assets/scss/_tokens.scss` rather than ad-hoc per-page styling:
+
+| Material | Asset | Brand role | Assigned sections |
+| --- | --- | --- | --- |
+| Canvas grain | `images/texture-canvas-grain.webp` | Base matte ground across dark and light themes | `body` |
+| Cartographic contours | `images/texture-cartography-lines.webp` | Discovery, story openings, and map motif | Proof strip, Adventures section, Gallery section, Philosophy mark |
+| Woven linen | `images/texture-linen-weave.webp` | Cards, invitations, and editorial callouts | Module cards, Adventure cards, Content callouts |
+| Walnut grain | `images/texture-walnut-grain.webp` | Structural and grounding bands | Packages band, Location band, Site footer |
+| Forest felt | `images/texture-forest-felt.webp` | Guided table and step-by-step process band | Process section (`.section--forest`) |
+| Aged parchment | `images/texture-parchment.webp` | High-contrast editorial reassurance band | Reassurance section (`.section--parchment`) |
+| Tabletop concept scenes | `images/*-hero.webp`, `images/closing-cta-bg.webp` | Atmospheric entry and closing bookends | Home hero, Interior page heroes, Closing CTA |
+
 ## Photography and art direction
 
 ### The Prepared Table

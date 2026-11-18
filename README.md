@@ -7,7 +7,7 @@ professional-service workflows are optional examples, not a requirement to launc
 a business or accept bookings.
 
 The local implementation includes reusable sections, configurable identity,
-keyboard and motion controls, optional inquiry storage, a short-command
+keyboard controls and native reduced-motion support, optional inquiry storage, a short-command
 operator inbox, and a worked session pack. The [readiness ledger](docs/readiness.md)
 records the checks that passed, open source issues, and what would need real
 browser or provider acceptance.
@@ -76,7 +76,7 @@ applying remote migrations, or modifying a live database. Those remain owner act
 | Registry and content contracts | `data/modules.yaml`, `data/module_schema.json` |
 | Templates and schema enforcement | `layouts/`, especially `sections/render.html` and `sections/validate.html` |
 | Shared form limits and choices | `data/intake.json` |
-| Theme, focus, motion, responsive layout | `assets/scss/`, `assets/js/site.js` |
+| Theme, focus, material textures, responsive layout | `assets/scss/`, `assets/js/site.js` |
 | Inquiry validation and storage | `lib/intake.mjs`, `functions/api/consultation.js` |
 | Environment isolation and operator access | `lib/environment.mjs`, `lib/operator.mjs`, `functions/api/inbox.js` |
 | Notification contract and retry | `lib/notifications.mjs`, `functions/api/notifications.js` |

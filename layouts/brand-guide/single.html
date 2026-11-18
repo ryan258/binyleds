@@ -297,6 +297,14 @@
           </table>
         </div>
 
+        <h3 class="guide-subheading">Material surfaces and texture mapping</h3>
+        <div class="journey-table-wrap">
+          <table class="guide-table">
+            <thead><tr><th>Material</th><th>Brand role</th><th>Assigned sections</th><th>Asset</th></tr></thead>
+            <tbody>{{ range $brand.visual.materials }}<tr><th scope="row">{{ .material }}</th><td>{{ .role }}</td><td>{{ .assigned_to }}</td><td><code>{{ .asset }}</code></td></tr>{{ end }}</tbody>
+          </table>
+        </div>
+
         <div class="guide-card-grid guide-card-grid--three">
           <article data-guide-card><h3>Layout rules</h3><ul>{{ range $brand.visual.layout_rules }}<li>{{ . }}</li>{{ end }}</ul><p><strong>Spacing:</strong> {{ $brand.visual.spacing }}</p></article>
           <article data-guide-card><h3>Imagery should</h3><ul>{{ range $brand.visual.imagery.do }}<li>{{ . }}</li>{{ end }}</ul></article>

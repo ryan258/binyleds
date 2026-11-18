@@ -337,6 +337,35 @@ visual:
     - role: Eyebrow
       desktop: 12/16 px
       mobile: 11/15 px
+  materials:
+    - material: Canvas grain
+      asset: images/texture-canvas-grain.webp
+      role: Base matte ground across dark and light themes
+      assigned_to: Body canvas (`body`)
+    - material: Cartographic contours
+      asset: images/texture-cartography-lines.webp
+      role: Discovery, story openings, and shared map motif
+      assigned_to: Proof strip, Adventures section, Gallery section, Philosophy mark
+    - material: Woven linen
+      asset: images/texture-linen-weave.webp
+      role: Tactile cards, invitations, and editorial callouts
+      assigned_to: Module cards, Adventure cards, Content callouts
+    - material: Walnut grain
+      asset: images/texture-walnut-grain.webp
+      role: Structural and grounding bands
+      assigned_to: Packages table band, Location band, Site footer
+    - material: Forest felt
+      asset: images/texture-forest-felt.webp
+      role: Guided table and step-by-step process band
+      assigned_to: Process section (`.section--forest`)
+    - material: Aged parchment
+      asset: images/texture-parchment.webp
+      role: High-contrast editorial reassurance band
+      assigned_to: Reassurance section (`.section--parchment`)
+    - material: Tabletop concept scenes
+      asset: images/*-hero.webp, images/closing-cta-bg.webp
+      role: Atmospheric entry and closing bookends
+      assigned_to: Home hero, Interior page heroes, Closing CTA
   spacing: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 / 128
   layout_rules:
     - Use generous negative space and editorial left alignment for practical information.

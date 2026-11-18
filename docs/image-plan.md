@@ -38,8 +38,20 @@ The existing favicon family still uses the BS utility seal.
 Record any changed public filenames in [data/release.json](../data/release.json)
 and build the intended profile to check the generated references. Inspect the
 hero crops at mobile and desktop sizes and keep concept art labeled wherever
-it appears. The six older scene WebPs and `storyscape-social-card.png`
-remain declared static files but have no current page or metadata placement.
+it appears.
+
+Background hero scenes (`images/home-hero.webp`, `images/about-hero.webp`,
+`images/experience-hero.webp`, `images/for-your-table-hero.webp`, and
+`images/how-it-works-hero.webp`) are layered via `--hero-photo` on `.home-hero`
+and `.page-hero` (`0.22` opacity in dark mode, `0.1` in light mode), and
+`images/closing-cta-bg.webp` backs `.closing-cta`. Seamless `.webp` material
+textures (`texture-canvas-grain.webp`, `texture-cartography-lines.webp`,
+`texture-linen-weave.webp`, `texture-walnut-grain.webp`, `texture-forest-felt.webp`,
+and `texture-parchment.webp`) are mapped by section role in
+[visual-standards.md](../brand/visual-standards.md) and
+`assets/scss/_tokens.scss`. `images/experience-callout.webp` and
+`images/storyscape-social-card.png` remain declared static files without
+current page placement.
 
 ## Earlier six-scene concept brief
 
