@@ -19,7 +19,7 @@ services:
   extended:
     eyebrow: Possible starting points
     title: What would your guests enjoy?
-    intro: The Private Storyscape starts with one evening at your table. These ideas can guide the conversation. I confirm availability, format, and scope with you.
+    intro: The Private Storyscape starts with one evening at your table. These formats are starting points for our conversation, and we’ll confirm the right fit and details together.
     items:
       - title: A private adventure
         tag: A complete story

@@ -11,8 +11,8 @@ showCta: true
 
 Make a rough guest list and note whether the group is new to roleplaying,
 experienced, or a mixture. Share what brings these people together and what
-sort of evening they tend to enjoy. An approximate number is enough for an
-initial inquiry; suitability is confirmed during consultation.
+sort of evening they tend to enjoy. An approximate number is enough to start;
+we’ll confirm what fits your space during our consultation.
 
 ## Describe the evening
 
@@ -49,7 +49,7 @@ Before committing, confirm:
 - The date, location, timing, and agreed group size.
 - The story approach and game system, if a particular one matters to you.
 - What preparation, materials, and on-the-night guidance are included.
-- The price, any travel costs, and applicable payment and cancellation terms.
+- The price, any travel costs, and payment and cancellation details.
 - What you and your guests need to do beforehand.
 
 An inquiry starts the conversation. A reservation requires direct agreement.

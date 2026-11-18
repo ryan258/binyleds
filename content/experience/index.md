@@ -34,7 +34,7 @@ your group and the agreed story, that may include:
 - Maps, music, miniatures, and selected physical details where useful
 - A self-contained story with a clear opening and ending
 
-{{< callout title="An illustrative opening" >}}
+{{< callout title="How an evening might begin" >}}
 A lighthouse is shining inland. Its beam reveals a path no one remembers
 building. Do you follow the light, or find out who lit it?
 {{< /callout >}}

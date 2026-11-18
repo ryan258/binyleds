@@ -25,17 +25,16 @@ Friends trying their first game might like a gentle mystery. Guests who love
 escape rooms might enjoy a trail of clues. A group that already plays might
 want a familiar world and a new decision to make.
 
-An inquiry starts the conversation. A reservation requires direct agreement,
-and sending a request creates no payment obligation.
+Sending an inquiry simply starts a conversation—there’s no reservation or payment obligation until we’ve agreed on the details.
 
 ## 2. Agree on the evening
 
 I’ll discuss what fits your group, the room, and your schedule. Before you
-decide, I’ll confirm timing, what’s included, the quote, and any applicable
-terms. If the date or format won’t work, I’ll tell you directly.
+decide, I’ll confirm timing, what’s included, and the full quote. If the date
+or format won’t work, I’ll tell you directly.
 
 Once we’ve agreed, I prepare the story, a first choice that guests can understand
-quickly, and any characters or materials in the scope.
+quickly, and any characters or materials we’ve agreed on.
 
 ## 3. Take a seat with your guests
 

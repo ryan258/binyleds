@@ -14,8 +14,8 @@ like to do, and explain the rules as they come up.
 
 {{< faq question="Is this only for a particular game system?" >}}
 Bring any game system you enjoy or would like to try. We will discuss the
-rules, the group’s familiarity, and the kind of story you want, then confirm
-the approach in your scope.
+rules, the group’s familiarity, and the kind of story you want, then choose
+the best approach together.
 {{< /faq >}}
 
 {{< faq question="How many guests can take part?" >}}
@@ -29,12 +29,12 @@ on the length once we’ve discussed the group, occasion, and story.
 {{< /faq >}}
 
 {{< faq question="What is the timeline and space needed for the evening?" >}}
-Tell me about your table, seating, and timing. We’ll confirm the room setup,
-arrival, and departure as part of the scope.
+Tell me about your table, seating, and timing. We’ll agree on room setup,
+arrival, and departure timing together.
 {{< /faq >}}
 
 {{< faq question="What is included?" >}}
-I prepare and guide the agreed adventure. The scope spells out any characters,
+I prepare and guide the agreed adventure. We’ll confirm any characters,
 maps, music, miniatures, or other materials included for your evening.
 {{< /faq >}}
 
@@ -62,7 +62,7 @@ what is useful, and save the rest for a private conversation.
 {{< /faq >}}
 
 {{< faq question="Does sending the form reserve a date?" >}}
-No. It begins a conversation. Date, location, fit, scope, pricing, and any
-commercial terms must be confirmed directly before an evening is reserved.
+No. It begins a conversation. We’ll confirm the date, location, plan, and
+pricing directly before your evening is reserved.
 {{< /faq >}}
 

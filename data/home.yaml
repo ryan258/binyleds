@@ -53,7 +53,7 @@ process:
       glyph: materials
       title: Agree on the evening
       text: >-
-        I confirm fit, timing, materials, scope, and price with you before you decide.
+        I confirm timing, materials, what’s included, and the full quote with you before you decide.
     - number: "03"
       glyph: play
       title: Take a seat with your guests
@@ -77,7 +77,7 @@ details:
     - title: Atmosphere and materials
       text: Maps, music, miniatures, and selected physical details where they serve the story.
     - title: In-home presence
-      text: The experience is prepared for the room and guided with attention to the gathering.
+      text: I arrive prepared for your space and guide the table from the opening scene to the final moment.
     - title: A possible next chapter
       text: When the table wants more, the conversation can continue after the final scene.
 
@@ -138,7 +138,7 @@ services:
   items:
     - title: A private adventure
       tag: One memorable gathering
-      text: Gather your friends for a self-contained story, with the preparation and game mastering taken care of within an agreed scope.
+      text: Gather your friends for a self-contained story, with all the preparation and game mastering taken care of so you can play too.
       link: {label: Explore a private evening, url: experience/}
     - title: Your first table
       tag: New to roleplaying
@@ -152,7 +152,7 @@ services:
 packages:
   eyebrow: Shape the commission
   title: Start with the evening you have in mind
-  intro: These are starting points for a conversation. Timing, guest count, materials, pricing, and availability are agreed individually before you commit.
+  intro: These are starting points for our conversation. Timing, guest count, materials, and pricing are always confirmed with you before you commit.
   caption: Compare possible approaches
   columns: [A first adventure, An occasion to remember, A continuing story]
   rows:
@@ -163,13 +163,13 @@ packages:
     - label: Story shape
       values: [A self-contained beginning and ending, A story shaped around the gathering, A possible follow-up to discuss]
     - label: Confirmed privately
-      values: [Scope and quote, Scope and quote, Feasibility and quote]
+      values: ["Date, plan, and quote", "Date, plan, and quote", "Schedule, plan, and quote"]
   link: {label: Talk through the possibilities, url: consultation/}
 
 adventures:
   eyebrow: A glimpse of the possible
   title: Which story would your table choose?
-  intro: These fictional openings show how a first choice might feel. I confirm the actual story and game system with you.
+  intro: Every adventure is shaped around your group. Here are three ways an evening might begin.
   items:
     - title: The Last Light of Lantern Bay
       number: "01"
@@ -177,13 +177,13 @@ adventures:
       premise: Once a year, the lighthouse shines inland. Tonight, it has revealed a path no one remembers building.
       choice: Follow the light, or find out who lit it?
       play: For guests who enjoy exploration and shared discoveries.
-    - title: The midnight invitation
+    - title: The Midnight Invitation
       number: "02"
       tone: Mystery · Conversation
       premise: Every guest at a secluded manor has received the same invitation. The host insists they never sent it.
       choice: Trust your fellow guests, or keep your own counsel?
       play: For a table drawn to clues, characters, and lively discussion.
-    - title: One very inconvenient dragon
+    - title: One Very Inconvenient Dragon
       number: "03"
       tone: Wit · Negotiation
       premise: A dragon has claimed the town bridge. It wants neither gold nor a fight. It wants someone to hear its complaint.
@@ -192,9 +192,9 @@ adventures:
   link: {label: Bring your own story idea, url: consultation/}
 
 gallery:
-  eyebrow: Concept artwork
+  eyebrow: At the table
   title: Around the Storyscape table
-  intro: AI-generated scenes show the atmosphere and details that can inspire a private adventure.
+  intro: A closer look at the atmosphere and tactile details that set the stage for a private evening.
   items:
     - image: images/storyscape/prepared-table-720.webp
       alt: An unrolled cream shoreline map rests beside a brass die, folded linen, and a glass of water on a warmly lit walnut table.
@@ -242,11 +242,11 @@ faq:
     - question: Do we need to know how to play D&D?
       answer: You can learn as you play. Tell me if you have D&D or another game in mind. I’ll confirm the system and explain the rules as they come up.
     - question: What does a commission cost?
-      answer: The quote follows the conversation about your group, location, preparation, and scope. The cost and what it covers are confirmed before you commit.
+      answer: Pricing depends on your group size, location, and what we’re preparing for the evening. I’ll confirm the full quote and everything it covers before you commit.
     - question: Can we request a particular occasion or theme?
-      answer: Yes. Share the occasion, the atmosphere you want, and any ideas your group already has. We can discuss what fits the table and the agreed scope.
+      answer: Yes. Share the occasion, the atmosphere you want, and any ideas your group already has, and we’ll shape the evening around them.
     - question: Does an inquiry reserve a date?
-      answer: No. An inquiry begins a conversation. A reservation requires direct confirmation of availability, fit, scope, pricing, and terms.
+      answer: No. Sending an inquiry simply starts a conversation. Your date is reserved once we’ve confirmed availability, plans, and pricing together.
   link: {label: Read all the practical answers, url: questions/}
 
 trust:
