@@ -12,8 +12,8 @@ function element(extra = {}) {
     focus() { this.focused = true; }, scrollIntoView() {}, ...extra };
 }
 function browser({ blocked = false, saved = {}, light = true, guideEnabled = true, hash = '' } = {}) {
-  const root = element(); const theme = element(); const motion = element();
-  const color = element({ matches: light }); const reduced = element({ matches: false });
+  const root = element(); const theme = element();
+  const color = element({ matches: light });
   const search = element({ value: '' }); const progress = element(); const link = element();
   const sections = [element({ id: 'foundation', textContent: 'Foundation', tagName: 'SECTION' }), element({ id: 'type', textContent: 'Manrope', tagName: 'SECTION' })];
   const check = element({ dataset: { brandCheck: 'one' }, checked: false });
@@ -24,16 +24,16 @@ function browser({ blocked = false, saved = {}, light = true, guideEnabled = tru
   });
   sections.forEach(section => { section.parentElement = guide; });
   const window = element({ scrollY: 0, innerHeight: 800, innerWidth: 1200, location: { hash },
-    matchMedia(query) { return query.includes('color-scheme') ? color : reduced; } });
+    matchMedia() { return color; } });
   vm.runInNewContext(script, {
     document: { documentElement: root,
-      querySelector(selector) { return { '[data-theme-toggle]': theme, '[data-motion-toggle]': motion, '[data-brand-guide]': guideEnabled ? guide : null }[selector] || null; },
+      querySelector(selector) { return { '[data-theme-toggle]': theme, '[data-brand-guide]': guideEnabled ? guide : null }[selector] || null; },
       getElementById(id) { return sections.find(section => section.id === id) || null; }, addEventListener() {} },
     window, URLSearchParams,
     localStorage: { getItem(key) { if (blocked) throw new Error('blocked'); return saved[key] || null; },
       setItem(key, value) { if (blocked) throw new Error('blocked'); saved[key] = value; } },
   });
-  return { root, theme, motion, color, reduced, search, progress, check, sections, link, window };
+  return { root, theme, color, search, progress, check, sections, link, window };
 }
 test('theme works without storage, follows system, and preserves an explicit choice', () => {
   const page = browser({ blocked: true, guideEnabled: false });
@@ -42,11 +42,11 @@ test('theme works without storage, follows system, and preserves an explicit cho
   page.theme.events.click(); assert.equal(page.root.dataset.theme, 'light');
   page.color.events.change(); assert.equal(page.root.dataset.theme, 'light');
 });
-test('motion can be paused independently while system reduction is always honored', () => {
-  const page = browser({ guideEnabled: false });
-  page.motion.events.click(); assert.equal(page.root.dataset.motion, 'reduce');
-  page.motion.events.click(); assert.equal(page.root.dataset.motion, 'full');
-  page.reduced.matches = true; page.reduced.events.change(); assert.equal(page.root.dataset.motion, 'reduce');
+test('theme toggle flips the visible theme on the first click when system matches light', () => {
+  const page = browser({ light: true, guideEnabled: false });
+  assert.equal(page.root.dataset.theme, 'light');
+  page.theme.events.click(); assert.equal(page.root.dataset.theme, 'dark');
+  page.theme.events.click(); assert.equal(page.root.dataset.theme, 'light');
 });
 for (const value of ['null', '[]', 'invalid', '42']) {
   test(`checklist tolerates saved ${value}`, () => {

@@ -48,13 +48,12 @@
 <script>
   document.documentElement.classList.add("js");
   (() => {
-    let theme, motion;
-    try { theme = localStorage.getItem('pref-theme'); motion = localStorage.getItem('pref-motion'); } catch {}
+    let theme;
+    try { theme = localStorage.getItem('pref-theme'); } catch {}
     document.documentElement.dataset.theme = ['light', 'dark'].includes(theme) ? theme : (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-    document.documentElement.dataset.motion = motion === 'reduce' || matchMedia('(prefers-reduced-motion: reduce)').matches ? 'reduce' : 'full';
   })();
 </script>
-<noscript><style>#theme-toggle,#motion-toggle,.top-link{display:none}</style></noscript>
+<noscript><style>#theme-toggle,.top-link{display:none}</style></noscript>
 
 <meta property="og:site_name" content="{{ site.Title }}">
 <meta property="og:title" content="{{ or .Params.searchTitle .Title site.Title }}">

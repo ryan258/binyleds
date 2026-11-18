@@ -32,10 +32,15 @@
   const colorScheme = window.matchMedia('(prefers-color-scheme: light)');
   let themeChoice = storage.get('pref-theme');
   if (!['light', 'dark', 'system'].includes(themeChoice)) themeChoice = 'system';
+  const nextThemeChoice = () => {
+    if (themeChoice === 'system') return colorScheme.matches ? 'dark' : 'light';
+    if (themeChoice === 'light') return colorScheme.matches ? 'dark' : 'system';
+    return colorScheme.matches ? 'system' : 'light';
+  };
   const applyTheme = () => {
     root.dataset.theme = themeChoice === 'system' ? (colorScheme.matches ? 'light' : 'dark') : themeChoice;
     if (themeToggle) {
-      const next = { system: 'light', light: 'dark', dark: 'system' }[themeChoice];
+      const next = nextThemeChoice();
       themeToggle.textContent = `Theme: ${themeChoice}`;
       themeToggle.setAttribute('aria-label', `Theme: ${themeChoice}. Switch to ${next}.`);
     }
@@ -43,23 +48,8 @@
   applyTheme();
   colorScheme.addEventListener('change', applyTheme);
   themeToggle?.addEventListener('click', () => {
-    themeChoice = { system: 'light', light: 'dark', dark: 'system' }[themeChoice];
+    themeChoice = nextThemeChoice();
     storage.set('pref-theme', themeChoice); applyTheme();
-  });
-  const motionToggle = document.querySelector('[data-motion-toggle]');
-  const systemMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let motionChoice = storage.get('pref-motion') === 'reduce' ? 'reduce' : 'system';
-  const applyMotion = () => {
-    root.dataset.motion = motionChoice === 'reduce' || systemMotion.matches ? 'reduce' : 'full';
-    if (motionToggle) {
-      motionToggle.textContent = motionChoice === 'reduce' ? 'Motion: paused' : 'Motion: system';
-      motionToggle.setAttribute('aria-pressed', String(motionChoice === 'reduce'));
-    }
-  };
-  applyMotion(); systemMotion.addEventListener('change', applyMotion);
-  motionToggle?.addEventListener('click', () => {
-    motionChoice = motionChoice === 'reduce' ? 'system' : 'reduce';
-    storage.set('pref-motion', motionChoice); applyMotion();
   });
   const receipt = document.querySelector('[data-receipt]');
   if (receipt) {

@@ -1,6 +1,6 @@
 {{- $page := .page -}}
 {{- $showcase := .showcase | default false -}}
-{{- $seen := slice "top" "main-content" "primary-menu" "theme-toggle" "motion-toggle" "top-link" -}}
+{{- $seen := slice "top" "main-content" "primary-menu" "theme-toggle" "top-link" -}}
 {{- $active := slice -}}
 {{- range .sections -}}{{- if ne .enabled false -}}{{- $active = $active | append . -}}{{- end -}}{{- end -}}
 {{- if and $page.IsHome (not $showcase) -}}

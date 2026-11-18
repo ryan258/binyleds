@@ -11,8 +11,8 @@
   --gold-text: #d8b870;
   --rule: #d8b870;
 }
-[data-motion="reduce"] {
-  &, * { scroll-behavior: auto !important; }
+@media (prefers-reduced-motion: reduce) {
+  html, * { scroll-behavior: auto !important; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 .form-grid { border: 0; padding: 0; margin: 0; min-width: 0; }
