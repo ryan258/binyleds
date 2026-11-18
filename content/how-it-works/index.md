@@ -3,6 +3,7 @@ title: How to plan a private tabletop adventure
 eyebrow: How it works
 lede: Start with your people and a possible date. Agree on the details, then take a seat with your guests while I guide the story.
 description: Start with your people and a possible date. Agree on scope before the evening, then sit down and play alongside your guests.
+heroImage: images/how-it-works-hero.webp
 heroArtwork: world-in-the-details
 toc: true
 showCta: true

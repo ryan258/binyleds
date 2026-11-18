@@ -3,6 +3,7 @@ title: How I guide the table
 eyebrow: About the approach
 lede: I prepare the opening, help guests make their first choice, and make room for the story they create together.
 description: Learn how Binyled’s Storyscape plans for the guests, guides the pace, and makes room for the table’s choices.
+heroImage: images/about-hero.webp
 toc: true
 showCta: true
 weight: 40

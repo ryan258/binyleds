@@ -17,12 +17,7 @@ CONTACT_EMAIL = "tj@thestoryscape.com"
 ARCHIVE = ROOT / ".local/handoff/thestoryscape-pages.zip"
 OMIT_FROM_UPLOAD = {
     "_routes.json",  # The static deployment has no Functions.
-    "images/about-hero.webp",
     "images/experience-callout.webp",
-    "images/experience-hero.webp",
-    "images/for-your-table-hero.webp",
-    "images/home-hero.webp",
-    "images/how-it-works-hero.webp",
     "images/remote-social.svg",
     "images/storyscape-social-card.png",
     "images/utility-seal.png",

@@ -3,6 +3,7 @@ title: A place in the story for every guest
 eyebrow: For your table
 lede: Bring curious newcomers, longtime players, or a mix of both. I explain what’s happening and help everyone find a way into the story.
 description: Learn which hosts, guests, occasions, and groups are a good fit for a private Storyscape.
+heroImage: images/for-your-table-hero.webp
 heroArtwork: prepared-table
 toc: true
 showCta: true

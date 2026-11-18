@@ -3,6 +3,7 @@ title: The Private Storyscape
 eyebrow: A private in-home tabletop adventure
 lede: Invite the people you want to play with. I shape the adventure around your guests and guide the evening so you can sit down with them.
 description: See how a private Storyscape adventure begins, how guests make choices, and how first-time players can join in.
+heroImage: images/experience-hero.webp
 heroArtwork: prepared-table
 toc: true
 showCta: true
