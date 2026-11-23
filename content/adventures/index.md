@@ -1,7 +1,7 @@
 ---
 title: Sample tabletop adventures
 eyebrow: Story openings
-lede: See the kinds of choices your guests might make in a guided tabletop adventure. A lighthouse mystery, a manor invitation, and a dragon with a complaint each give the table a different place to begin.
+lede: A lighthouse that shines the wrong way, an invitation no one sent, and a dragon with a grievance. Three openings, three very different evenings.
 description: Explore Storyscape openings and the choices they offer a private tabletop group, from discovery and mystery to playful negotiation.
 layout: modular
 heroImage: images/for-your-table-hero.webp

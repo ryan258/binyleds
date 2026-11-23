@@ -19,13 +19,13 @@ provider configuration have not been verified.
 
 ## Local checks
 
-On November 23, 2026, after enforcing `INTAKE_BACKEND=disabled` on the `remote`
-profile (R03), making `INTAKE_CONTACT_EMAIL` optional for Cloudflare intake,
-simplifying the theme toggle and base typography/motion CSS, and regenerating
-brand collateral without concept/AI labels, the complete verification suite
-(`npm run test:all`, including `check`, `test:intake` with 68 passing tests, and
-`test:hosting`) passed cleanly against the local working tree with Hugo Extended
-0.168.0, Dart Sass 1.106.1, and Node 22.22.3.
+On November 23, 2026, after streamlining the homepage funnel (8 sections),
+main navigation (4 items), consultation form UX, and subpage copy—alongside
+enforcing `INTAKE_BACKEND=disabled` on `remote` (R03) and making
+`INTAKE_CONTACT_EMAIL` optional for Cloudflare intake—the complete verification
+suite (`npm run test:all`, including `check`, `test:intake` with 68 passing
+tests, and `test:hosting`) passed cleanly against the local working tree with
+Hugo Extended 0.168.0, Dart Sass 1.106.1, and Node 22.22.3.
 Output checks confirmed both profiles had disabled intake, noindex, and no sitemap;
 the internal guide appeared only in the exemplar. The Storyscape homepage used the
 current artwork and the remote homepage showed the Wayfarer Table identity. This

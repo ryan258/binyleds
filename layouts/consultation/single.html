@@ -47,8 +47,8 @@
 
       <div class="form-intro">
         <p class="eyebrow">Private consultation request</p>
-        <h2 id="consultation-form-title">Tell me about the table</h2>
-        <p>Fields marked <span aria-hidden="true">*</span><span class="sr-only">required</span> are required.</p>
+        <h2 id="consultation-form-title">Tell me about your gathering</h2>
+        <p>No payment or commitment required—I’ll reply with availability and a full quote. Fields marked <span aria-hidden="true">*</span><span class="sr-only">required</span> are required.</p>
       </div>
 
       <div data-intake-errors role="alert" tabindex="-1" hidden></div>
@@ -83,7 +83,7 @@
         <div class="field">
           <label for="guest-count">Expected guests <span aria-hidden="true">*</span></label>
           <input id="guest-count" aria-describedby="guest-help" name="guest-count" type="number" min="{{ hugo.Data.intake.guestMinimum }}" step="1" inputmode="numeric" required>
-          <p id="guest-help" class="field-help">Give your best estimate. The practical group size is confirmed together before any session is agreed.</p>
+          <p id="guest-help" class="field-help">Count yourself in. Three to six players works best; give your best estimate either way.</p>
         </div>
 
         <div class="field field--full">
@@ -109,13 +109,13 @@
 
         <div class="field field--full">
           <label for="vision">What would make the evening feel distinctly yours? <span aria-hidden="true">*</span></label>
-          <textarea id="vision" aria-describedby="vision-help" name="vision" rows="6" maxlength="{{ index hugo.Data.intake.limits "vision" }}" required></textarea>
+          <textarea id="vision" aria-describedby="vision-help" name="vision" rows="3" maxlength="{{ index hugo.Data.intake.limits "vision" }}" required></textarea>
           <p id="vision-help" class="field-help">Interests, tone, favorite stories, group dynamics, or the feeling you want guests to carry home.</p>
         </div>
 
         <div class="field field--full">
           <label for="boundaries">Comfort, access, or accommodation notes <span class="field-optional">Optional</span></label>
-          <textarea id="boundaries" aria-describedby="boundaries-help" name="boundaries" rows="4" maxlength="{{ index hugo.Data.intake.limits "boundaries" }}"></textarea>
+          <textarea id="boundaries" aria-describedby="boundaries-help" name="boundaries" rows="2" maxlength="{{ index hugo.Data.intake.limits "boundaries" }}"></textarea>
           <p id="boundaries-help" class="field-help">Share only what would help make the gathering welcoming. Details can also be discussed privately later.</p>
         </div>
 

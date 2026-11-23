@@ -1,68 +1,66 @@
 ---
 title: Questions about your private tabletop evening
 eyebrow: Practical answers
-lede: Find out what your guests need, what I can prepare, and how we confirm the date and price.
+lede: What your guests need, what I bring, and how the date and price get settled.
 description: Answers about guests, experience level, location, pricing, preparation, and the private Storyscape consultation.
 showCta: true
 weight: 50
 ---
 
 {{< faq question="Do my guests need tabletop experience?" >}}
-Guests can learn as they play. I describe the opening scene, ask what they’d
-like to do, and explain the rules as they come up.
+No. I describe the opening scene, ask what they’d like to do, and explain
+rules as they come up. The first choice is always a simple one.
 {{< /faq >}}
 
 {{< faq question="Is this only for a particular game system?" >}}
-Bring any game system you enjoy or would like to try. We will discuss the
-rules, the group’s familiarity, and the kind of story you want, then choose
-the best approach together.
+No. Bring a system you love or one you’d like to try. I’ll match the rules to
+how familiar your group is and the story you want.
 {{< /faq >}}
 
 {{< faq question="How many guests can take part?" >}}
-Bring a rough guest count. I’ll confirm what suits the group, room, and
-kind of adventure before we agree.
+Three to six players, you included. That’s small enough for every guest to get
+real time in the spotlight, whether it’s their first game or their fiftieth.
+Have a bigger group in mind? Ask, and I’ll tell you honestly what would work.
 {{< /faq >}}
 
-{{< faq question="How long is the experience?" >}}
-Tell me when you want to start and when guests need to leave. We’ll agree
-on the length once we’ve discussed the group, occasion, and story.
+{{< faq question="How long is the evening?" >}}
+About three hours. Long enough for a full story with a real ending, short
+enough to finish on a weeknight. Tell me when you’d like to start and I’ll
+plan around it.
 {{< /faq >}}
 
-{{< faq question="What is the timeline and space needed for the evening?" >}}
-Tell me about your table, seating, and timing. We’ll agree on room setup,
-arrival, and departure timing together.
+{{< faq question="What space do we need?" >}}
+A table everyone can sit around. Tell me about your seating and timing, and
+I’ll plan setup, arrival, and departure around it.
 {{< /faq >}}
 
 {{< faq question="What is included?" >}}
-I prepare and guide the agreed adventure. We’ll confirm any characters,
-maps, music, miniatures, or other materials included for your evening.
+I write and run the adventure. Your quote spells out any characters, maps,
+music, miniatures, or other materials for your evening.
 {{< /faq >}}
 
 {{< faq question="How is pricing handled?" >}}
-I’ll confirm the price and what it covers before you commit. The quote follows
-the conversation about your group, location, and what I’ll prepare.
+You get one full quote, with everything it covers, before you commit. It
+reflects your group size, your location, and what I prepare.
 {{< /faq >}}
 
 {{< faq question="Where do you travel?" >}}
-The Private Storyscape is designed for Bentonville and Northwest Arkansas.
-I’ll confirm the date, location, and travel details with you privately.
+Homes in Bentonville and across Northwest Arkansas. I’ll confirm the date,
+location, and any travel details with you directly.
 {{< /faq >}}
 
 {{< faq question="Can the story reflect a birthday or other occasion?" >}}
-Yes, when that detail would make the evening more personal. The occasion can
-shape tone, themes, or small moments without turning the gathering into a themed
-performance.
+Yes. The occasion can color the tone, the themes, or a few small moments,
+without turning the gathering into a themed performance.
 {{< /faq >}}
 
 {{< faq question="How are comfort boundaries and accessibility handled?" >}}
-Whatever helps your table feel comfortable has a place in the conversation.
-The consultation includes room to name tone, content boundaries, access needs,
-and the kinds of participation that help guests feel at ease. Share only
-what is useful, and save the rest for a private conversation.
+Anything that helps your table feel at ease belongs in the conversation: tone,
+content to avoid, access needs, and how guests like to take part. Share only
+what’s useful, and save the rest for a private conversation.
 {{< /faq >}}
 
 {{< faq question="Does sending the form reserve a date?" >}}
-No. It begins a conversation. We’ll confirm the date, location, plan, and
-pricing directly before your evening is reserved.
+No. It starts a conversation. Your evening is reserved once you’ve accepted
+the date, location, plan, and price.
 {{< /faq >}}
-
