@@ -353,7 +353,7 @@ visual:
     - material: Walnut grain
       asset: images/texture-walnut-grain.webp
       role: Structural and grounding bands
-      assigned_to: Packages table band, Location band, Site footer
+      assigned_to: Packages table band, Location band
     - material: Forest felt
       asset: images/texture-forest-felt.webp
       role: Guided table and step-by-step process band

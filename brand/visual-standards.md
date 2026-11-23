@@ -56,7 +56,7 @@ Tactile `.webp` textures are assigned consistently by section role through share
 | Canvas grain | `images/texture-canvas-grain.webp` | Base matte ground across dark and light themes | `body` |
 | Cartographic contours | `images/texture-cartography-lines.webp` | Discovery, story openings, and map motif | Proof strip, Adventures section, Gallery section, Philosophy mark |
 | Woven linen | `images/texture-linen-weave.webp` | Cards, invitations, and editorial callouts | Module cards, Adventure cards, Content callouts |
-| Walnut grain | `images/texture-walnut-grain.webp` | Structural and grounding bands | Packages band, Location band, Site footer |
+| Walnut grain | `images/texture-walnut-grain.webp` | Structural and grounding bands | Packages band, Location band |
 | Forest felt | `images/texture-forest-felt.webp` | Guided table and step-by-step process band | Process section (`.section--forest`) |
 | Aged parchment | `images/texture-parchment.webp` | High-contrast editorial reassurance band | Reassurance section (`.section--parchment`) |
 | Tabletop concept scenes | `images/*-hero.webp`, `images/closing-cta-bg.webp` | Atmospheric entry and closing bookends | Home hero, Interior page heroes, Closing CTA |
@@ -69,7 +69,7 @@ Tactile `.webp` textures are assigned consistently by section role through share
 
 Hospitality comes through the ordinary, cared-for setting. Frame at seated eye level and look for a natural hand gesture, an open seat, or the shared moment of passing a map. Choose walnut, linen, ordinary glass, and one warm lamp. Use this look for an introduction, a homepage hero, a partner handoff, or the host one-sheet. Preserve the gesture and some visible table surface when cropping tight.
 
-Suggested description: “Hands unfold a cream map on a walnut table beside a glass of water in warm lamplight.”
+Suggested description: “An unrolled cream shoreline map rests beside a brass die, folded linen, and a glass of water on a warmly lit walnut table.”
 
 ### World in the Details
 

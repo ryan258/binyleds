@@ -107,8 +107,8 @@ as a real gathering, client, or evidence of materials supplied.
 
 The Storyscape profiles use 720 × 480 and 1200 × 800 WebP renditions of each scene,
 the two wordmark SVGs, the process glyph sprite, and the 1200 × 630 link preview.
-Artwork data supplies scene paths and alt text. The figure template gives the
-hero artwork a visible “AI-generated concept artwork” caption. [Web exports](../static/images/storyscape/) · [Artwork data](../data/storyscape_artwork.yaml) · [Figure template](../layouts/_partials/storyscape-photo.html)
+Artwork data supplies scene paths and alt text. The figure template renders the
+hero artwork without a caption. [Web exports](../static/images/storyscape/) · [Artwork data](../data/storyscape_artwork.yaml) · [Figure template](../layouts/_partials/storyscape-photo.html)
 
 ### Built-in ImageGen prompts
 
