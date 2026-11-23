@@ -35,18 +35,9 @@ function browser({ blocked = false, saved = {}, light = true, guideEnabled = tru
   });
   return { root, theme, color, search, progress, check, sections, link, window };
 }
-test('theme works without storage, follows system, and preserves an explicit choice', () => {
+test('theme stays locked to dark regardless of system preference or storage', () => {
   const page = browser({ blocked: true, guideEnabled: false });
-  assert.equal(page.root.dataset.theme, 'light');
-  page.color.matches = false; page.color.events.change(); assert.equal(page.root.dataset.theme, 'dark');
-  page.theme.events.click(); assert.equal(page.root.dataset.theme, 'light');
-  page.color.events.change(); assert.equal(page.root.dataset.theme, 'light');
-});
-test('theme toggle flips the visible theme on the first click when system matches light', () => {
-  const page = browser({ light: true, guideEnabled: false });
-  assert.equal(page.root.dataset.theme, 'light');
-  page.theme.events.click(); assert.equal(page.root.dataset.theme, 'dark');
-  page.theme.events.click(); assert.equal(page.root.dataset.theme, 'light');
+  assert.equal(page.root.dataset.theme, 'dark');
 });
 for (const value of ['null', '[]', 'invalid', '42']) {
   test(`checklist tolerates saved ${value}`, () => {

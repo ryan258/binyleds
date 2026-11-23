@@ -65,7 +65,7 @@ params:
   serviceAreaHeading: In your home
   serviceAreaText: Bentonville and Northwest Arkansas, with each date and location confirmed privately.
   areaServed: [Bentonville, Northwest Arkansas]
-  defaultTheme: system
+  defaultTheme: dark
   images:
     - images/storyscape/social-link.png
   socialImageAlt: "Binyled’s Storyscape. You host the people. I host the world. Private in-home tabletop adventures in Bentonville and Northwest Arkansas, beside a hand-drawn map, a dark die, and a glass of water on a walnut table."

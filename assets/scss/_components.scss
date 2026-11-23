@@ -129,29 +129,6 @@ html[data-theme="light"] .site-header {
   padding-inline: 0.9rem;
 }
 
-.theme-control {
-  width: 48px;
-  min-width: 48px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  padding: 0;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: transparent;
-  color: var(--muted);
-  font-size: 0.58rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.theme-control:hover {
-  border-color: var(--antique-gold);
-  color: var(--ink);
-}
-
 .menu-toggle {
   display: none;
 }

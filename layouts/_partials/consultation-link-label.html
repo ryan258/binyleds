@@ -1,8 +1,1 @@
-{{- $label := .label -}}
-{{- $route := strings.TrimSuffix "/" (strings.TrimPrefix "/" .url) -}}
-{{- $consultation := strings.TrimSuffix "/" (strings.TrimPrefix "/" site.Params.consultationPath) -}}
-{{- $isConsultation := or (eq $route $consultation) (eq .url (site.Params.consultationPath | relURL)) -}}
-{{- if and $isConsultation (ne site.Params.profile "remote") (not (in (slice "cloudflare" "netlify") site.Params.intakeBackend)) -}}
-  {{- $label = "Preview the consultation" -}}
-{{- end -}}
-{{- return $label -}}
+{{- return .label -}}

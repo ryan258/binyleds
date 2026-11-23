@@ -5,7 +5,6 @@
   const header = document.querySelector("[data-site-header]");
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const menuPanel = document.querySelector("[data-menu-panel]");
-  const themeToggle = document.querySelector("[data-theme-toggle]");
   const topLink = document.getElementById("top-link");
 
   const setMenu = (open) => {
@@ -29,28 +28,7 @@
     get(key) { try { return localStorage.getItem(key); } catch { return null; } },
     set(key, value) { try { localStorage.setItem(key, value); return true; } catch { return false; } },
   };
-  const colorScheme = window.matchMedia('(prefers-color-scheme: light)');
-  let themeChoice = storage.get('pref-theme');
-  if (!['light', 'dark', 'system'].includes(themeChoice)) themeChoice = 'system';
-  const nextThemeChoice = () => {
-    if (themeChoice === 'system') return colorScheme.matches ? 'dark' : 'light';
-    if (themeChoice === 'light') return colorScheme.matches ? 'dark' : 'system';
-    return colorScheme.matches ? 'system' : 'light';
-  };
-  const applyTheme = () => {
-    root.dataset.theme = themeChoice === 'system' ? (colorScheme.matches ? 'light' : 'dark') : themeChoice;
-    if (themeToggle) {
-      const next = nextThemeChoice();
-      themeToggle.textContent = `Theme: ${themeChoice}`;
-      themeToggle.setAttribute('aria-label', `Theme: ${themeChoice}. Switch to ${next}.`);
-    }
-  };
-  applyTheme();
-  colorScheme.addEventListener('change', applyTheme);
-  themeToggle?.addEventListener('click', () => {
-    themeChoice = nextThemeChoice();
-    storage.set('pref-theme', themeChoice); applyTheme();
-  });
+  root.dataset.theme = 'dark';
   const receipt = document.querySelector('[data-receipt]');
   if (receipt) {
     const id = new URLSearchParams(window.location.hash.slice(1)).get('receipt');
