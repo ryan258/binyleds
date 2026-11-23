@@ -58,9 +58,9 @@ The [November 21 handoff plan](docs/site-operations.md#november-21-handoff-plan)
 records the tentative Cloudflare move and client-owned domain, billing, and
 Zoho mailbox.
 
-Keep `INTAKE_BACKEND=disabled` for Wayfarer Table. The general build wrapper
-currently allows a Netlify override for the remote profile, but the demo's
-privacy page says it collects nothing.
+Wayfarer Table always builds with intake disabled; the general build wrapper
+rejects any other backend for the remote profile because the demo's privacy
+page says it collects nothing.
 
 No command in this README authorizes publishing, changing DNS, sending mail,
 applying remote migrations, or modifying a live database. Those remain owner actions.

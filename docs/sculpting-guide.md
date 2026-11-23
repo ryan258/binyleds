@@ -37,9 +37,9 @@ Build the fictional example with its form disabled.
 INTAKE_BACKEND=disabled npm run build:remote
 ```
 
-Keep the remote example's intake disabled. The wrapper accepts Netlify for
-this profile, but the Wayfarer privacy notice says the example collects no
-inquiries. Use the [site operations runbook](site-operations.md) to select and
+The remote example always builds with intake disabled; `scripts/build-site.mjs`
+rejects any other backend for this profile because the Wayfarer privacy notice
+says the example collects no inquiries. Use the [site operations runbook](site-operations.md) to select and
 verify an intake backend for a real service.
 
 ## Choose and reorder sections

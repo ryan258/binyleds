@@ -1,6 +1,6 @@
 # Readiness ledger
 
-Updated November 18, 2026 against the local working tree. Implementation below
+Updated November 23, 2026 against the local working tree. Implementation below
 describes the source in this checkout. The active host, live intake, and
 provider configuration have not been verified.
 
@@ -19,12 +19,13 @@ provider configuration have not been verified.
 
 ## Local checks
 
-On November 18, 2026, after polishing the client-facing copy and removing
-public AI-generation notices from artwork captions and gallery copy, the
-complete verification suite (`npm run test:all`, including `check`,
-`test:intake` with 68 passing tests, and `test:hosting`) passed cleanly
-against the local working tree with Hugo Extended 0.168.0, Dart Sass 1.106.1,
-and Node 22.22.3.
+On November 23, 2026, after enforcing `INTAKE_BACKEND=disabled` on the `remote`
+profile (R03), cleaning up duplicate SCSS texture mixins, guarding the hero
+background image style when artwork is absent, and aligning brand/texture
+documentation, the complete verification suite (`npm run test:all`, including
+`check`, `test:intake` with 68 passing tests, and `test:hosting`) passed
+cleanly against the local working tree with Hugo Extended 0.168.0, Dart Sass
+1.106.1, and Node 22.22.3.
 Output checks confirmed both profiles had disabled intake, noindex, and no sitemap;
 the internal guide appeared only in the exemplar. The Storyscape homepage used the
 current artwork and the remote homepage showed the Wayfarer Table identity. This
@@ -50,9 +51,6 @@ npm run test:all
 The [October 5 review](project-review-2026-10-05.md) has the original evidence
 and proposed acceptance criteria. These findings still apply:
 
-- **R03 — remote privacy:** The general wrapper still allows Netlify intake on
-  Wayfarer Table, whose privacy page says it collects nothing. Keep that profile
-  disabled.
 - **R04 — release inventory:** The output audit exempts files under
   `assets/` from the static manifest check and does not enforce a complete HTML
   route allow-list.

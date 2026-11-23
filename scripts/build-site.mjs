@@ -11,6 +11,8 @@ const base = process.env.SITE_URL || 'http://localhost:1313/';
 const contact = process.env.INTAKE_CONTACT_EMAIL || '';
 if (!['exemplar', 'client', 'remote'].includes(profile)) throw new Error('Unknown SITE_PROFILE.');
 if (!['disabled', 'netlify'].includes(backend)) throw new Error('Use build:cloudflare for Cloudflare intake.');
+// The remote demo's privacy page says it collects nothing (R03).
+if (profile === 'remote' && backend !== 'disabled') throw new Error('The remote profile requires INTAKE_BACKEND=disabled.');
 const url = new URL(base);
 if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password || url.search || url.hash) throw new Error('Use a site URL without credentials, query, or fragment.');
 if (production && (url.protocol !== 'https:' || /(^|\.)example\.(org|com|net)$/.test(url.hostname))) throw new Error('Production requires an explicit HTTPS site URL.');

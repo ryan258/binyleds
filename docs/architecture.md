@@ -31,8 +31,8 @@ content and identity Hugo reads.
 | `remote` | Fictional Wayfarer Table identity, `examples/remote/content/`, and `data/remote.json` | `INTAKE_BACKEND=disabled npm run build:remote` |
 
 `scripts/build-site.mjs` supports disabled and Netlify intake. The remote
-example's privacy notice describes a disabled form, so keep it in disabled
-mode. The wrapper currently permits the Netlify setting for that profile.
+example's privacy notice describes a disabled form, so the wrapper rejects any
+other backend for that profile.
 `scripts/build-cloudflare.mjs` uses the client profile and requires an explicit
 `INTAKE_ENV`. Both wrappers check source, generate a clean output directory, and
 audit the result. Staging output is noindex and omits the sitemap. Noindex is an
