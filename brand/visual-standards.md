@@ -65,7 +65,7 @@ Tactile `.webp` textures are assigned consistently by section role through share
 
 ### The Prepared Table
 
-[Open the board](mood-boards/prepared-table.png) · [Open the concept photograph](assets/imagery/prepared-table.webp)
+[Open the board](mood-boards/prepared-table.png) · [Open the scene](assets/imagery/prepared-table.webp)
 
 Hospitality comes through the ordinary, cared-for setting. Frame at seated eye level and look for a natural hand gesture, an open seat, or the shared moment of passing a map. Choose walnut, linen, ordinary glass, and one warm lamp. Use this look for an introduction, a homepage hero, a partner handoff, or the host one-sheet. Preserve the gesture and some visible table surface when cropping tight.
 
@@ -73,13 +73,13 @@ Suggested description: “An unrolled cream shoreline map rests beside a brass d
 
 ### World in the Details
 
-[Open the board](mood-boards/world-in-the-details.png) · [Open the concept photograph](assets/imagery/world-in-the-details.webp)
+[Open the board](mood-boards/world-in-the-details.png) · [Open the scene](assets/imagery/world-in-the-details.webp)
 
 Preparation becomes visible in the objects. Frame from overhead or just above the surface. Light uncoated paper from the side so fibers, map lines, cloth, and brass are legible. Use this look for the guest invitation, an adventure preview, or an editorial story about what is prepared. Leave the primary detail clear at thumbnail scale.
 
 Suggested description: “A brass die and pencil rest beside a hand-drawn shoreline on cream paper.”
 
-For future commissioned photography, capture one wide establishing image and a crop-safe detail for each scene. Keep faces and identifiable details out of the frame unless the intended use has consent. Use neutral props and keep readable type out of the image area. Choose real room and material details that a host would recognize. The supplied photographs are AI-generated concepts. Use a visible “Illustrative scene” label or equivalent credit in the surrounding caption or artwork.
+For future commissioned photography, capture one wide establishing image and a crop-safe detail for each scene. Keep faces and identifiable details out of the frame unless the intended use has consent. Use neutral props and keep readable type out of the image area. Choose real room and material details that a host would recognize.
 
 ## Artwork and output
 

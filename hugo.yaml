@@ -74,7 +74,7 @@ params:
   defaultTheme: system
   images:
     - images/storyscape/social-link.png
-  socialImageAlt: "Binyled’s Storyscape. You host the people. I host the world. Private in-home tabletop adventures in Bentonville and Northwest Arkansas, with an illustrative tabletop scene."
+  socialImageAlt: "Binyled’s Storyscape. You host the people. I host the world. Private in-home tabletop adventures in Bentonville and Northwest Arkansas, beside a hand-drawn map, a dark die, and a glass of water on a walnut table."
   consultationPath: consultation/
 
 # Hugo copies ignored files unless its static mount excludes them explicitly.

@@ -67,7 +67,7 @@ Offer a public link or ask the host to introduce themselves. Share contact detai
 | [Link graphic](../collateral/social-link.png) | Wide 1200 × 630 artwork for approved link and editorial placements. | Check the live crop and the destination. Supply a descriptive caption. |
 | [Portrait graphic](../collateral/social-portrait.png) | 1080 × 1350 social post artwork. | Include the offer or example status and the action in the accompanying caption. |
 | [Square graphic](../collateral/social-square.png) | 1080 × 1080 artwork for square tiles. | Keep text and caption in sync with the chosen release mode. |
-| [Concept imagery](../assets/imagery/) | Editorial detail of a prepared table or the feeling of the gathering. | Use the asset’s approved crop, description, and visible concept label. |
+| [Scene imagery](../assets/imagery/) | Editorial detail of a prepared table or the feeling of the gathering. | Use the asset’s approved crop and description. |
 
 Refer to the [asset register](../ASSET_REGISTER.md) and [reuse policy](../../REUSE.md) for provenance and permissions. The BS seal is the digital utility mark. The production asset register records the status of the separately referenced crest. Give partners the correct approved artwork and explicit permission for the intended placement.
 

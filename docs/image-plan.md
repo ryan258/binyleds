@@ -2,7 +2,7 @@
 
 ## Current web placements
 
-The Storyscape exemplar and client profiles use two AI-generated concept
+The Storyscape exemplar and client profiles use two illustrated
 scenes from the November 2026 [brand kit](../brand/README.md). The scenes
 illustrate the atmosphere of a Storyscape session.
 

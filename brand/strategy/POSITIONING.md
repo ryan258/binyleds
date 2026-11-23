@@ -62,7 +62,7 @@ Use the service-page copy once the owner chooses to invite inquiries. For a publ
 | Material | What it supports | Use |
 | --- | --- | --- |
 | Host guide, sample opening, and Lantern Bay workflow | Concrete examples of how preparation, onboarding, choices, and follow-up are designed. | Describe the visible method. Keep the synthetic label with the sample. |
-| Generated artwork and styled collateral | Art direction and a view of the intended atmosphere. | Use “Illustrative scene” or “Concept artwork” where an image could be understood as event documentation. |
+| Scene artwork and styled collateral | Art direction and a view of the intended atmosphere. | Don’t present a scene as documentation of a real event or client. |
 | Consultation and local intake source | A designed inquiry flow with documented acceptance work outstanding. | In demo materials, label the flow as an example. Live wording follows real intake acceptance and owner approval. |
 | Playtest or actual client evidence | Outcome claims tied to the specific session and what was observed. | Obtain the applicable permission for public photos, quotes, and attribution. Keep practice-session findings labeled as such. |
 | Capacity, scope, and operator facts | Dates, travel fit, group size, duration, materials, fees, and terms. | Confirm with the owner and put agreed details in the written scope. Leave unconfirmed facts out of published assets. |

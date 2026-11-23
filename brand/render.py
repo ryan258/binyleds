@@ -265,7 +265,7 @@ def mood(page, number, name, title, copy, direction, use, colors, dark):
         if color == (INK if dark else PAPER):
             page.rect(x - 0.5, 478.5, 61, 36, "#958671")
         page.rect(x, 479, 60, 35, color)
-    page.footer(number, dark, "Binyled’s Storyscape  /  AI-generated concept imagery")
+    page.footer(number, dark, "Binyled’s Storyscape")
 
 
 def glyphs(page, scratch):
@@ -381,7 +381,7 @@ def build_one_sheet(output):
     contact = COPY["contact"] or f"{COPY['region']}  •  Details confirmed privately"
     if page.body(58, 719, contact, 480, 12, PAPER) > 753:
         raise ValueError("Contact details exceed the host one-sheet's CTA panel.")
-    page.text(42, 766, "  •  ".join(filter(None, (COPY["preview_note"], "AI-generated concept imagery"))), 10.5, MUTED)
+    page.text(42, 766, COPY["preview_note"], 10.5, MUTED)
     canvas.showPage()
     canvas.save()
 
@@ -438,7 +438,7 @@ def build_social(output, scratch):
                   58 if horizontal else 90, PAPER, DISPLAY, 500)
         label(x, y + (294 if horizontal else 315), COPY["descriptor"],
               25 if horizontal else 34, PAPER, BODY, 550)
-        label(x, height - 60, f"{COPY['region']}  /  Illustrative scene",
+        label(x, height - 60, COPY["region"],
               17 if horizontal else 23, GOLD, BODY, 550)
         art.save(output / f"{name}.png", optimize=True)
 

@@ -30,7 +30,7 @@ process:
   template: process
 gallery:
   title: Atmosphere gallery
-  description: Existing concept artwork, explicitly distinguished from client photographs.
+  description: Existing scene artwork for atmosphere; not client photographs.
   template: gallery
 details:
   title: Inclusions list

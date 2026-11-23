@@ -102,8 +102,8 @@ minimum sizes, pairing, and implementation.
 | [Brand standards](brand-standards.pdf), [mood boards](mood-boards/), [collateral](collateral/) | Derived from the above art and the live brand palette and type. Editable [copy](collateral/copy.json) and [export source](render.py). Owner previews. |
 
 These entries record provenance. The [reuse policy](../REUSE.md) governs
-redistribution. Display the scene as concept imagery and avoid representing it
-as a real gathering, client, or evidence of materials supplied.
+redistribution. Don’t present a scene as a real gathering, client, or evidence
+of materials supplied.
 
 The Storyscape profiles use 720 × 480 and 1200 × 800 WebP renditions of each scene,
 the two wordmark SVGs, the process glyph sprite, and the 1200 × 630 link preview.

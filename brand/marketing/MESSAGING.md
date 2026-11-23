@@ -104,11 +104,11 @@ For search and directory drafts, try phrases a host might use, such as “privat
 
 > Start with who’s coming, a date you have in mind, and the general location. The rest of your private tabletop evening can take shape together. Read the host’s checklist.
 
-**Atmosphere caption for a staged or generated image**
+**Atmosphere caption**
 
-> Concept artwork for Binyled’s Storyscape showing a prepared tabletop before play.
+> A prepared tabletop, ready for the first choice.
 
-Describe the visible image in alt text and carry the message and action in the caption or adjacent text. When an image repeats nearby copy and adds no meaning, mark it decorative where the channel allows. Keep concept labels visible even when a platform crops the art.
+Describe the visible image in alt text and carry the message and action in the caption or adjacent text. When an image repeats nearby copy and adds no meaning, mark it decorative where the channel allows.
 
 ## Portfolio copy
 
