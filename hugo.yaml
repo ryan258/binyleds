@@ -24,24 +24,18 @@ minify:
 
 menus:
   main:
-    - name: The experience
-      pageRef: /experience
-      weight: 10
-    - name: Services
-      pageRef: /services
-      weight: 20
     - name: Adventures
       pageRef: /adventures
-      weight: 30
+      weight: 10
     - name: How it works
       pageRef: /how-it-works
-      weight: 40
+      weight: 20
     - name: Questions
       pageRef: /questions
-      weight: 50
+      weight: 30
     - name: Request a consultation
       pageRef: /consultation
-      weight: 60
+      weight: 40
       params:
         cta: true
 

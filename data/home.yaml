@@ -1,26 +1,25 @@
 hero:
-  eyebrow: Private in-home tabletop adventures
+  eyebrow: Private tabletop adventures · Northwest Arkansas
   line_one: You host the people.
   line_two: I host the world.
   lede: >-
-    Invite your favorite people and take a seat with them. I prepare the
-    adventure around your guests, help everyone get started, and guide the
-    evening at your table.
+    One evening, one story, written for the friends around your table. I bring
+    the plot, the rules, and the pacing, so you get to play instead of plan.
   primary_cta:
     label: Request a private consultation
     url: consultation/
   secondary_cta:
-    label: Explore the experience
-    url: experience/
+    label: See how it works
+    url: "#process"
   signature: I build the world. You shape the story.
 
 proof:
-  - label: Take a seat with your guests
-    detail: I prepare the adventure and guide play while you join in.
-  - label: Start with a simple choice
-    detail: I explain the scene, ask what you’d like to do, and introduce rules as they come up.
-  - label: Shape the story around your group
-    detail: Tell me what brings everyone together and what they’d enjoy playing.
+  - label: You play, too
+    detail: Nobody has to run the game or study a rulebook. That part is mine.
+  - label: Beginners belong here
+    detail: Every turn starts with one plain question—what do you do? Rules arrive only when they matter.
+  - label: Written for this group
+    detail: The story starts from who’s coming, what they love, and why they’re gathering.
 
 positioning:
   link: {label: Explore the Private Storyscape, url: experience/}
@@ -39,27 +38,29 @@ positioning:
 
 process:
   link: {label: See how the evening works, url: how-it-works/}
-  eyebrow: The process
-  title: From a first conversation to the table
+  eyebrow: How it works
+  title: From first message to final scene
   intro: >-
-    Start with a possible date, the general location, and a rough guest count.
+    Three steps. Nothing is booked until you say yes.
   steps:
     - number: "01"
       glyph: consultation
       title: Tell me about your gathering
       text: >-
-        Share what brings everyone together and how you’d like the evening to feel.
+        A possible date, your area, and a rough guest count. Add who’s coming
+        and how you want the night to feel.
     - number: "02"
       glyph: materials
-      title: Agree on the evening
+      title: Get a clear plan and quote
       text: >-
-        I confirm timing, materials, what’s included, and the full quote with you before you decide.
+        I reply with availability, what’s included, and the full price. If the
+        date or format won’t work, I’ll tell you plainly.
     - number: "03"
       glyph: play
-      title: Take a seat with your guests
+      title: Pull up a chair
       text: >-
-        I prepare the agreed adventure and guide the story as your guests decide
-        what happens.
+        I arrive prepared, set the opening scene, and guide the story while
+        your guests decide what happens next.
 
 details:
   eyebrow: What the commission can hold
@@ -87,12 +88,12 @@ reassurance:
   title: Everyone can start with a choice
   paragraphs:
     - >-
-      I’ll describe what your characters see and ask what they do. You can
-      speak as a character or tell the table what you’d like to try.
+      I describe what your characters see, then ask what they do. Answer in
+      character or just say what you’d like to try. Both work.
     - >-
-      First-time players learn the rules as they need them. Experienced players
-      have room to explore and improvise, including the friend who usually
-      runs the game.
+      First-timers pick up the rules as they go. Seasoned players get room to
+      scheme and improvise—including the friend who usually runs the game and
+      finally gets to play.
   pullquote: Within the first scene, the evening belongs to everyone.
 
 philosophy:
@@ -121,11 +122,12 @@ location:
     url: for-your-table/
 
 closing:
-  eyebrow: Your evening begins here
-  title: Tell me about your gathering
+  eyebrow: Ready when you are
+  title: Request a private consultation
   text: >-
-    A possible date, the general location, and a rough guest count are enough
-    to start. I’ll confirm the practical details with you before you decide.
+    A possible date, your area in Northwest Arkansas, and a rough guest count
+    are enough. You’ll get availability, a plan, and a full quote. Nothing is
+    owed until you say yes.
   cta:
     label: Request a private consultation
     url: consultation/
@@ -150,26 +152,26 @@ services:
       link: {label: Plan around your gathering, url: gatherings/}
 
 packages:
-  eyebrow: Shape the commission
-  title: Start with the evening you have in mind
-  intro: These are starting points for our conversation. Timing, guest count, materials, and pricing are always confirmed with you before you commit.
-  caption: Compare possible approaches
-  columns: [A first adventure, An occasion to remember, A continuing story]
+  eyebrow: Choose a shape
+  title: Three ways to begin
+  intro: Most evenings start from one of these. Your quote reflects your group, your location, and what I prepare.
+  caption: Compare three kinds of evening
+  columns: [A first adventure, A celebration, A continuing story]
   rows:
-    - label: Your starting point
-      values: [Curious friends trying roleplaying, A gathering with a personal reason, A table interested in another chapter]
-    - label: What we discuss
-      values: [Guidance and a welcoming introduction, Tone and meaningful personal details, Continuity and a sustainable rhythm]
-    - label: Story shape
-      values: [A self-contained beginning and ending, A story shaped around the gathering, A possible follow-up to discuss]
-    - label: Confirmed privately
-      values: ["Date, plan, and quote", "Date, plan, and quote", "Schedule, plan, and quote"]
-  link: {label: Talk through the possibilities, url: consultation/}
+    - label: Made for
+      values: [Curious friends who’ve never played, "A birthday, reunion, or milestone", A table that wants to keep going]
+    - label: The story
+      values: [Complete in one evening, Complete in one evening with nods to the occasion, An opening chapter built to return to]
+    - label: I’ll ask about
+      values: [Who’s coming and how new they are, The guest of honor and what to weave in, Everyone’s calendar and a rhythm that lasts]
+    - label: Before you book
+      values: ["Date, plan, and full quote", "Date, plan, and full quote", "Schedule, plan, and full quote"]
+  link: {label: Request a quote for your table, url: consultation/}
 
 adventures:
   eyebrow: A glimpse of the possible
   title: Which story would your table choose?
-  intro: Every adventure is shaped around your group. Here are three ways an evening might begin.
+  intro: Three ways a night might open. Each is a starting point—yours gets written around your guests.
   items:
     - title: The Last Light of Lantern Bay
       number: "01"
@@ -189,12 +191,12 @@ adventures:
       premise: A dragon has claimed the town bridge. It wants neither gold nor a fight. It wants someone to hear its complaint.
       choice: Bargain, investigate, or attempt something unreasonable?
       play: For friends who enjoy improvisation and unexpected solutions.
-  link: {label: Bring your own story idea, url: consultation/}
+  link: {label: Start with one of these or your own idea, url: consultation/}
 
 gallery:
   eyebrow: At the table
   title: Around the Storyscape table
-  intro: A closer look at the atmosphere and tactile details that set the stage for a private evening.
+  intro: A map, a die, a few well-chosen details. Enough to set the scene without crowding the conversation.
   items:
     - image: images/storyscape/prepared-table-720.webp
       alt: An unrolled cream shoreline map rests beside a brass die, folded linen, and a glass of water on a warmly lit walnut table.
@@ -236,17 +238,19 @@ resources:
       link: {label: Find your place at the table, url: for-your-table/}
 
 faq:
-  eyebrow: A few practical answers
-  title: What to know before you plan
+  eyebrow: Quick answers
+  title: What hosts ask first
   items:
     - question: Do we need to know how to play D&D?
-      answer: You can learn as you play. Tell me if you have D&D or another game in mind. I’ll confirm the system and explain the rules as they come up.
-    - question: What does a commission cost?
-      answer: Pricing depends on your group size, location, and what we’re preparing for the evening. I’ll confirm the full quote and everything it covers before you commit.
-    - question: Can we request a particular occasion or theme?
-      answer: Yes. Share the occasion, the atmosphere you want, and any ideas your group already has, and we’ll shape the evening around them.
+      answer: No. I teach the rules as they come up. If your group already loves D&D or another game, tell me and I’ll plan around it.
+    - question: How many people, and for how long?
+      answer: Three to six players, you included, for about three hours. That keeps every guest in the story and still reaches a real ending.
+    - question: What does it cost?
+      answer: It depends on group size, location, and what I prepare. You’ll see the full quote, and everything it covers, before you commit.
+    - question: Can the story fit an occasion or theme?
+      answer: Yes. Tell me the occasion, the mood, and any ideas your group already has. The story makes room for them without turning into a theme party.
     - question: Does an inquiry reserve a date?
-      answer: No. Sending an inquiry simply starts a conversation. Your date is reserved once we’ve confirmed availability, plans, and pricing together.
+      answer: No. It starts a conversation. Your date is held once you’ve accepted the plan and quote.
   link: {label: Read all the practical answers, url: questions/}
 
 trust:

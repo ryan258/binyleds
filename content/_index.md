@@ -7,32 +7,16 @@ sections:
     id: hero
   - module: proof
     id: proof
-  - module: services
-    id: services
-  - module: positioning
-    id: experience
   - module: adventures
     id: adventures
+  - module: gallery
+    id: gallery
   - module: packages
     id: packages
   - module: process
     id: process
-  - module: gallery
-    id: gallery
-  - module: details
-    id: details
-  - module: reassurance
-    id: reassurance
-  - module: comfort
-    id: comfort
-  - module: philosophy
-    id: philosophy
-  - module: resources
-    id: resources
   - module: faq
     id: faq
-  - module: location
-    id: location
   - module: closing
     id: closing
 ---
