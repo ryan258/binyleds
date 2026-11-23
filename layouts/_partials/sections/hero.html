@@ -7,7 +7,7 @@
   {{- $secondary = dict "url" $primary.url "label" $primaryLabel -}}
   {{- $primary = $data.secondary_cta -}}
 {{- end -}}
-<section class="home-hero{{ if $artwork }} home-hero--artwork{{ end }}" aria-labelledby="{{ .id }}-title" style="--hero-photo: url('{{ "images/home-hero.webp" | relURL }}')">
+<section class="home-hero{{ if $artwork }} home-hero--artwork{{ end }}" aria-labelledby="{{ .id }}-title"{{ if $artwork }} style="--hero-photo: url('{{ "images/home-hero.webp" | relURL }}')"{{ end }}>
   <div class="shell home-hero__grid">
     <div class="home-hero__copy">
       <p class="eyebrow">{{ $data.eyebrow }}</p>
