@@ -152,11 +152,6 @@ html[data-theme="light"] .site-header {
   color: var(--ink);
 }
 
-html[data-theme="dark"] .theme-control__moon,
-html[data-theme="light"] .theme-control__sun {
-  display: none;
-}
-
 .menu-toggle {
   display: none;
 }
