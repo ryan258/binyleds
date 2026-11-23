@@ -6,3 +6,4 @@
 <p>This demonstration form is disabled and does not collect or send inquiries.</p>
 {{ end }}
 {{ with site.Params.intakeContactEmail }}<p>Contact <a href="mailto:{{ . }}">{{ . }}</a> about access, correction, deletion, or keeping a detail out of the form.</p>{{ end }}
+{{ if site.Params.intakeContactEmail }}{{ else if eq site.Params.intakeBackend "cloudflare" }}<p>To ask about access, correction, or deletion, send a request through the consultation form and say so in your message.</p>{{ end }}

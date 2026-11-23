@@ -7,6 +7,20 @@ need owner confirmation. For a static demonstration, leave intake disabled.
 See [hosting configuration](hosting-ci-cd-gh-pages-setup.md) for build modes
 and [readiness](readiness.md) for the acceptance ledger.
 
+## Standard Cloudflare site stack
+
+Every Cloudflare-hosted site Ryan builds uses the same stack unless he says
+otherwise:
+
+- **Images:** a public Backblaze B2 bucket on an `images.` subdomain, proxied
+  through Cloudflare.
+- **Mail:** a Zoho mailbox on the site's domain that forwards to Gmail (needs a
+  paid Zoho plan).
+- **Contact:** the Cloudflare form (`npm run build:cloudflare`) with Turnstile,
+  a honeypot field, D1 storage, and an email notification to the Zoho mailbox.
+  Leave `INTAKE_CONTACT_EMAIL` unset to keep the address off the public site;
+  error messages then ask the visitor to retry instead of pointing to an email.
+
 ## November 21 handoff plan
 
 **Target: Saturday, November 21, 2026.** TJ bought `thestoryscape.com` through
@@ -53,7 +67,11 @@ Current DNS, mailbox, and deployment status still need verification.
   Zoho's exact MX, SPF, and DKIM values. Reconcile existing SPF and DMARC
   records and recreate any existing mailboxes or aliases before switching MX.
   Keep Cloudflare inbound Email Routing off on the main domain. Send a message
-  from an outside account and reply from Zoho.
+  from an outside account and reply from Zoho. To forward the mailbox to
+  Gmail, TJ needs a paid Zoho plan such as Mail Lite: Zoho's help says new
+  Free-plan accounts don't include forwarding. Set the forward in Zoho's
+  **Settings → Email Forwarding**, confirm it from Gmail, and send another test.
+  [Zoho email forwarding](https://www.zoho.com/mail/help/email-forwarding.html)
   [Zoho domain setup](https://www.zoho.com/mail/how-to/setup-my-domain-with-zoho-mail.html)
   · [Cloudflare email DNS](https://developers.cloudflare.com/email-service/configuration/domains/)
 - [ ] **Connect Pages.** Upload the [production ZIP](#build-the-standalone-upload)
@@ -65,12 +83,15 @@ Current DNS, mailbox, and deployment status still need verification.
 
 ### After the site and Zoho mail work
 
-- [ ] **Add the image subdomain if wanted.** The bundled images launch with
-  Pages. For a separate image library, TJ enables R2 under their billing,
-  creates a bucket for public images, and connects
-  `images.thestoryscape.com` under the bucket's **Custom Domains**. Upload
-  one public image and verify its HTTPS URL before updating site references.
-  [R2 custom domains](https://developers.cloudflare.com/r2/buckets/public-buckets/)
+- [ ] **Add the Backblaze B2 image host.** The bundled images launch with
+  Pages. For the image library, TJ creates a public B2 bucket under their
+  billing and serves it as `images.thestoryscape.com` through a proxied
+  Cloudflare DNS record, following Backblaze's Cloudflare setup guide. Egress
+  from B2 to Cloudflare is free under the Bandwidth Alliance. Upload one public
+  image and verify its HTTPS URL. Moving site references to that host is a
+  separate code change: the templates use bundled paths, and the CSP `img-src`
+  must add the image host.
+  [Backblaze and Cloudflare](https://www.backblaze.com/blog/backblaze-and-cloudflare-partner-to-provide-free-data-transfer/)
 - [ ] **Transfer registration to Cloudflare Registrar.** Once the site and
   mail pass their checks and the Cloudflare zone is active, TJ checks domain
   eligibility. A recent registration or transfer can impose a 60-day lock.
@@ -214,7 +235,7 @@ Configure these values for the Cloudflare build.
 | `PRODUCTION_URL` | Actual custom-domain HTTPS origin | Unused |
 | `CF_PAGES_URL` | Unused | Deployment HTTPS origin or loopback for local |
 | `TURNSTILE_SITE_KEY` | Real production site key | Real preview site key or local dummy key |
-| `INTAKE_CONTACT_EMAIL` | Actual public contact | Actual test contact |
+| `INTAKE_CONTACT_EMAIL` | Optional public contact (omit to hide) | Optional test contact (omit to hide) |
 | `CONSENT_VERSION` | `cloudflare-intake-v1` after notice review | Must match runtime value |
 
 The proposed Cloudflare Pages build command installs or reuses the pinned

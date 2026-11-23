@@ -52,6 +52,11 @@ with tempfile.TemporaryDirectory(prefix='storyscape-hosting-') as temp:
             raise AssertionError('(output / "_headers").is_file() and (output / "_routes.json").is_file()')
         run(['python3', 'scripts/audit_site.py', str(output), '--profile', 'client'] + (['--expect-noindex'] if mode == 'preview' else []))
         run(['node', 'scripts/build-cloudflare.mjs'], dict(env, TURNSTILE_SITE_KEY='1x00000000000000000000AA'), ok=False)
+    # Without INTAKE_CONTACT_EMAIL the form still builds and no address is published.
+    output = Path(temp) / 'private-contact'
+    run(['node', 'scripts/build-cloudflare.mjs'], dict(env, INTAKE_ENV='preview', INTAKE_CONTACT_EMAIL='', BUILD_DESTINATION=str(output)))
+    if any('mailto:' in page.read_text() for page in output.rglob('*.html')):
+        raise AssertionError('Cloudflare build without INTAKE_CONTACT_EMAIL published a mailto link')
     output = Path(temp) / 'mirror'
     run(['hugo', '--gc', '--minify', '--panicOnWarning', '--cleanDestinationDir', '--environment', 'staging', '--disableKinds', 'sitemap', '--baseURL', 'https://example.test/binyleds/', '--destination', str(output)])
     page = Page(output / 'consultation/index.html')

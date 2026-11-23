@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{- $cloudflare := eq site.Params.intakeBackend "cloudflare" -}}
 {{- $netlify := eq site.Params.intakeBackend "netlify" -}}
-{{- if and (or $cloudflare $netlify) (not site.Params.intakeContactEmail) -}}{{ errorf "Active intake requires intakeContactEmail" }}{{- end -}}
+{{- if and $netlify (not site.Params.intakeContactEmail) -}}{{ errorf "Netlify intake requires intakeContactEmail" }}{{- end -}}
 {{- $mirror := not (or $cloudflare $netlify) -}}
 <article id="main-content" class="consultation-page">
   {{ partial "page-hero.html" . }}
@@ -135,7 +135,7 @@
         <input id="restore-draft" type="file" accept="application/json,.json" data-restore-draft aria-describedby="draft-help">
         <p id="draft-help" class="field-help">Drafts include your private notes. Saving is optional; form details are never automatically stored in this browser.</p>
       </div>
-      <noscript><p>Verification requires JavaScript. Use the contact option below.</p></noscript>
+      <noscript><p>Verification requires JavaScript.{{ if site.Params.intakeContactEmail }} Use the contact option below.{{ else }} Please enable it to send this form.{{ end }}</p></noscript>
       {{ end }}
       <button class="button button--primary form-submit" type="submit" {{ if or $mirror $cloudflare }}disabled{{ end }}>Request a private consultation</button>
       {{ if $cloudflare }}
@@ -143,6 +143,8 @@
       {{ end }}
       {{ with site.Params.intakeContactEmail }}
       <p>Prefer email, or having trouble? <a href="mailto:{{ . }}">{{ . }}</a></p>
+      {{ end }}
+      {{ if site.Params.intakeContactEmail }}{{ else if $cloudflare }}<p>Having trouble sending? Your entries stay on this page. Wait a few minutes and send again.</p>
       {{ else }}<p>This demonstration has no contact address configured. It cannot receive an inquiry.</p>{{ end }}
       <p class="form-note">This request begins a conversation. It does not reserve a date or create a payment obligation.</p>
       </form>

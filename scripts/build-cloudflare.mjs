@@ -9,9 +9,10 @@ const base = mode === 'production' ? process.env.PRODUCTION_URL : process.env.CF
 const contact = process.env.INTAKE_CONTACT_EMAIL;
 const key = process.env.TURNSTILE_SITE_KEY;
 const consent = process.env.CONSENT_VERSION;
-if (!base || !contact || !key || !consent) throw new Error('Set the canonical/deployment URL, INTAKE_CONTACT_EMAIL, TURNSTILE_SITE_KEY, and CONSENT_VERSION.');
+// INTAKE_CONTACT_EMAIL is optional: leave it unset to keep the address off the public site.
+if (!base || !key || !consent) throw new Error('Set the canonical/deployment URL, TURNSTILE_SITE_KEY, and CONSENT_VERSION.');
 const url = new URL(base);
-if (!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(contact)) throw new Error('Invalid fallback contact email.');
+if (contact && !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(contact)) throw new Error('Invalid fallback contact email.');
 if (url.pathname !== '/' || url.search || url.hash || url.username || url.password) throw new Error('Cloudflare intake requires an origin URL, without a subpath or credentials.');
 if (!['http:', 'https:'].includes(url.protocol)) throw new Error('Use an HTTP or HTTPS origin.');
 if (mode === 'local' ? !['localhost', '127.0.0.1'].includes(url.hostname) : url.protocol !== 'https:') throw new Error('Use HTTPS for deployed sites and loopback for local development.');
@@ -22,7 +23,7 @@ try {
   const override = join(temp, 'intake.json');
   writeFileSync(override, JSON.stringify({ params: {
     intakeBackend: 'cloudflare', turnstileSiteKey: key,
-    intakeContactEmail: contact, intakeConsentVersion: consent,
+    intakeContactEmail: contact || '', intakeConsentVersion: consent,
   } }));
   const args = ['--config', `hugo.yaml,config/client.json,${override}`, '--gc', '--minify', '--panicOnWarning',
     '--cleanDestinationDir', '--baseURL', url.href, '--environment', mode === 'production' ? 'production' : 'staging'];

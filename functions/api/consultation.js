@@ -22,7 +22,7 @@ export async function onRequest(context) {
   } catch (error) {
     if (error instanceof IntakeError) return reply(error.status, { error: error.message, code: error.code, ...(error.field ? { field: error.field } : {}) });
     console.error('intake_unavailable');
-    return reply(503, { code: 'receipt_unconfirmed', error: 'Receipt could not be confirmed. Keep these details and retry with the same request, or use the contact address beside the form.' });
+    return reply(503, { code: 'receipt_unconfirmed', error: 'Receipt could not be confirmed. Keep these details and retry with the same request.' });
   }
 }
 function success(request, id) {
