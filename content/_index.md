@@ -1,7 +1,7 @@
 ---
 title: Binyled’s Storyscape
 searchTitle: Private in-home tabletop adventures in Northwest Arkansas
-# Remove entries or set enabled: false to sculpt this composition.
+# Remove entries or set enabled: false to sculpt this composition here.
 sections:
   - module: hero
     id: hero
